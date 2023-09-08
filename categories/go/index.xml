@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>go on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/categories/go/</link>
+    <description>Recent content in go on Someone or Nobody</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 06 Sep 2023 13:39:38 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go</title>
+      <link>https://someoneornobody.github.io/dev/go/go/</link>
+      <pubDate>Wed, 06 Sep 2023 13:39:38 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/go/go/</guid>
+      <description>go.md</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lives on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/life/</link>
+    <description>Recent content in Lives on Someone or Nobody</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 06 Sep 2023 13:42:02 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Restaurant</title>
+      <link>https://someoneornobody.github.io/life/restaurant/restaurant/</link>
+      <pubDate>Wed, 06 Sep 2023 13:42:02 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/life/restaurant/restaurant/</guid>
+      <description>restaurant.md</description>
+    </item>
+    
+    <item>
+      <title>Place</title>
+      <link>https://someoneornobody.github.io/life/place/place/</link>
+      <pubDate>Wed, 06 Sep 2023 13:41:06 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/life/place/place/</guid>
+      <description>place.md</description>
+    </item>
+    
+  </channel>
+</rss>
