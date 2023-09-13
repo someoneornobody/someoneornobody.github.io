@@ -9,10 +9,10 @@
     <lastBuildDate>Wed, 13 Sep 2023 08:12:02 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo With Github</title>
-      <link>https://someoneornobody.github.io/etc/hugo/hugo-with-github/</link>
+      <link>https://someoneornobody.github.io/dev/hugo/hugo-with-github/</link>
       <pubDate>Wed, 13 Sep 2023 08:12:02 +0900</pubDate>
       
-      <guid>https://someoneornobody.github.io/etc/hugo/hugo-with-github/</guid>
+      <guid>https://someoneornobody.github.io/dev/hugo/hugo-with-github/</guid>
       <description>개요 HUGO 를 사용하여 SSG (Static Site Generators) 를 운영하는 대표적인 방법 중 하나는 github 저장소 를 이용하는 것입니다. github 를 통하여 서비스 시 별도의 비용도 발생하지 않고 다양한 플러그인들 지원을 통해 여러가지 기능을 손쉽게 적용 할 수 있는 장점이 있습니다.
 아래는 HUGO 를 통해 github 에 게시글을 작성하고 노출 시키는방법에 대해 설명해 보고자 합니다.
 git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repository 를 생성하도록 합니다.</description>
