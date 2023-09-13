@@ -5,19 +5,19 @@
     <loc>https://someoneornobody.github.io/categories/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
   </url><url>
-    <loc>https://someoneornobody.github.io/dev/</loc>
+    <loc>https://someoneornobody.github.io/etc/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/github/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
   </url><url>
-    <loc>https://someoneornobody.github.io/categories/go/</loc>
-    <lastmod>2023-09-13T08:12:02+09:00</lastmod>
-  </url><url>
     <loc>https://someoneornobody.github.io/tags/hugo/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
   </url><url>
-    <loc>https://someoneornobody.github.io/dev/go/hugo-with-github/</loc>
+    <loc>https://someoneornobody.github.io/categories/hugo/</loc>
+    <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+  </url><url>
+    <loc>https://someoneornobody.github.io/etc/hugo/hugo-with-github/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
   </url><url>
     <loc>https://someoneornobody.github.io/</loc>
@@ -29,10 +29,13 @@
     <loc>https://someoneornobody.github.io/tags/go/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
   </url><url>
-    <loc>https://someoneornobody.github.io/dev/go/hugo-start/</loc>
+    <loc>https://someoneornobody.github.io/etc/hugo/hugo-start/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/ssg/</loc>
+    <lastmod>2023-09-11T15:04:49+09:00</lastmod>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/static-site-generators/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
   </url><url>
     <loc>https://someoneornobody.github.io/search/</loc>

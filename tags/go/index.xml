@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 11 Sep 2023 15:04:49 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HUGO 시작하기</title>
-      <link>https://someoneornobody.github.io/dev/go/hugo-start/</link>
+      <link>https://someoneornobody.github.io/etc/hugo/hugo-start/</link>
       <pubDate>Mon, 11 Sep 2023 15:04:49 +0900</pubDate>
       
-      <guid>https://someoneornobody.github.io/dev/go/hugo-start/</guid>
+      <guid>https://someoneornobody.github.io/etc/hugo/hugo-start/</guid>
       <description>HUGO ? HUGO 는 GO 프로그래밍 언어로 작성된 오픈 소스 정적 사이트 (Static Site Generators) 생성기 입니다.
 정적 사이트 생성기란 서버측 처리없이 HTML, CSS, Javascript 파일로 제공되는 웹 사이트로 다양한 플랫폼에서 빠르고 안전하며 쉽게 호스팅 할 수 있습니다.
 다양한 케이스가 있겠지만 대표적인 방법으로는 github 저장소를 이용하여 콘텐츠 생성 및 호스팅을 하는 방법이 있습니다.
