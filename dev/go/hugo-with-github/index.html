@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hugo With Github - Someone or Nobody</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-74F0WSFH3D');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
+        
+		<meta property="og:title" content="Hugo With Github" />
+<meta property="og:description" content="개요 HUGO 를 사용하여 SSG (Static Site Generators) 를 운영하는 대표적인 방법 중 하나는 github 저장소 를 이용하는 것입니다. github 를 통하여 서비스 시 별도의 비용도 발생하지 않고 다양한 플러그인들 지원을 통해 여러가지 기능을 손쉽게 적용 할 수 있는 장점이 있습니다.
+아래는 HUGO 를 통해 github 에 게시글을 작성하고 노출 시키는방법에 대해 설명해 보고자 합니다.
+git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repository 를 생성하도록 합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://someoneornobody.github.io/dev/go/hugo-with-github/" /><meta property="article:section" content="dev" />
+<meta property="article:published_time" content="2023-09-13T08:12:02+09:00" />
+<meta property="article:modified_time" content="2023-09-13T08:12:02+09:00" />
+
+		<meta itemprop="name" content="Hugo With Github">
+<meta itemprop="description" content="개요 HUGO 를 사용하여 SSG (Static Site Generators) 를 운영하는 대표적인 방법 중 하나는 github 저장소 를 이용하는 것입니다. github 를 통하여 서비스 시 별도의 비용도 발생하지 않고 다양한 플러그인들 지원을 통해 여러가지 기능을 손쉽게 적용 할 수 있는 장점이 있습니다.
+아래는 HUGO 를 통해 github 에 게시글을 작성하고 노출 시키는방법에 대해 설명해 보고자 합니다.
+git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repository 를 생성하도록 합니다."><meta itemprop="datePublished" content="2023-09-13T08:12:02+09:00" />
+<meta itemprop="dateModified" content="2023-09-13T08:12:02+09:00" />
+<meta itemprop="wordCount" content="380">
+<meta itemprop="keywords" content="hugo,github," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Someone or Nobody" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Someone or Nobody</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/go">
+            
+            <span class="menu__text">go</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">Hugo With Github</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-13T08:12:02&#43;09:00">2023-09-13 08:12:02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/go/" rel="category">go</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#개요">개요</a></li>
+    <li><a href="#git-repository-생성"><strong>git repository 생성</strong></a></li>
+    <li><a href="#저장소-연결하기">저장소 연결하기</a>
+      <ul>
+        <li><a href="#작업저장소-연결하기"><strong>작업저장소 연결하기</strong></a></li>
+        <li><a href="#호스팅저장소-연결하기">호스팅저장소 연결하기</a></li>
+        <li><a href="#저장소에-푸쉬-및-확인하기"><strong>저장소에 푸쉬 및 확인하기</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p> </p>
+<h2 id="개요">개요</h2>
+<p>HUGO 를 사용하여 SSG (Static Site Generators) 를 운영하는 대표적인 방법 중 하나는 <a href="https://github.com">github 저장소</a> 를 이용하는 것입니다.
+github 를 통하여 서비스 시 별도의 비용도 발생하지 않고 다양한 플러그인들 지원을 통해 여러가지 기능을 손쉽게 적용 할 수 있는 장점이 있습니다.</p>
+<p>아래는 HUGO 를 통해 github 에 게시글을 작성하고 노출 시키는방법에 대해 설명해 보고자 합니다.</p>
+<p> </p>
+<h2 id="git-repository-생성"><strong>git repository 생성</strong></h2>
+<hr>
+<ul>
+<li>
+<p>먼저 <a href="https://github.com">github</a> 에 가입 후 아래와 같이  2개의 repository 를 생성하도록 합니다.</p>
+<ul>
+<li>
+<p>작업저장소 ( 게시글을 작성하고 저장할 저장소이며 실제 노출되는 저장소는 아님)</p>
+<p>→ github.com/my-account/content-storage</p>
+</li>
+<li>
+<p>호스팅저장소 (작업저장소에서 작성 된 게시글을 실제 사용자들이 볼 수 있는 저장소)</p>
+<p>→ content-hosting.github.io</p>
+</li>
+</ul>
+<blockquote>
+<p>작업저장소 및 호스팅저장소 생성 후 로컬에서 푸쉬할 때 인증을 위해 token 을 미리 발급한다.
+토큰은 <a href="http://github.co">github.co</a>m 에 로그인 후 우측 상단의 프로필 &gt; settings &gt; Developer Settings &gt; Personal access tokens 메뉴에서 <strong>Create new token</strong> 버튼을통해 생성 할 수 있으며 권한은 <strong>repo</strong> 정도로만주고 진행한다.</p>
+</blockquote>
+<blockquote>
+<p><em>github 의 계정설정에서 (우측 상단 프로필 &gt; Settings &gt; Repositories &gt; Repository default branch) 가 기본으로 main 으로 되어 있다면 master 로 변경한다.</em></p>
+</blockquote>
+<blockquote>
+<p>호스팅저장소는 저장소 생성 시 <a href="http://readme.md">readme.md</a> 파일을 생성하도록 한다. 그렇지 않으면 서브모듈로 추가 시 master 저장소가 비어서 정상적으로 연결되지 않을 수 있다</p>
+</blockquote>
+</li>
+</ul>
+<p> </p>
+<h2 id="저장소-연결하기">저장소 연결하기</h2>
+<hr>
+<p> 
+앞서 <a href="https://someoneornobody.github.io/dev/go/hugo-start/">HUGO 시작하기</a> 에서 저는 <code>hugo new site my-site</code> 로 생성하였기 때문에 수행 경로를 <code>hugo/my-site</code> 라 칭하겠습니다.</p>
+<h3 id="작업저장소-연결하기"><strong>작업저장소 연결하기</strong></h3>
+<blockquote>
+<p>수행 경로: <code>hugo/my-site</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># git 초기화</span>
+</span></span><span style="display:flex;"><span>git init
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 저장소 연결</span>
+</span></span><span style="display:flex;"><span>git remote add origin https://github.com/my-account/content-storage
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 저장소 이동</span>
+</span></span><span style="display:flex;"><span>git branch -M master
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 커밋</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>git commit -am <span style="color:#e6db74">&#39;initialize commit&#39;</span>
+</span></span><span style="display:flex;"><span>git push -u origin master
+</span></span></code></pre></div><p> </p>
+<h3 id="호스팅저장소-연결하기">호스팅저장소 연결하기</h3>
+<hr>
+<blockquote>
+<p>수행 경로: <code>hugo/my-site</code></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># submodule 로 연결하여 준다</span>
+</span></span><span style="display:flex;"><span>git submodule add -b master https://github.com/my-account/content-hosting.github.io.git public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># submodule 저장소로 이동</span>
+</span></span><span style="display:flex;"><span>cd ./public
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 현재 저장소 확인 </span>
+</span></span><span style="display:flex;"><span>git status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># master 가 아닐 경우 master 로 변경</span>
+</span></span><span style="display:flex;"><span>git checkout master
+</span></span></code></pre></div><blockquote>
+<p><strong>호스팅저장소를 연결하면  내 <code>hugo/my-site/public</code> 폴더가 생성 된 것을 확인 할 수 있는데 이 폴더 안의 내용들이 호스팅저장소에 노출 된다.</strong></p>
+</blockquote>
+<ul>
+<li>
+<p>호스팅저장소에 hugo 테마 적용</p>
+<ul>
+<li>현재 적용되어져 있는 mainroad 테마를 호스팅저장소에 적용한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo -t mainroad
+</span></span></code></pre></div><p>→ <code>/hugo/my-site/public</code> 아래 테마관련 파일들이 생성된 것을 확인 할 수 있다.</p>
+</li>
+</ul>
+<p> </p>
+<h3 id="저장소에-푸쉬-및-확인하기"><strong>저장소에 푸쉬 및 확인하기</strong></h3>
+<hr>
+<blockquote>
+<p>수행 경로: <code>/hugo/my-site</code></p>
+</blockquote>
+<ul>
+<li>배포 쉘 실행</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 커밋할 파일 추가</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 커밋 내용 작성</span>
+</span></span><span style="display:flex;"><span>git commit -am <span style="color:#e6db74">&#39;최초 커밋&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 저장소에 푸쉬</span>
+</span></span><span style="display:flex;"><span>git push origin master
+</span></span></code></pre></div><p>→ <a href="https://github.com">github</a> 에 접속하여 <code>my-account/content-storage</code> 저장소에 가보면 아래와 같이 파일들이 추가됨과 함께 public 폴더가 서브모듈로 포함되어 있는 것을 확인할 수 있다.</p>
+<p> 
+<img src="/img/posts/dev.go.hugo-with-github.repo.png" alt="pic_content_storage"></p>
+<p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/hugo/" rel="tag">hugo</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/github/" rel="tag">github</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/dev/go/hugo-start/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">HUGO 시작하기</p>
+		</a>
+	</div>
+</nav>
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/go/">go</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/go/hugo-with-github/">Hugo With Github</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/go/hugo-start/">HUGO 시작하기</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

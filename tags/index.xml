@@ -6,22 +6,31 @@
     <description>Recent content in Tags on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 11 Sep 2023 15:04:49 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 13 Sep 2023 08:12:02 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>go</title>
-      <link>https://someoneornobody.github.io/tags/go/</link>
-      <pubDate>Mon, 11 Sep 2023 15:04:49 +0900</pubDate>
+      <title>github</title>
+      <link>https://someoneornobody.github.io/tags/github/</link>
+      <pubDate>Wed, 13 Sep 2023 08:12:02 +0900</pubDate>
       
-      <guid>https://someoneornobody.github.io/tags/go/</guid>
+      <guid>https://someoneornobody.github.io/tags/github/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
       <link>https://someoneornobody.github.io/tags/hugo/</link>
-      <pubDate>Mon, 11 Sep 2023 15:04:49 +0900</pubDate>
+      <pubDate>Wed, 13 Sep 2023 08:12:02 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://someoneornobody.github.io/tags/go/</link>
+      <pubDate>Mon, 11 Sep 2023 15:04:49 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/go/</guid>
       <description></description>
     </item>
     
