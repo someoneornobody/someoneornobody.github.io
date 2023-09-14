@@ -4,56 +4,91 @@
   <url>
     <loc>https://someoneornobody.github.io/categories/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/iphone/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/iphone15/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/life/news/iphone15/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/life/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/categories/news/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/dev/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/github/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/hugo/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/categories/hugo/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/dev/hugo/hugo-with-github/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/go/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/dev/hugo/hugo-start/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/ssg/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/static-site-generators/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/search/</loc>
+    <changefreq>daily</changefreq>
     <priority>0.1</priority>
   </url>
 </urlset>
