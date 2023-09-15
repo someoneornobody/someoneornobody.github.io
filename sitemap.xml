@@ -3,7 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://someoneornobody.github.io/categories/</loc>
-    <lastmod>2023-09-14T06:52:27+09:00</lastmod>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/dev/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/getcurrentinstance/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/inject/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/provide/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/vue/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/vue3/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/dev/vue/use-global-properties/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/</loc>
+    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -29,21 +79,6 @@
   </url><url>
     <loc>https://someoneornobody.github.io/categories/news/</loc>
     <lastmod>2023-09-14T06:52:27+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/</loc>
-    <lastmod>2023-09-14T06:52:27+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/</loc>
-    <lastmod>2023-09-14T06:52:27+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/dev/</loc>
-    <lastmod>2023-09-13T08:12:02+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>

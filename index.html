@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Someone or Nobody</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="Everyday life, programming and......... travel... want to go..">
+	<meta name="description" content="everyday life! programming! travel!">
 
 	
 	
@@ -25,12 +25,12 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
         
 		<meta property="og:title" content="Someone or Nobody" />
-<meta property="og:description" content="Everyday life, programming and......... travel... want to go.." />
+<meta property="og:description" content="everyday life! programming! travel!" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://someoneornobody.github.io/" />
 
 		<meta itemprop="name" content="Someone or Nobody">
-<meta itemprop="description" content="Everyday life, programming and......... travel... want to go..">
+<meta itemprop="description" content="everyday life! programming! travel!">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -86,6 +86,14 @@
           </a>
           </li>
         
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
       </ul>
     </li>
     <li class="menu__item menu__dropdown">
@@ -119,6 +127,26 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/vue/use-global-properties/" rel="bookmark">
+			전역 변수 사용하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-15T09:50:33&#43;09:00">2023-09-15 09:50:33</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		아래는vue3 에서 script setup 방식으로 전역변수를 사용하는 예제 입니다. 전역변수 설정 case 1 provide 를 사용하여 전역변수를 설정하는 방법. file: main.js ... const appTitle = &#39;hello nobody&#39; const app = createApp(app) .provide(&#39;$title&#39;, appTitle) .mount(&#39;#app&#39;) case 2 config.globalProperties 를 사용하는 방식으로 provide 와 동일하게 vue3 에서 전역 애플리케이션 인스턴스에 속성을 추가할 수 있는 기능. file: main.js ... const appTitle = &#39;hello nobody&#39; const app = createApp(app) ... app.config.globalProperties.$title = appTitle .
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/use-global-properties/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -211,6 +239,10 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 				<a class="widget__link" href="/categories/news/">news</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
 		</ul>
 	</div>
 </div>
@@ -218,6 +250,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties/">전역 변수 사용하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/news/iphone15/">Iphone15</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-with-github/">Hugo With Github</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-start/">HUGO 시작하기</a></li>
@@ -227,13 +260,18 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
 	</div>
 </div>
 </aside>
