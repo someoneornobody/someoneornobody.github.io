@@ -8,7 +8,7 @@
     <language>ko-kr</language>
     <lastBuildDate>Fri, 15 Sep 2023 09:50:33 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/inject/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>전역 변수 사용하기</title>
+      <title>[Vue] 전역 변수 사용하기</title>
       <link>https://someoneornobody.github.io/dev/vue/use-global-properties/</link>
       <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
       

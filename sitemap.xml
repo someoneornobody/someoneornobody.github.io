@@ -2,12 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://someoneornobody.github.io/dev/db/mysql-mariadb-commands/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://someoneornobody.github.io/categories/</loc>
-    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/db/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/dev/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/mariadb/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/mysql/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/</loc>
+    <lastmod>2023-09-18T11:22:47+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/dev/vue/use-global-properties/</loc>
     <lastmod>2023-09-15T09:50:33+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -27,27 +67,12 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://someoneornobody.github.io/</loc>
-    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/</loc>
-    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://someoneornobody.github.io/categories/vue/</loc>
     <lastmod>2023-09-15T09:50:33+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/vue3/</loc>
-    <lastmod>2023-09-15T09:50:33+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/dev/vue/use-global-properties/</loc>
     <lastmod>2023-09-15T09:50:33+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -82,6 +107,11 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>https://someoneornobody.github.io/dev/hugo/hugo-with-github/</loc>
+    <lastmod>2023-09-13T08:12:02+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://someoneornobody.github.io/tags/github/</loc>
     <lastmod>2023-09-13T08:12:02+09:00</lastmod>
     <changefreq>always</changefreq>
@@ -97,17 +127,12 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://someoneornobody.github.io/dev/hugo/hugo-with-github/</loc>
-    <lastmod>2023-09-13T08:12:02+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/go/</loc>
+    <loc>https://someoneornobody.github.io/dev/hugo/hugo-start/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://someoneornobody.github.io/dev/hugo/hugo-start/</loc>
+    <loc>https://someoneornobody.github.io/tags/go/</loc>
     <lastmod>2023-09-11T15:04:49+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>

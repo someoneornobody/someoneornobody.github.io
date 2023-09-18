@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[MySQL/MariaDB] 명령어 - Someone or Nobody</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-74F0WSFH3D');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
+        
+		<meta property="og:title" content="[MySQL/MariaDB] 명령어" />
+<meta property="og:description" content="MySQL / Mariadb 명령어 root 접속 (mysql 폴더 / bin 으로 이동해서 수행) ./mysql -u root -p 사용자 목록 use mysql; select user, host from user; 비밀번호 변경 mysqladmin -u아이디 -p기존패스워드 password 신규패스워드 인덱스 초기화 ALTER TABLE [table name] AUTO_INCREMENT = 1; 현재 커넥션 개수 보기 show global status like &#39;threads_connected&#39;; datetime #unix_time -&gt; date_time from_unixtime( signdate , &#34;%Y%m%d-%H%i%S&#34;) MySQL 외부 접근 권한
+%: 외부접근 localhost: 내부접근 권한설정 #gtane all privileges on {db}." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://someoneornobody.github.io/dev/db/mysql-mariadb-commands/" /><meta property="article:section" content="dev" />
+<meta property="article:published_time" content="2023-09-18T11:22:47+09:00" />
+<meta property="article:modified_time" content="2023-09-18T11:22:47+09:00" />
+
+		<meta itemprop="name" content="[MySQL/MariaDB] 명령어">
+<meta itemprop="description" content="MySQL / Mariadb 명령어 root 접속 (mysql 폴더 / bin 으로 이동해서 수행) ./mysql -u root -p 사용자 목록 use mysql; select user, host from user; 비밀번호 변경 mysqladmin -u아이디 -p기존패스워드 password 신규패스워드 인덱스 초기화 ALTER TABLE [table name] AUTO_INCREMENT = 1; 현재 커넥션 개수 보기 show global status like &#39;threads_connected&#39;; datetime #unix_time -&gt; date_time from_unixtime( signdate , &#34;%Y%m%d-%H%i%S&#34;) MySQL 외부 접근 권한
+%: 외부접근 localhost: 내부접근 권한설정 #gtane all privileges on {db}."><meta itemprop="datePublished" content="2023-09-18T11:22:47+09:00" />
+<meta itemprop="dateModified" content="2023-09-18T11:22:47+09:00" />
+<meta itemprop="wordCount" content="343">
+<meta itemprop="keywords" content="mysql,mariadb,명령어," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Someone or Nobody" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Someone or Nobody</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/news">
+            
+            <span class="menu__text">NEWS</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[MySQL/MariaDB] 명령어</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-18T11:22:47&#43;09:00">2023-09-18 11:22:47</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/db/" rel="category">db</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#mysql--mariadb-명령어">MySQL / Mariadb 명령어</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p> </p>
+<h2 id="mysql--mariadb-명령어">MySQL / Mariadb 명령어</h2>
+<p> </p>
+<ul>
+<li>root 접속 (mysql 폴더 / bin 으로 이동해서 수행)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./mysql -u root -p
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>사용자 목록</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>use mysql;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#66d9ef">user</span>, <span style="color:#66d9ef">host</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>비밀번호 변경</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>mysqladmin <span style="color:#f92672">-</span>u아이디 <span style="color:#f92672">-</span>p기존패스워드 password <span style="color:#960050;background-color:#1e0010">신규패스워드</span>
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>인덱스 초기화</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span>  [<span style="color:#66d9ef">table</span> name]  AUTO_INCREMENT <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>현재 커넥션 개수 보기</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">show</span> <span style="color:#66d9ef">global</span> status <span style="color:#66d9ef">like</span> <span style="color:#e6db74">&#39;threads_connected&#39;</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>datetime</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#unix_time -&gt; date_time</span>
+</span></span><span style="display:flex;"><span>from_unixtime<span style="color:#f92672">(</span> signdate , <span style="color:#e6db74">&#34;%Y%m%d-%H%i%S&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>
+<p>MySQL 외부 접근 권한</p>
+<ul>
+<li>%: 외부접근</li>
+<li>localhost: 내부접근</li>
+</ul>
+<ul>
+<li>권한설정</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span>gtane <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> <span style="color:#960050;background-color:#1e0010">{</span>db<span style="color:#960050;background-color:#1e0010">}</span>.<span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">table</span><span style="color:#960050;background-color:#1e0010">}</span> <span style="color:#66d9ef">to</span> <span style="color:#960050;background-color:#1e0010">{</span><span style="color:#66d9ef">user</span><span style="color:#960050;background-color:#1e0010">}</span><span style="color:#f92672">@</span><span style="color:#960050;background-color:#1e0010">{</span>ip<span style="color:#960050;background-color:#1e0010">}</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;root password&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">to</span> <span style="color:#960050;background-color:#1e0010">‘</span>root<span style="color:#960050;background-color:#1e0010">’</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%’ identified by ‘root의 패스워드’;
+</span></span></span></code></pre></div><ul>
+<li>모든IP허용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>INSERT INTO mysql.user <span style="color:#f92672">(</span>host,user,password<span style="color:#f92672">)</span> VALUES <span style="color:#f92672">(</span>‘%’,<span style="color:#e6db74">&#39;root’,password(‘패스워드’));
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">GRANT ALL PRIVILEGES ON *.* TO ‘root’@&#39;</span>%’;
+</span></span><span style="display:flex;"><span>FLUSH PRIVILEGES;
+</span></span></code></pre></div><ul>
+<li>IP대역 허용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> mysql.<span style="color:#66d9ef">user</span> (<span style="color:#66d9ef">host</span>,<span style="color:#66d9ef">user</span>,password) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;111.222.%&#39;</span>,<span style="color:#e6db74">&#39;root&#39;</span>,password(<span style="color:#e6db74">&#39;패스워드&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;111.222.%&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</span></span></code></pre></div><ul>
+<li>특정 IP 허용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> mysql.<span style="color:#66d9ef">user</span> (<span style="color:#66d9ef">host</span>,<span style="color:#66d9ef">user</span>,password) <span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;111.222.33.44&#39;</span>,<span style="color:#e6db74">&#39;root&#39;</span>,password(<span style="color:#e6db74">&#39;패스워드&#39;</span>));
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GRANT</span> <span style="color:#66d9ef">ALL</span> <span style="color:#66d9ef">PRIVILEGES</span> <span style="color:#66d9ef">ON</span> <span style="color:#f92672">*</span>.<span style="color:#f92672">*</span> <span style="color:#66d9ef">TO</span> <span style="color:#e6db74">&#39;root&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;111.222.33.44&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</span></span></code></pre></div><ul>
+<li>원복</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">FROM</span> mysql.<span style="color:#66d9ef">user</span> <span style="color:#66d9ef">WHERE</span> <span style="color:#66d9ef">Host</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;%&#39;</span> <span style="color:#66d9ef">AND</span> <span style="color:#66d9ef">User</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#39;root&#39;</span>;
+</span></span><span style="display:flex;"><span>FLUSH <span style="color:#66d9ef">PRIVILEGES</span>;
+</span></span></code></pre></div></li>
+</ul>
+<p> </p>
+<ul>
+<li>mysql.user 테이블의 password 변경</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">update</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">set</span> password <span style="color:#f92672">=</span> password(<span style="color:#e6db74">&#39;new password&#39;</span>) <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">user</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;username&#39;</span>;
+</span></span></code></pre></div><ul>
+<li>
+<p>Error Code : 1175 일 시 세이프 모드를 해제 한 후 적용한다.</p>
+<p>set sql_safe_updates = 0; -&gt; 세이프 모드 해제</p>
+<p>set sql_safe_updates = 1; -&gt; 세이프 모드 적용</p>
+</li>
+<li>
+<p><strong>mysql 서버에</strong> <strong>직접</strong> <strong>접속하여</strong> <strong>변경할</strong> <strong>경우 flush privileges; 커맨드도</strong> <strong>꼭</strong> <strong>해주어야</strong> <strong>한다.</strong></p>
+</li>
+</ul>
+<p> </p>
+<ul>
+<li>데이터베이스 목록</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">show</span> databases;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>사용자추가</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">외부</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#39;userid&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;user password&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">내부</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">create</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#39;userid&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;localhost&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;user password&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> <span style="color:#66d9ef">user</span> (<span style="color:#66d9ef">host</span>, <span style="color:#66d9ef">user</span>, password) <span style="color:#66d9ef">values</span> (<span style="color:#e6db74">&#39;localhost&#39;</span>, <span style="color:#e6db74">&#39;userid&#39;</span>, <span style="color:#e6db74">&#39;password(user password&#39;</span>));
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>사용자제거</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">drop</span> <span style="color:#66d9ef">user</span> <span style="color:#e6db74">&#39;userid&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">delete</span> <span style="color:#66d9ef">from</span> <span style="color:#66d9ef">user</span> <span style="color:#66d9ef">where</span> <span style="color:#66d9ef">user</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;userid&#39;</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>권한주기</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span><span style="color:#960050;background-color:#1e0010">전체권한</span> (<span style="color:#66d9ef">SELECT</span>, <span style="color:#66d9ef">DELETE</span>, <span style="color:#66d9ef">UPDATE</span>, <span style="color:#66d9ef">INSERT</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">privileges</span> <span style="color:#66d9ef">on</span> dbname.<span style="color:#66d9ef">table</span> <span style="color:#66d9ef">to</span> userid<span style="color:#f92672">@</span><span style="color:#66d9ef">host</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;password&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">select</span>, <span style="color:#66d9ef">insert</span>, <span style="color:#66d9ef">update</span> <span style="color:#66d9ef">on</span> dbname.<span style="color:#66d9ef">table</span> <span style="color:#66d9ef">to</span> userid<span style="color:#f92672">@</span><span style="color:#66d9ef">host</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;password&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">grant</span> <span style="color:#66d9ef">select</span>, <span style="color:#66d9ef">insert</span>, <span style="color:#66d9ef">update</span> <span style="color:#66d9ef">on</span> dbname.<span style="color:#66d9ef">table</span> <span style="color:#66d9ef">to</span> userid<span style="color:#f92672">@</span><span style="color:#e6db74">&#39;192.168.%&#39;</span> identified <span style="color:#66d9ef">by</span> <span style="color:#e6db74">&#39;password&#39;</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>권한 적용</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>flush <span style="color:#66d9ef">privileges</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>권한 삭제</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">revoke</span> <span style="color:#66d9ef">all</span> <span style="color:#66d9ef">on</span> dbname.<span style="color:#66d9ef">table</span> <span style="color:#66d9ef">from</span> userid<span style="color:#f92672">@</span><span style="color:#66d9ef">host</span>
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>권한 확인</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">show</span> grants <span style="color:#66d9ef">for</span> userid<span style="color:#f92672">@</span><span style="color:#66d9ef">host</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">show</span> grants <span style="color:#66d9ef">for</span> <span style="color:#e6db74">&#39;userid&#39;</span><span style="color:#f92672">@</span><span style="color:#e6db74">&#39;%&#39;</span>;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>LOCK 확인 (root 등 권한이 있는 사용자로 조회)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> lock_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> information_schema.innodb_locks;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>LOCK 대기 상태</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> information_schema.innodb_lock_waits;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>트랜잭션 진행 확인</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#f92672">#</span> trx_mysql_thread_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> information_Schema.innodb_trx;
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>LOCK 해제</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>kill <span style="color:#960050;background-color:#1e0010">{</span>lock_id<span style="color:#960050;background-color:#1e0010">}</span>;
+</span></span></code></pre></div><p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mysql/" rel="tag">mysql</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mariadb/" rel="tag">mariadb</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" rel="tag">명령어</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/dev/vue/use-global-properties/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Vue] 전역 변수 사용하기</p>
+		</a>
+	</div>
+</nav>
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/news/">news</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-commands/">[MySQL/MariaDB] 명령어</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties/">[Vue] 전역 변수 사용하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/life/news/iphone15/">Iphone15</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-with-github/">[HUGO] Github 연동하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-start/">[HUGO] 시작하기</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="mariadb">mariadb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
