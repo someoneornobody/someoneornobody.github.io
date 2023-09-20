@@ -95,6 +95,14 @@
           </li>
         
           <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
           <a class="menu__link" href="/categories/db">
             
             <span class="menu__text">Database</span>
@@ -143,6 +151,28 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/hugo/hugo-with-github/" rel="bookmark">
+			[HUGO] Github 연동하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-13T08:12:02&#43;09:00">2023-09-13 08:12:02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		개요 HUGO 를 사용하여 SSG (Static Site Generators) 를 운영하는 대표적인 방법 중 하나는 github 저장소 를 이용하는 것입니다. github 를 통하여 서비스 시 별도의 비용도 발생하지 않고 다양한 플러그인들 지원을 통해 여러가지 기능을 손쉽게 적용 할 수 있는 장점이 있습니다.
+아래는 HUGO 를 통해 github 에 게시글을 작성하고 노출 시키는방법에 대해 설명해 보고자 합니다.
+git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repository 를 생성하도록 합니다.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-with-github/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -204,6 +234,10 @@
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
@@ -214,19 +248,23 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/server/apache-binary-install/">[Apache] 아파치 2.2.34 바이너리 설치</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/javascript/bf-cache/">[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-commands/">[MySQL/MariaDB] 명령어</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties/">[Vue] 전역 변수 사용하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/news/iphone15/">[NEWS] iPhone15</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-with-github/">[HUGO] Github 연동하기</a></li>
 		</ul>
 	</div>
 </div>
 <div class="widget-taglist widget">
 	<h4 class="widget__title">Tags</h4>
 	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/apache/" title="apache">apache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/apr/" title="apr">apr (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/bfcache/" title="bfcache">bfcache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/binary/" title="binary">binary (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cache/" title="cache">cache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/extpat/" title="extpat">extpat (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
@@ -234,9 +272,12 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/manual/" title="manual">manual (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="mariadb">mariadb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="module">module (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/proxy/" title="proxy">proxy (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (1)</a>

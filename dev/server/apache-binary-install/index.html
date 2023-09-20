@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Apache] 아파치 2.2.34 바이너리 설치 - Someone or Nobody</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-74F0WSFH3D');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
+        
+		<meta property="og:title" content="[Apache] 아파치 2.2.34 바이너리 설치" />
+<meta property="og:description" content="개요 및 준비사항 - Apache 설치 시 OS에 필요한 라이브러리들이 없다고 가정하고(가끔 인프라쪽에 서버 생성 요청할때.. 정말 아무 라이브러리도 없는 쌩 서버만 주는 경우가 있죠..) , 필요한 라이브러리들 부터 순차적으로 설치 후 apache 를 설치하는 내용입니다.
+- 서버 설치 환경은 CentOS 7.5 버전 입니다
+Apache 소스 컴파일 설치 시 필요한 라이브러리 (괄호안의 숫자는 현 문서에서 다루는 버전입니다) apache (v2.2.34)
+Apache Http server. 웹 서버. download: https://httpd.apache.org/download.cgi apr (v1.7.0)
+Apache Portable Runtime 의 약자." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://someoneornobody.github.io/dev/server/apache-binary-install/" /><meta property="article:section" content="dev" />
+<meta property="article:published_time" content="2023-09-20T07:17:04+09:00" />
+<meta property="article:modified_time" content="2023-09-20T07:17:04+09:00" />
+
+		<meta itemprop="name" content="[Apache] 아파치 2.2.34 바이너리 설치">
+<meta itemprop="description" content="개요 및 준비사항 - Apache 설치 시 OS에 필요한 라이브러리들이 없다고 가정하고(가끔 인프라쪽에 서버 생성 요청할때.. 정말 아무 라이브러리도 없는 쌩 서버만 주는 경우가 있죠..) , 필요한 라이브러리들 부터 순차적으로 설치 후 apache 를 설치하는 내용입니다.
+- 서버 설치 환경은 CentOS 7.5 버전 입니다
+Apache 소스 컴파일 설치 시 필요한 라이브러리 (괄호안의 숫자는 현 문서에서 다루는 버전입니다) apache (v2.2.34)
+Apache Http server. 웹 서버. download: https://httpd.apache.org/download.cgi apr (v1.7.0)
+Apache Portable Runtime 의 약자."><meta itemprop="datePublished" content="2023-09-20T07:17:04+09:00" />
+<meta itemprop="dateModified" content="2023-09-20T07:17:04+09:00" />
+<meta itemprop="wordCount" content="563">
+<meta itemprop="keywords" content="apache,binary,apr,extpat,manual,module,proxy," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Someone or Nobody" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Someone or Nobody</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/news">
+            
+            <span class="menu__text">NEWS</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[Apache] 아파치 2.2.34 바이너리 설치</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-20T07:17:04&#43;09:00">2023-09-20 07:17:04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/server/" rel="category">server</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#개요-및-준비사항">개요 및 준비사항</a></li>
+    <li><a href="#프로그램-설치">프로그램 설치</a>
+      <ul>
+        <li><a href="#expat-229">expat-2.2.9</a></li>
+        <li><a href="#apr-170">apr-1.7.0</a></li>
+        <li><a href="#apr-util-161">apr-util-1.6.1</a></li>
+        <li><a href="#zlib01211">zlib01.2.11</a></li>
+        <li><a href="#openssl-101u">openssl-1.0.1u</a></li>
+        <li><a href="#apache">Apache</a></li>
+      </ul>
+    </li>
+    <li><a href="#모듈-추가">모듈 추가</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p> </p>
+<h2 id="개요-및-준비사항">개요 및 준비사항</h2>
+<hr>
+<p><strong>- Apache 설치 시 OS에  필요한 라이브러리들이 없다고 가정하고(가끔 인프라쪽에 서버 생성 요청할때.. 정말 아무 라이브러리도 없는 쌩 서버만 주는 경우가 있죠..)
+, 필요한 라이브러리들 부터 순차적으로 설치 후 apache 를 설치하는 내용입니다.</strong></p>
+<p><strong>- 서버 설치 환경은 CentOS 7.5 버전 입니다</strong></p>
+<ul>
+<li>Apache 소스 컴파일 설치 시 필요한 라이브러리 (<strong>괄호안의 숫자는 현 문서에서 다루는 버전입니다</strong>)
+<ul>
+<li>
+<p><strong>apache (v2.2.34)</strong></p>
+<ul>
+<li>Apache Http server. 웹 서버.</li>
+<li>download: <a href="https://httpd.apache.org/download.cgi">https://httpd.apache.org/download.cgi</a></li>
+</ul>
+<p><a href=""></a></p>
+</li>
+<li>
+<p><strong>apr (v1.7.0)</strong></p>
+<ul>
+<li>Apache Portable Runtime 의 약자. 플랫폼에 종속되지 않고 동작하기 위해 필요한 라이브러리.</li>
+<li>download: <a href="https://apr.apache.org/download.cgi">https://apr.apache.org/download.cgi</a></li>
+</ul>
+<p><a href=""></a></p>
+</li>
+<li>
+<p><strong>apr-util (v1.6.1)</strong></p>
+<ul>
+<li>apr 유틸리티 라이브러리. DB 연결, LDAP연동, XML 파싱, 데이터 암호화 등의 유틸리티 라이브러리.</li>
+<li>download: <a href="https://apr.apache.org/download.cgi">https://apr.apache.org/download.cgi</a></li>
+</ul>
+<p><a href=""></a></p>
+</li>
+<li>
+<p><strong>expat (v2.2.9)</strong></p>
+<ul>
+<li>C언어 라이브러리로 만들어진 XML Parser. 위에 언급한 apr 모돌과의 인터페이스 처리 담당.</li>
+<li>download: <a href="https://github.com/libexpat/libexpat/releases">https://github.com/libexpat/libexpat/releases</a></li>
+</ul>
+<p><a href=""></a></p>
+</li>
+<li>
+<p><strong>zlib (v1.2.11)</strong></p>
+<ul>
+<li>데이터 압축, 해제 라이브러리. 압축 데이터 저장 및 전송 처리.</li>
+<li>download: <a href="https://www.zlib.net/">https://www.zlib.net/</a></li>
+</ul>
+<p><a href=""></a></p>
+</li>
+<li>
+<p><strong>openssl (v1.0.1u)</strong></p>
+<ul>
+<li>암호화, 보안 프로토콜 통신 처리 라이브러리. 사이트 구성 시 SSL 처리 시 필요.</li>
+<li>download: <a href="https://www.openssl.org/source/">https://www.openssl.org/source/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<h2 id="프로그램-설치">프로그램 설치</h2>
+<hr>
+<ul>
+<li>프로그램 설치 경로: <code>/user/path</code></li>
+<li>설치 프로그램 위치 경로: `/user/path/app</li>
+</ul>
+<p> </p>
+<blockquote>
+<h3 id="expat-229">expat-2.2.9</h3>
+</blockquote>
+<ul>
+<li><strong>tar.gz 압축 해제</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app
+</span></span><span style="display:flex;"><span>tar –xzvf expat-2.2.9.tar.gz
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>configure 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app/expat-2.2.9
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/user/path/lib/expat-2.2.9
+</span></span></code></pre></div><pre><code>prefix: 설치 경로
+</code></pre>
+<p> </p>
+<ul>
+<li><strong>컴파일</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>설치</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make install
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>설치 경로로 이동하여 파일 확인</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/lib/expat-2.2.9
+</span></span></code></pre></div><p> </p>
+<blockquote>
+<h3 id="apr-170">apr-1.7.0</h3>
+</blockquote>
+<ul>
+<li><strong>tar.gz 압축 해제</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app
+</span></span><span style="display:flex;"><span>tar –xzvf apr-1.7.0.tar.gz
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>configure 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app/apr-1.7.0
+</span></span><span style="display:flex;"><span>cp –arp libtool libtoolT
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/user/path/lib/apr-1.7.0
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>컴파일 및 설치</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> make install
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>설치 경로로 이동하여 파일 확인</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/lib/apr-1.7.0
+</span></span></code></pre></div><p> </p>
+<blockquote>
+<h3 id="apr-util-161">apr-util-1.6.1</h3>
+</blockquote>
+<ul>
+<li><strong>tar.gz 압축 해제</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app
+</span></span><span style="display:flex;"><span>tar –xzvf apr-util-1.6.1.tar.gz
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>configure 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app/apr-util-1.6.1
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/user/path/lib/apr-util-1.6.1 --with-apr<span style="color:#f92672">=</span>/user/path/lib/apr-1.7.0 --with-expat<span style="color:#f92672">=</span>/user/path/lib/expat-2.2.9
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>컴파일 및 설치</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> make install
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>설치 경로로 이동하여 파일 확인</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/lib/apr-util-1.6.1
+</span></span></code></pre></div><p> </p>
+<blockquote>
+<h3 id="zlib01211">zlib01.2.11</h3>
+</blockquote>
+<ul>
+<li><strong>tar.gz 압축 해제</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app
+</span></span><span style="display:flex;"><span>tar –xzvf zlib-1.2.11.tar.gz
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>configure 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app/zlib-1.2.11
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/user/path/lib/zlib-1.2.11
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>컴파일 및 설치</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> make install
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>모듈 변경 및 설정 파일 수정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># zlib 압축해제 폴더로 이동</span>
+</span></span><span style="display:flex;"><span>cd /user/path/app/zlib-1.2.11
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># libz.so 파일 zlib 설치 폴더로 복사</span>
+</span></span><span style="display:flex;"><span>cp libz.so* /user/path/lib/zlib-1.2.11
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># zlib 설치 폴더로 이동</span>
+</span></span><span style="display:flex;"><span>cd /user/path/lib/zlib-1.2.11
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># libz.so 파일 삭제 및 링크 설정 </span>
+</span></span><span style="display:flex;"><span>rm -f libz.so
+</span></span><span style="display:flex;"><span>rm -f libz.so.1
+</span></span><span style="display:flex;"><span>ln -s libz.so.1.2.11 libz.so
+</span></span><span style="display:flex;"><span>ln -s libz.so.1.2.11 libz.so.1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># /etc/ld.so.conf 설정 파일에 zlib 경로 추가</span>
+</span></span><span style="display:flex;"><span>echo /user/path/lib/zlib-1.2.11 &gt;&gt; /etc/ld.so.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 설정파일 반영</span>
+</span></span><span style="display:flex;"><span>ldconfig
+</span></span></code></pre></div><p> </p>
+<blockquote>
+<h3 id="openssl-101u">openssl-1.0.1u</h3>
+</blockquote>
+<ul>
+<li><strong>tar.gz 압축 해제</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app
+</span></span><span style="display:flex;"><span>tar -xzvf openssl-1.0.1u.tar.gz
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>configure 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app/openssl-1.0.1u
+</span></span><span style="display:flex;"><span>./config --prefix<span style="color:#f92672">=</span>/user/path/lib/openssl --openssldir<span style="color:#f92672">=</span>/user/path/cert shared threads --with-zlib-lib<span style="color:#f92672">=</span>/user/path/lib/zlib-1.2.11
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>컴파일 및 설치</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make <span style="color:#f92672">&amp;&amp;</span> make install
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>설피 경로로 이동하여 파일 확인</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/lib/openssl
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>openssl 경로 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export LD_LIBRARY_PATH<span style="color:#f92672">=</span>/user/path/lib/openssl/lib
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>export 명령어로 확인</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>export
+</span></span></code></pre></div><p> </p>
+<blockquote>
+<h3 id="apache">Apache</h3>
+</blockquote>
+<ul>
+<li><strong>tar.gz 압축 해제</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app
+</span></span><span style="display:flex;"><span>tar -xzvf httpd-2.2.34.tar.gz
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>configure 설정</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/app/httpd-2.2.34
+</span></span><span style="display:flex;"><span>./configure --prefix<span style="color:#f92672">=</span>/user/path/web --enable-modules<span style="color:#f92672">=</span>all --enable-mods-shared<span style="color:#f92672">=</span>all --enable-so --enable-ssl --with-ssl<span style="color:#f92672">=</span>/user/path/lib/openssl --with-mpm<span style="color:#f92672">=</span>prefork --with-apr<span style="color:#f92672">=</span>/user/path/lib/apr-1.7.0 --with-apr-util<span style="color:#f92672">=</span>/user/path/lib/apr-util-1.6.1 --with-expat<span style="color:#f92672">=</span>/user/path/lib/expat-2.2.9 --with-z<span style="color:#f92672">=</span>/user/path/lib/zlib-1.2.11
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>컴파일 및 설치</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make clean
+</span></span><span style="display:flex;"><span>make
+</span></span><span style="display:flex;"><span>make install
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>설치 경로로 이동하여 버전 확인하여 설치 확인</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/web/bin
+</span></span><span style="display:flex;"><span>./httpd -version
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>
+<p><strong>Web 서버 동작 확인</strong></p>
+<ul>
+<li>httpd.conf 파일 내 ServerName 을 localhost:80 으로 변경한다.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/web/conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ServerName localhost:80
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>vi httpd.conf
+</span></span></code></pre></div></li>
+</ul>
+<p> </p>
+<ul>
+<li><strong>Apache 서버 실행</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/web/bin
+</span></span><span style="display:flex;"><span>./apachectl start
+</span></span></code></pre></div><p> </p>
+<ul>
+<li><strong>브라우저 에서 접속 확인</strong>
+<ul>
+<li>주소창에 http://localhost 입력하여 <code>It works</code> 문구 확인</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<ul>
+<li><strong>Apache 서버 중지</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/web/bin
+</span></span><span style="display:flex;"><span>./apachectl stop
+</span></span></code></pre></div><p> </p>
+<h2 id="모듈-추가">모듈 추가</h2>
+<hr>
+<ul>
+<li>
+<p>아래는 Apache 사용 시 모듈을 추가하는 방법이다. 예시는 proxy 모듈로 작성되었다.</p>
+</li>
+<li>
+<p>Apache 압축해제 폴더로 이동한다. (<code>설치 폴더가 아닌 설치 압축파일의 해제 경로</code>)</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 압축파일 해제 경로 내 proxy 모듈 경로로 이동</span>
+</span></span><span style="display:flex;"><span>cd /user/path/app/httpd-2.2.34/modules/proxy
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 모듈 컴파일 및 추가</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># {경로} -aic {모듈.c}</span>
+</span></span><span style="display:flex;"><span>/user/path/web/bin/apxs -aic mod_proxy.c proxy_util.c
+</span></span><span style="display:flex;"><span>/user/path/web/bin/apxs -aic mod_proxy_http.c proxy_util.c
+</span></span><span style="display:flex;"><span>/user/path/web/bin/apxs -aic mod_proxy_connect.c proxy_util.c
+</span></span><span style="display:flex;"><span>/user/path/web/bin/apxs -aic mod_proxy_ajp.c proxy_util.c ajp_header.c ajp_utils.c ajp_link.c ajp_msg.c
+</span></span><span style="display:flex;"><span>/user/path/web/bin/apxs -aic mod_proxy_balancer.c proxy_util.c
+</span></span><span style="display:flex;"><span>/user/path/web/bin/apxs -aic mod_proxy_scgi.c**
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>아파치가 설치된 경로 내 모듈 디렉토리로 이동하여 모듈 설치 확인</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /user/path/web/modules
+</span></span></code></pre></div><p> </p>
+<ul>
+<li>
+<p>아래의 모듈들을 확인한다</p>
+<blockquote>
+<p>mod_proxy.so</p>
+<p>mod_proxy_ajp.so</p>
+<p>mod_proxy_balancer.so</p>
+<p>mod_proxy_connect.so</p>
+<p>mod_proxy_http.so</p>
+<p>mod_proxy_scgi.so</p>
+<p>mod_ssl.so</p>
+</blockquote>
+</li>
+</ul>
+<p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/apache/" rel="tag">apache</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/binary/" rel="tag">binary</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/apr/" rel="tag">apr</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/extpat/" rel="tag">extpat</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/manual/" rel="tag">manual</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/module/" rel="tag">module</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/proxy/" rel="tag">proxy</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/dev/javascript/bf-cache/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)</p>
+		</a>
+	</div>
+</nav>
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/news/">news</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/server/apache-binary-install/">[Apache] 아파치 2.2.34 바이너리 설치</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/bf-cache/">[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-commands/">[MySQL/MariaDB] 명령어</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties/">[Vue] 전역 변수 사용하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/life/news/iphone15/">[NEWS] iPhone15</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/apache/" title="apache">apache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/apr/" title="apr">apr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfcache/" title="bfcache">bfcache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/binary/" title="binary">binary (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cache/" title="cache">cache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/extpat/" title="extpat">extpat (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/manual/" title="manual">manual (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="mariadb">mariadb (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="module">module (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/proxy/" title="proxy">proxy (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0/" title="뒤로가기">뒤로가기 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

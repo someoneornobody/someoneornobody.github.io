@@ -6,7 +6,70 @@
     <description>Recent content in Tags on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 19 Sep 2023 07:48:19 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Sep 2023 07:17:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apache</title>
+      <link>https://someoneornobody.github.io/tags/apache/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>apr</title>
+      <link>https://someoneornobody.github.io/tags/apr/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/apr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>binary</title>
+      <link>https://someoneornobody.github.io/tags/binary/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/binary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>extpat</title>
+      <link>https://someoneornobody.github.io/tags/extpat/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/extpat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>manual</title>
+      <link>https://someoneornobody.github.io/tags/manual/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/manual/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>module</title>
+      <link>https://someoneornobody.github.io/tags/module/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/module/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://someoneornobody.github.io/tags/proxy/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>bfcache</title>
       <link>https://someoneornobody.github.io/tags/bfcache/</link>
