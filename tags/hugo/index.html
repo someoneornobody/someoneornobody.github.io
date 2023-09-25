@@ -155,6 +155,30 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/hugo/hugo-write-article/" rel="bookmark">
+			[HUGO] 글작성, 문법, 이미지업로드 하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-25T07:11:39&#43;09:00">2023-09-25 07:11:39</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		개요 본 게시물은 hugo 의 Mainroad 테마를 기준으로 작성되었습니다. 이는 아래 작성된 내용들이 환경이나 표준과 다를 수 있음을 의미합니다. 파일 생성 수행 경로: hugo 사이트 생성 경로 (hugo/my-site)
+hugo new {경로/파일명.md} 를 통해 작성할 게시물 파일을 생성하는데, 이렇게 생성된 파일은
+hugo/my-site/content
+폴더 아래 자동으로 생성됩니다. 생성 된 파일은 hugo/my-site/archetypes/default.md 에 작성된 템플릿을 기반으로 기본적인 내용이 작성되어져 있습니다..
+hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생성. 내용 작성 해당 md 파일에 게시할 내용을 markdown 문법으로 작성함으로써 글 작성에 대한건 사실 끝입니다.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-write-article/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/hugo/hugo-with-github/" rel="bookmark">
 			[HUGO] Github 연동하기
 			</a>
@@ -221,7 +245,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/hugo/">hugo</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">2</span>
+				<span class="widget__counter widget__counter--bubble">3</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">javascript</a>&nbsp;
@@ -246,11 +270,11 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-write-article/">[HUGO] 글작성, 문법, 이미지업로드 하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/server/apache-binary-install/">[Apache] 아파치 2.2.34 바이너리 설치</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/javascript/bf-cache/">[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-commands/">[MySQL/MariaDB] 명령어</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties/">[Vue] 전역 변수 사용하기</a></li>
-			<li class="widget__item"><a class="widget__link" href="/life/news/iphone15/">[NEWS] iPhone15</a></li>
 		</ul>
 	</div>
 </div>
@@ -266,7 +290,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
@@ -281,6 +305,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0/" title="뒤로가기">뒤로가기 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/" title="이미지업로드">이미지업로드 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
 	</div>
 </div>

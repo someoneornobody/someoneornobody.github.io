@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>이미지업로드 on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/</link>
+    <description>Recent content in 이미지업로드 on Someone or Nobody</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 25 Sep 2023 07:11:39 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[HUGO] 글작성, 문법, 이미지업로드 하기</title>
+      <link>https://someoneornobody.github.io/dev/hugo/hugo-write-article/</link>
+      <pubDate>Mon, 25 Sep 2023 07:11:39 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/hugo/hugo-write-article/</guid>
+      <description>개요 본 게시물은 hugo 의 Mainroad 테마를 기준으로 작성되었습니다. 이는 아래 작성된 내용들이 환경이나 표준과 다를 수 있음을 의미합니다. 파일 생성 수행 경로: hugo 사이트 생성 경로 (hugo/my-site)
+hugo new {경로/파일명.md} 를 통해 작성할 게시물 파일을 생성하는데, 이렇게 생성된 파일은
+hugo/my-site/content
+폴더 아래 자동으로 생성됩니다. 생성 된 파일은 hugo/my-site/archetypes/default.md 에 작성된 템플릿을 기반으로 기본적인 내용이 작성되어져 있습니다..
+hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생성. 내용 작성 해당 md 파일에 게시할 내용을 markdown 문법으로 작성함으로써 글 작성에 대한건 사실 끝입니다.</description>
+    </item>
+    
+  </channel>
+</rss>
