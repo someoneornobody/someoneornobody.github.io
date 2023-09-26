@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>NO_ZERO_DATE on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/tags/no_zero_date/</link>
+    <description>Recent content in NO_ZERO_DATE on Someone or Nobody</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 26 Sep 2023 09:40:29 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/no_zero_date/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</title>
+      <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</link>
+      <pubDate>Tue, 26 Sep 2023 09:40:29 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</guid>
+      <description>Mysql, Mariadb 사용 시 datetime 필드에 공백을 입력하고 싶거나
+혹은 기존까지 공백이 잘 들어갔는데 오류가 발생하는 케이스가 있을 경우 해결하는 내용입니다. 만약 기존에 아래의 쿼리처럼 datetime 필드에 공백을 넣었을 경우 문제가 없다가 갑자기 오류가 나는 상황이 발생하는 경우가 있습니다. UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ Error 1292: Incorrect datetime value: &#39;&#39; for column &#39;AGREE_DT&#39; at row 1
+만약, 이렇게 오류가 난다면 sql_mode 를 체크해봐야 합니다.</description>
+    </item>
+    
+  </channel>
+</rss>
