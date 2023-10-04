@@ -6,7 +6,43 @@
     <description>Recent content in Tags on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 26 Sep 2023 10:26:05 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Oct 2023 09:26:00 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pinia</title>
+      <link>https://someoneornobody.github.io/tags/pinia/</link>
+      <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/pinia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>store</title>
+      <link>https://someoneornobody.github.io/tags/store/</link>
+      <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/store/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue-router</title>
+      <link>https://someoneornobody.github.io/tags/vue-router/</link>
+      <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/vue-router/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue3</title>
+      <link>https://someoneornobody.github.io/tags/vue3/</link>
+      <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/vue3/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>mariadb</title>
       <link>https://someoneornobody.github.io/tags/mariadb/</link>
@@ -202,15 +238,6 @@
       <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/tags/provide/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>vue3</title>
-      <link>https://someoneornobody.github.io/tags/vue3/</link>
-      <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
-      
-      <guid>https://someoneornobody.github.io/tags/vue3/</guid>
       <description></description>
     </item>
     

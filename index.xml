@@ -6,7 +6,16 @@
     <description>Recent content on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 26 Sep 2023 10:26:05 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Oct 2023 09:26:00 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Vue] Pinia Store 에서 vue-router 사용하기</title>
+      <link>https://someoneornobody.github.io/dev/vue/router-use-in-pinia-store/</link>
+      <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/vue/router-use-in-pinia-store/</guid>
+      <description>개요 pinia store 에서 vue-router 사용 시 undefined 로 인해 정상적인 동작을 하지않는 상황이 발생 사실 이건 당연한, 간단한 구조적 문제였는데.. 저와 같은 실수를 하는 사람이 없길 바라며 작성하는 게시글입니다.. 개발 환경 build tool: vite framework: vue3 state management: pinia 코드 main.js import { createApp } from &amp;#39;vue&amp;#39; import { createPinia } from &amp;#39;pinia&amp;#39; import App from &amp;#39;./App.vue&amp;#39; import router from &amp;#39;./router&amp;#39; const app = createApp(App) app.use(createPinia()) app.use(router) app.mount(&amp;#39;#app&amp;#39;) stores/common.</description>
+    </item>
+    
     <item>
       <title>[Mysql,Mariadb] sql_mode 구성 항목 및 설정</title>
       <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode/</link>
