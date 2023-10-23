@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Vue] computed property 값 변경하기 - Someone or Nobody</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="change a properties computed value in Vue with vuex">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-74F0WSFH3D');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
+        
+		<meta property="og:title" content="[Vue] computed property 값 변경하기" />
+<meta property="og:description" content="change a properties computed value in Vue with vuex" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://someoneornobody.github.io/dev/vue/setter-getter/" /><meta property="article:section" content="dev" />
+<meta property="article:published_time" content="2023-10-19T13:06:30+09:00" />
+<meta property="article:modified_time" content="2023-10-19T13:06:30+09:00" />
+
+		<meta itemprop="name" content="[Vue] computed property 값 변경하기">
+<meta itemprop="description" content="change a properties computed value in Vue with vuex"><meta itemprop="datePublished" content="2023-10-19T13:06:30+09:00" />
+<meta itemprop="dateModified" content="2023-10-19T13:06:30+09:00" />
+<meta itemprop="wordCount" content="510">
+<meta itemprop="keywords" content="vue,setter,getter,vuex,computed,store," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Someone or Nobody" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Someone or Nobody</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/news">
+            
+            <span class="menu__text">NEWS</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[Vue] computed property 값 변경하기</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-19T13:06:30&#43;09:00">2023-10-19 13:06:30</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p> </p>
+<p>화면에서 <code>computed</code> 속성의 값을 변경 시킬 경우 발생하는 오류와 이에 대한 해결 방법을 이야기하고자 한다.</p>
+<p>먼저, 아래의 소스를 보자.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">computed</span> <span style="color:#a6e22e">값</span><span style="color:#f92672">:</span> {{ <span style="color:#a6e22e">compDefaultValue</span> }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>          &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;increase&#34;</span>&gt;<span style="color:#a6e22e">문구</span> <span style="color:#a6e22e">변경</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> () =&gt; ({
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">defaultValue</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      }),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">compDefaultValue</span>() {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">increase</span>() {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">compDefaultValue</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p> 
+위 소스에서 문구 변경을 클릭할 경우 호출되는 <code>increase</code> 함수에서 <code>this.compDefaultValue = 1</code> 을 하는 순간 아래와 같은 오류가 발생할 것이다.</p>
+<p> </p>
+<blockquote>
+<p>vue.runtime.esm.js:619 [Vue warn]: Computed property &ldquo;compDefaultValue&rdquo; was assigned to but it has no setter.</p>
+</blockquote>
+<p> </p>
+<p><code>computed</code> 내 에서 사용되는 속성들은 단어그대로 <strong>계산된 속성 (computed properties)</strong> 이 정의되는 것인데</p>
+<p>이는 명시적으로 값을 설정하지 않는 <code>읽기 전용</code> 으로 설계되어 있다.</p>
+<p>이렇게 <code>읽기 전용</code>으로 설계 된 속성을 변경하려하면 위와 같은 오류가 발생하게 된다.</p>
+<p>만약 값을 수정해야 할 필요가 있을때는 <code>get()</code> 및 <code>set()</code> 메소드를 사용하면 된다.</p>
+<p> </p>
+<h2 id="get">get()</h2>
+<p>정의 된 값을 반환한다. getter 라고 표현한다.</p>
+<p> </p>
+<h2 id="set">set()</h2>
+<p>정의 된 값을 수정한다. setter 라고 표현한다.</p>
+<p> </p>
+<p>getter, setter 를 사용하여 수정된 소스는 아래와 같다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">computed</span> <span style="color:#a6e22e">값</span><span style="color:#f92672">:</span> {{ <span style="color:#a6e22e">compDefaultValue</span> }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;increase()&#34;</span>&gt;<span style="color:#a6e22e">값</span> <span style="color:#a6e22e">증가</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> () =&gt; ({
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">defaultValue</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>      }),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">compDefaultValue</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">get</span>() {
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span>
+</span></span><span style="display:flex;"><span>              },
+</span></span><span style="display:flex;"><span>              <span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">newValue</span>) {
+</span></span><span style="display:flex;"><span>                  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">newValue</span>
+</span></span><span style="display:flex;"><span>              }
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">increase</span>() {
+</span></span><span style="display:flex;"><span>              <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">compDefaultValue</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>          }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>이제 <strong>값 증가</strong> 버튼을 클릭하면 setter (set()) 를 통해 전달된 1 값이 기존 <em>defaultValue</em> 값에 더해지고,
+화면에는 getter (get()) 를 통해 자동으로 업데이트 된 값이 표시된다.</p>
+<p> </p>
+<p>여기서 한가지 체크할 부분은.. 사실 아래와 같이 <em><code>increase</code> 함수에서 defaultValue 값 자체를 증가시키면 좀 더 간단하게 해결</em>이 된다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">p</span>&gt;<span style="color:#a6e22e">computed</span> <span style="color:#a6e22e">값</span><span style="color:#f92672">:</span> {{ <span style="color:#a6e22e">compDefaultValue</span> }}&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;increase&#34;</span>&gt;<span style="color:#a6e22e">값</span> <span style="color:#a6e22e">증가</span>&lt;/<span style="color:#f92672">button</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> () =&gt; ({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">defaultValue</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>    }),
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">compDefaultValue</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">increase</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">defaultValue</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p> </p>
+<p>하지만 getter, setter 가 필요한 경우가 있는데 예를들면 체크박스를 사용할 때와 같은 경우이다.</p>
+<p>아래의 예제는 <code>vuex</code> 를 사용 시 <code>store</code> 내 <code>state</code> 의 변수값을 이용하여 체크박스를 사용하는 예제이다.</p>
+<p>(v-checkbox 는 <a href="https://vuetifyjs.com"><code>vuetify2</code></a>에서 사용되는 요소 선언이다.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ...<span style="color:#a6e22e">store</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">main</span>.<span style="color:#a6e22e">js</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">namespace</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">checkAll</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  ...<span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">main</span>.<span style="color:#a6e22e">vue</span>  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">v-checkbox</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">v</span><span style="color:#f92672">-model</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">checkAll</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span><span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;`value: ${checkAll}`&#34;</span>
+</span></span><span style="display:flex;"><span>      &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/v-checkbox&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">mapState</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      ...<span style="color:#a6e22e">mapState</span>(<span style="color:#e6db74">&#39;main&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">checkAll</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span> =&gt; <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">checkAll</span>
+</span></span><span style="display:flex;"><span>      })
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p> </p>
+<p>위와 같이 작성하였을 경우 본문에서 언급한 setter 오류가 동일하게 발생한다.</p>
+<p>이때 간단하게 해결 할 수 있는 방법이 getter, setter 를 이용한 방법이다.</p>
+<p>수정 된 코드는 아래와 같다.</p>
+<p> </p>
+<p>store: <strong>main.js</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">namespace</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">state</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">checkAll</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setCheckAll</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">v</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">checkAll</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p> </p>
+<p>template: <strong>main.vue</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">v-checkbox</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">v</span><span style="color:#f92672">-model</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">compCheckAll</span><span style="color:#960050;background-color:#1e0010">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">:</span><span style="color:#a6e22e">label</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;`value: ${compCheckAll}`&#34;</span>
+</span></span><span style="display:flex;"><span>      &gt;<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/v-checkbox&gt;</span>
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">mapState</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vuex&#39;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      ...<span style="color:#a6e22e">mapState</span>(<span style="color:#e6db74">&#39;main&#39;</span>, {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">checkAll</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">state</span> =&gt; <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">checkAll</span>
+</span></span><span style="display:flex;"><span>      }),
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">compCheckAll</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">get</span>() {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">checkAll</span>
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">set</span>(<span style="color:#a6e22e">v</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$store</span>.<span style="color:#a6e22e">commit</span>(<span style="color:#e6db74">&#39;main/setCheckAll&#39;</span>, <span style="color:#a6e22e">v</span>)
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p> </p>
+<p>이렇게 하면 checkbox 를 클릭 할 때마다 <code>store</code> 의 <code>mutations</code> 에 설정 된 <code>setCheckAll</code> 함수가 호출되며</p>
+<p>이때 변경 된 값을 전달하게 되고, 그 값은 바로바로 화면에 표시 될 것이다.</p>
+<p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vue/" rel="tag">vue</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/setter/" rel="tag">setter</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/getter/" rel="tag">getter</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vuex/" rel="tag">vuex</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/computed/" rel="tag">computed</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/store/" rel="tag">store</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/dev/vue/router-use-in-pinia-store/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Vue] Pinia Store 에서 vue-router 사용하기</p>
+		</a>
+	</div>
+</nav>
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/news/">news</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-sql-mode/">[Mysql,Mariadb] sql_mode 구성 항목 및 설정</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-datetime-white-space/">[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-write-article/">[HUGO] 글작성, 문법, 이미지업로드 하기</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/apache/" title="apache">apache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/apr/" title="apr">apr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfcache/" title="bfcache">bfcache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/binary/" title="binary">binary (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cache/" title="cache">cache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/computed/" title="computed">computed (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datetime/" title="datetime">datetime (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/extpat/" title="extpat">extpat (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/getter/" title="getter">getter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/manual/" title="manual">manual (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="mariadb">mariadb (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="module">module (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_date/" title="NO_ZERO_DATE">NO_ZERO_DATE (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_in_date/" title="NO_ZERO_IN_DATE">NO_ZERO_IN_DATE (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pinia/" title="pinia">pinia (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/proxy/" title="proxy">proxy (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/setter/" title="setter">setter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql_mode/" title="sql_mode">sql_mode (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue-router/" title="vue-router">vue-router (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vuex/" title="vuex">vuex (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0/" title="뒤로가기">뒤로가기 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/" title="이미지업로드">이미지업로드 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

@@ -154,6 +154,28 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/vue/setter-getter/" rel="bookmark">
+			[Vue] computed property 값 변경하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-19T13:06:30&#43;09:00">2023-10-19 13:06:30</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		화면에서 computed 속성의 값을 변경 시킬 경우 발생하는 오류와 이에 대한 해결 방법을 이야기하고자 한다.
+먼저, 아래의 소스를 보자.
+&lt;template&gt; &lt;div&gt; &lt;p&gt;computed 값: {{ compDefaultValue }}&lt;/p&gt; &lt;button @click=&#34;increase&#34;&gt;문구 변경&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { data: () =&gt; ({ defaultValue: 0 }), computed: { compDefaultValue() { return this.defaultValue } }, methods: { increase() { this.compDefaultValue = 1 } } } &lt;/script&gt; 위 소스에서 문구 변경을 클릭할 경우 호출되는 increase 함수에서 this.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/setter-getter/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/vue/router-use-in-pinia-store/" rel="bookmark">
 			[Vue] Pinia Store 에서 vue-router 사용하기
 			</a>
@@ -239,30 +261,6 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-write-article/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/dev/server/apache-binary-install/" rel="bookmark">
-			[Apache] 아파치 2.2.34 바이너리 설치
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-20T07:17:04&#43;09:00">2023-09-20 07:17:04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/server/" rel="category">server</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		개요 및 준비사항 - Apache 설치 시 OS에 필요한 라이브러리들이 없다고 가정하고(가끔 인프라쪽에 서버 생성 요청할때.. 정말 아무 라이브러리도 없는 쌩 서버만 주는 경우가 있죠..) , 필요한 라이브러리들 부터 순차적으로 설치 후 apache 를 설치하는 내용입니다.
-- 서버 설치 환경은 CentOS 7.5 버전 입니다
-Apache 소스 컴파일 설치 시 필요한 라이브러리 (괄호안의 숫자는 현 문서에서 다루는 버전입니다) apache (v2.2.34)
-Apache Http server. 웹 서버. download: https://httpd.apache.org/download.cgi apr (v1.7.0)
-Apache Portable Runtime 의 약자.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/server/apache-binary-install/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -307,7 +305,7 @@ Apache Portable Runtime 의 약자.
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">2</span>
+				<span class="widget__counter widget__counter--bubble">3</span>
 				</li>
 		</ul>
 	</div>
@@ -316,11 +314,11 @@ Apache Portable Runtime 의 약자.
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-sql-mode/">[Mysql,Mariadb] sql_mode 구성 항목 및 설정</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-datetime-white-space/">[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/hugo/hugo-write-article/">[HUGO] 글작성, 문법, 이미지업로드 하기</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/server/apache-binary-install/">[Apache] 아파치 2.2.34 바이너리 설치</a></li>
 		</ul>
 	</div>
 </div>
@@ -332,9 +330,11 @@ Apache Portable Runtime 의 약자.
 		<a class="widget-taglist__link widget__link btn" href="/tags/bfcache/" title="bfcache">bfcache (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/binary/" title="binary">binary (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/cache/" title="cache">cache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/computed/" title="computed">computed (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/datetime/" title="datetime">datetime (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/extpat/" title="extpat">extpat (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/getter/" title="getter">getter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (3)</a>
@@ -350,12 +350,15 @@ Apache Portable Runtime 의 약자.
 		<a class="widget-taglist__link widget__link btn" href="/tags/pinia/" title="pinia">pinia (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/proxy/" title="proxy">proxy (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/setter/" title="setter">setter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/sql_mode/" title="sql_mode">sql_mode (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue-router/" title="vue-router">vue-router (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vuex/" title="vuex">vuex (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0/" title="뒤로가기">뒤로가기 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/" title="이미지업로드">이미지업로드 (1)</a>
