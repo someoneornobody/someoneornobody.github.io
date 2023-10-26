@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>[Vue] import.meta.env.MODE 값 설정하기 - Someone or Nobody</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="Vue3, vite 개발환경에서 import.meta.env.MODE 값을 설정하는 방법">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-74F0WSFH3D');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
+        
+		<meta property="og:title" content="[Vue] import.meta.env.MODE 값 설정하기" />
+<meta property="og:description" content="Vue3, vite 개발환경에서 import.meta.env.MODE 값을 설정하는 방법" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://someoneornobody.github.io/dev/vue/set-env-mode/" /><meta property="article:section" content="dev" />
+<meta property="article:published_time" content="2023-10-26T10:37:09+09:00" />
+<meta property="article:modified_time" content="2023-10-26T10:37:09+09:00" />
+
+		<meta itemprop="name" content="[Vue] import.meta.env.MODE 값 설정하기">
+<meta itemprop="description" content="Vue3, vite 개발환경에서 import.meta.env.MODE 값을 설정하는 방법"><meta itemprop="datePublished" content="2023-10-26T10:37:09+09:00" />
+<meta itemprop="dateModified" content="2023-10-26T10:37:09+09:00" />
+<meta itemprop="wordCount" content="544">
+<meta itemprop="keywords" content="vue3,vite,mode,local," />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="Someone or Nobody" rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">Someone or Nobody</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/news">
+            
+            <span class="menu__text">NEWS</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/places">
+            
+            <span class="menu__text">PLACES</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[Vue] import.meta.env.MODE 값 설정하기</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-26T10:37:09&#43;09:00">2023-10-26 10:37:09</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#개발환경">개발환경</a></li>
+    <li><a href="#상황">상황</a></li>
+    <li><a href="#해결">해결</a></li>
+    <li><a href="#왜">왜?</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p> </p>
+<h2 id="개발환경">개발환경</h2>
+<hr>
+<ul>
+<li>
+<p>현재 개발중인 환경은 아래와 같다</p>
+<ul>
+<li>front framework: vue3 (v3.2.13)</li>
+<li>build tool: vite (v3.1.9)</li>
+</ul>
+</li>
+</ul>
+<p> </p>
+<h2 id="상황">상황</h2>
+<hr>
+<p>개발을 하다보면 <strong>local, dev, prod</strong> 와 같은 <em>개발환경에 따라 다른 처리가 필요한 부분</em>이 꼭 생기게 된다.</p>
+<p><em>vue3, vite</em> 를 사용하여 개발하는 지금, 이러한 처리가 필요한 부분이 발생하여 해당 환경에 맞게 처리 후</p>
+<p>테스트 할 환경으로 빌드를 하기 위해 아래와 같이 빌드를 실행하였다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>   npm run build --mode local
+</span></span></code></pre></div><p>정상적으로 진행 될 거라 생각했지만 아래와 같은 오류가 발생하였다.</p>
+<pre tabindex="0"><code class="language-npm" data-lang="npm">   Error: &#34;local&#34; cannot be used as a mode name because it conflicts with the .local postfix for .env files.
+</code></pre><p>내용을 찾아보니 <strong><code>.local</code> 이라는 접미사(postfix) 를 환경변수 파일 (.env) 의 이름으로 사용하고 있기 떄문에 충돌이 난다</strong> 라는 것이었다.</p>
+<p> </p>
+<h2 id="해결">해결</h2>
+<hr>
+<p>먼저 결론부터 얘기하자면 <code>local</code> 이라는 환경 대신 <code>local-dev</code> 와 같은 값으로 변경해서 사용하면 된다.</p>
+<p>간단히 두 단계로 설명하자면&hellip;&hellip;&hellip;.</p>
+<p> </p>
+<ul>
+<li>
+<p>package.json 수정</p>
+<p>package.json 의 scripts 내 구문을 아래와 같이 수정한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;example-vue3&#34;</span>,
+</span></span><span style="display:flex;"><span>    ....
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;scripts&#34;</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vite&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;build_dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vite build --mode dev&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;build_prod&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vite build --mode production&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;build&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vite build --mode local-dev&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  ....
+</span></span></code></pre></div><p><code>build</code> 구분의 뒤에 <code>--mode local-dev</code> 로 환경변수의 값을 설정해준다. (<code>local-dev</code> 가 아닌 본인이 원하는 값으로 해도 된다.)</p>
+</li>
+</ul>
+<p> </p>
+<ul>
+<li>
+<p>build 후 확인</p>
+<p>아래의 명령어를 통해 build 후 환경변수 값을 확인한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  npm run build
+</span></span></code></pre></div><p>-&gt; 브라우저에 접속하여 <code>import.meta.env.MODE</code> 변수를 통해 현재 개발환경 모드를 확인한다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`mode: </span><span style="color:#e6db74">${</span><span style="color:#66d9ef">import</span>.<span style="color:#a6e22e">meta</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MODE</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
+</span></span></code></pre></div><p><code>local-dev</code> 라는 값을 확인 할 수 있을 것이다.</p>
+</li>
+</ul>
+<p> </p>
+<h2 id="왜">왜?</h2>
+<hr>
+<p>위의 오류에 대해 설명하기 전에.. 먼저 <em>vite</em> 의 실행과정에 대해 알아보자면..</p>
+<p><em>vite</em> 는 시작 시 <strong>.env</strong> 파일을 찾아 로드한다고 한다.</p>
+<p>보통 <em>vite</em> 로 개발 시 서버실행을 위해서는 <code>npm run dev</code> 를 입력하여 실행하게 되는데 이 내용은 기본적으로 <strong>package.json</strong> 에 있는 작성된 스크립트를 실행시킨다.</p>
+<p>만약 <strong>package.json</strong> 이 위에 작성 된 것 처럼 설정되어있을 시</p>
+<p><code>npm run dev</code> 는 그냥 <code>vite</code> 라는 커맨드를 실행 시키게 될 것이고</p>
+<p><code>npm run build</code> 는 <code>vite build --mode local-dev</code> 라는 커맨드를 실행시키게 되는 것이다.</p>
+<p>이와 같이, <code>vite build</code> 뒤에는 <code>--mode [environment]</code> 를 추가할 수 있는데 이렇게 임의로 <code>environment</code> 를 설정하여 <code>build</code> 시에는 <strong>.env.[environment]</strong> 와 같은 해당 <strong>environment 파일</strong>을 찾으려 한다고 한다.</p>
+<p>해당 내용으로 <a href="https://vitejs.dev/guide/env-and-mode.html">vite</a> 공식 사이트에서는 아래와 같이 설명하고 있다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  .env                <span style="color:#75715e"># loaded in all cases</span>
+</span></span><span style="display:flex;"><span>  .env.local          <span style="color:#75715e"># loaded in all cases, ignored by git</span>
+</span></span><span style="display:flex;"><span>  .env.<span style="color:#f92672">[</span>mode<span style="color:#f92672">]</span>         <span style="color:#75715e"># only loaded in specified mode</span>
+</span></span><span style="display:flex;"><span>  .env.<span style="color:#f92672">[</span>mode<span style="color:#f92672">]</span>.local   <span style="color:#75715e"># only loaded in specified mode, ignored by git</span>
+</span></span></code></pre></div><p>이 때, <strong>.env.local</strong> 이라는 파일이 이미 사용중이라 충돌이 나기 때문에 해당 이름으로는 사용 할 수 없다고 하는 것이다. (아니 근데 대체 어디서 사용중인지는 아직&hellip;)</p>
+<p>그렇다면 <strong>.env</strong> 상황이 없는 상태에서는 어떨까?</p>
+<p><strong>.env</strong> 파일이 없는 상황에서의 별도로 설정된 기본값이 있으며 해당 값은 아래와 같다.</p>
+<p> </p>
+<ul>
+<li>
+<p><code>npm run dev</code> -&gt;  <strong>development</strong></p>
+</li>
+<li>
+<p><code>npm run build</code> -&gt; <strong>production</strong></p>
+</li>
+</ul>
+<p> </p>
+<p>결론은.. 저~ 위에 <strong>package.json</strong> 처럼 작성 되었을 경우 실행 커맨드에 따른 <code>import.meta.env.MODE</code> 값은 아래와 같다.</p>
+<p><code>npm run dev</code> -&gt; <strong>development</strong> (+애플리케이션을 개발모드로 실행한다)</p>
+<p><code>npm run build_dev</code> -&gt; <strong>dev</strong></p>
+<p><code>npm run build_prod</code> -&gt; <strong>production</strong></p>
+<p><code>npm run build</code> -&gt; <strong>local-dev</strong></p>
+<p> </p>
+<p>참고로, 위 설정은 <code>build_dev</code>, <code>build_prod</code> 시에는 번들링하여 빌드된 파일을 생성하는 용도 이므로&hellip; 만약 직접 해당 실행환경으로 서버를 띄워서 확인 하고 싶다면 <code>build</code> 명령어를 빼면 된다.</p>
+<p>아래처럼 &hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>   ...
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">scripts</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>     ...
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;build_dev&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vite --mode dev&#34;</span>,
+</span></span><span style="display:flex;"><span>     <span style="color:#e6db74">&#34;build_prod&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;vite --mode production&#34;</span>,
+</span></span><span style="display:flex;"><span>     ...
+</span></span><span style="display:flex;"><span>   }
+</span></span></code></pre></div><p> </p>
+<p>p.s 개인적으로 본문의 내용을 잊지 않기 위해 기록할 겸 글로 작성해봤는데&hellip; 작성하면서도 <strong>왜??</strong>, <strong>어떻게..??</strong> 하는 부분이 개인적으로도 많이 있는 것 같다.</p>
+<p>예를들면 <code>--mode local</code> 로 사용 할 수 있을 것 같고&hellip; 또 대체 <strong>.env.local</strong> 파일을 어떤 시스템에서 어떻게 사용중이길래 안된다는 건지 등&hellip;</p>
+<p>시간이 될 때 더 찾아보고 보강을 해야 할 것 같다.</p>
+<p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+<div class="post__tags tags clearfix">
+	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
+	<ul class="tags__list">
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vue3/" rel="tag">vue3</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/vite/" rel="tag">vite</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/mode/" rel="tag">mode</a>
+		</li>
+		<li class="tags__item">
+			<a class="tags__link btn" href="/tags/local/" rel="tag">local</a>
+		</li>
+	</ul>
+</div>
+		</footer>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/dev/vue/setter-getter/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Vue] computed property 값 변경하기</p>
+		</a>
+	</div>
+</nav>
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/news/">news</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/places/">places</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/set-env-mode/">[Vue] import.meta.env.MODE 값 설정하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/life/places/songnae-all-day-party/">[부천/송내] 올데이파티 키즈풀 파티룸</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-sql-mode/">[Mysql,Mariadb] sql_mode 구성 항목 및 설정</a></li>
+		</ul>
+	</div>
+</div>
+<div class="widget-taglist widget">
+	<h4 class="widget__title">Tags</h4>
+	<div class="widget__content">
+		<a class="widget-taglist__link widget__link btn" href="/tags/alldayparty/" title="alldayparty">alldayparty (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/apache/" title="apache">apache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/apr/" title="apr">apr (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/bfcache/" title="bfcache">bfcache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/binary/" title="binary">binary (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/cache/" title="cache">cache (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/computed/" title="computed">computed (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/datetime/" title="datetime">datetime (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/extpat/" title="extpat">extpat (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/getter/" title="getter">getter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/local/" title="local">local (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/manual/" title="manual">manual (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="mariadb">mariadb (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mode/" title="mode">mode (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="module">module (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_date/" title="NO_ZERO_DATE">NO_ZERO_DATE (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_in_date/" title="NO_ZERO_IN_DATE">NO_ZERO_IN_DATE (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/pinia/" title="pinia">pinia (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/provide/" title="provide">provide (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/proxy/" title="proxy">proxy (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/setter/" title="setter">setter (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql_mode/" title="sql_mode">sql_mode (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vite/" title="vite">vite (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue-router/" title="vue-router">vue-router (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vuex/" title="vuex">vuex (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0/" title="뒤로가기">뒤로가기 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%B6%80%EC%B2%9C/" title="부천">부천 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%86%A1%EB%82%B4/" title="송내">송내 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%95%84%EA%B8%B0%EB%9E%91-%EB%86%80%EB%A7%8C%ED%95%9C-%EA%B3%B3/" title="아기랑 놀만한 곳">아기랑 놀만한 곳 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%95%84%EC%9D%B4%EB%9E%91-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C-%EA%B3%B3/" title="아이랑 가볼만한 곳">아이랑 가볼만한 곳 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%98%AC%EB%8D%B0%EC%9D%B4%ED%8C%8C%ED%8B%B0/" title="올데이파티">올데이파티 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/" title="이미지업로드">이미지업로드 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%82%A4%EC%A6%88%ED%92%80/" title="키즈풀">키즈풀 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%8C%8C%ED%8B%B0%EB%A3%B8/" title="파티룸">파티룸 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97/" title="프라이빗">프라이빗 (1)</a>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2023 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

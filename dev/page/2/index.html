@@ -163,6 +163,30 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/hugo/hugo-write-article/" rel="bookmark">
+			[HUGO] 글작성, 문법, 이미지업로드 하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-25T07:11:39&#43;09:00">2023-09-25 07:11:39</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		개요 본 게시물은 hugo 의 Mainroad 테마를 기준으로 작성되었습니다. 이는 아래 작성된 내용들이 환경이나 표준과 다를 수 있음을 의미합니다. 파일 생성 수행 경로: hugo 사이트 생성 경로 (hugo/my-site)
+hugo new {경로/파일명.md} 를 통해 작성할 게시물 파일을 생성하는데, 이렇게 생성된 파일은
+hugo/my-site/content
+폴더 아래 자동으로 생성됩니다. 생성 된 파일은 hugo/my-site/archetypes/default.md 에 작성된 템플릿을 기반으로 기본적인 내용이 작성되어져 있습니다..
+hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생성. 내용 작성 해당 md 파일에 게시할 내용을 markdown 문법으로 작성함으로써 글 작성에 대한건 사실 끝입니다.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-write-article/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/server/apache-binary-install/" rel="bookmark">
 			[Apache] 아파치 2.2.34 바이너리 설치
 			</a>
@@ -246,28 +270,6 @@ Apache Portable Runtime 의 약자.
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/vue/use-global-properties/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/dev/hugo/hugo-with-github/" rel="bookmark">
-			[HUGO] Github 연동하기
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-13T08:12:02&#43;09:00">2023-09-13 08:12:02</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">hugo</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		개요 HUGO 를 사용하여 SSG (Static Site Generators) 를 운영하는 대표적인 방법 중 하나는 github 저장소 를 이용하는 것입니다. github 를 통하여 서비스 시 별도의 비용도 발생하지 않고 다양한 플러그인들 지원을 통해 여러가지 기능을 손쉽게 적용 할 수 있는 장점이 있습니다.
-아래는 HUGO 를 통해 github 에 게시글을 작성하고 노출 시키는방법에 대해 설명해 보고자 합니다.
-git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repository 를 생성하도록 합니다.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-with-github/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -318,7 +320,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">3</span>
+				<span class="widget__counter widget__counter--bubble">4</span>
 				</li>
 		</ul>
 	</div>
@@ -327,11 +329,11 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/set-env-mode/">[Vue] import.meta.env.MODE 값 설정하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/places/songnae-all-day-party/">[부천/송내] 올데이파티 키즈풀 파티룸</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-sql-mode/">[Mysql,Mariadb] sql_mode 구성 항목 및 설정</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-datetime-white-space/">[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</a></li>
 		</ul>
 	</div>
 </div>
@@ -355,8 +357,10 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="iphone">iphone (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="iphone15">iphone15 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/local/" title="local">local (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/manual/" title="manual">manual (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="mariadb">mariadb (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mode/" title="mode">mode (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="module">module (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_date/" title="NO_ZERO_DATE">NO_ZERO_DATE (1)</a>
@@ -369,9 +373,10 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="ssg">ssg (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vite/" title="vite">vite (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue-router/" title="vue-router">vue-router (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vuex/" title="vuex">vuex (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0/" title="뒤로가기">뒤로가기 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/" title="명령어">명령어 (1)</a>
