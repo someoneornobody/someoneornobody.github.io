@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Lives - Someone or Nobody</title>
+	<title>nexttick - Someone or Nobody</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
 	<meta name="description" content="">
 
@@ -23,12 +23,12 @@
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
         
-		<meta property="og:title" content="Lives" />
+		<meta property="og:title" content="nexttick" />
 <meta property="og:description" content="everyday life! programming! travel!" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://someoneornobody.github.io/life/" />
+<meta property="og:url" content="https://someoneornobody.github.io/tags/nexttick/" />
 
-		<meta itemprop="name" content="Lives">
+		<meta itemprop="name" content="nexttick">
 <meta itemprop="description" content="everyday life! programming! travel!">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -37,7 +37,7 @@
 
 	<link rel="stylesheet" href="/css/style.css">
 	
-	<link rel="alternate" type="application/rss+xml" href="/life/index.xml" title="Someone or Nobody">
+	<link rel="alternate" type="application/rss+xml" href="/tags/nexttick/index.xml" title="Someone or Nobody">
 
 	<link rel="shortcut icon" href="/favicon.ico">
 </head>
@@ -158,68 +158,29 @@
 			
 <main class="main list" role="main">
 	<header class="main__header">
-		<h1 class="main__title">Lives</h1>
+		<h1 class="main__title">nexttick</h1>
 	</header><article class="list__item post">
 	
-		
-		
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/life/places/songnae-all-day-party/">
-		<img class="thumbnail__image" src="/img/posts/life/places/songnae.all.day.party/life.places.songnae.all.day.party.34.png" alt="[부천/송내] 올데이파티 키즈풀 파티룸">
-		</a>
-	</figure>
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/life/places/songnae-all-day-party/" rel="bookmark">
-			[부천/송내] 올데이파티 키즈풀 파티룸
+			<a href="/dev/vue/nexttick/" rel="bookmark">
+			[Vue] nextTick 활용 (#1)
 			</a>
 		</h2>
 		<div class="list__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-14T00:23:17&#43;09:00">2023-10-14 00:23:17</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/places/" rel="category">places</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-11-08T13:18:38&#43;09:00">2023-11-08 13:18:38</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
 	</span>
 </div></div>
 	</header>
 	<div class="content list__excerpt post__content clearfix">
-		부천 송내역 에서 도보 3분 거리에 드디어 !!!
-프라이빗 키즈풀 파티룸 이 생겼습니다.
-키즈워터룸 또는 워터룸 이라고도 불리우는데요, (아래부터는 워터룸 이라 칭할게요)
-넓은 수영장과 함께 정말 많은, 왠만한 장난감은 다 갖춘 정말 퍼펙트한 워터룸 이었습니다.
-예약은 네이버에서 올데이파티키즈룸 으로 검색하셔서 날짜 및 시간을 정해서 예매하시면 문자로 진행이 됩니다.
-비밀번호나 기타 이것저것 사용에 관련된 안내를 친절하게 받으실 수 있어요.
-위치는 송내역 북부 광장에서 신호등 건너면 바로 있는 송내 스카이뷰 자이 건물 2층 입니다.
+		input 요소 처리 시 nextTick 이 사용 될 만한 예제에 대해 설명해 보겠습니다.
+먼저 input 에 대한 입력 조건은 아래와 같습니다.
+숫자만 입력 가능하다. 6자리 이상은 입력되지 않는다. 위에 대한 조건을 바탕으로 하는 기본 코드는 아래와 같습니다.
+&lt;template&gt; &lt;input type=&#34;text&#34; name=&#34;birth&#34; placeholder=&#34;ex) 200414&#34; v-model=&#34;birth&#34; /&gt; &lt;/template&gt; &lt;script setup&gt; import {ref, watch} from &#39;vue&#39; const birth = ref(&#39;&#39;) watch(() =&gt; birth.value, newValue =&gt; { if (newValue.length &gt; 6) { birth.value = birth.
 	</div>
 	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/life/places/songnae-all-day-party/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	
-		
-		
-	<figure class="list__thumbnail thumbnail">
-		<a class="thumbnail__link" href="/life/news/iphone15/">
-		<img class="thumbnail__image" src="/img/posts/life/news/life.news.iphone15.color.1515plus.png" alt="[NEWS] iPhone15">
-		</a>
-	</figure>
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/life/news/iphone15/" rel="bookmark">
-			[NEWS] iPhone15
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-14T06:52:27&#43;09:00">2023-09-14 06:52:27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/news/" rel="category">news</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		본 게시글은 개인적인 참고를 위해 작성되었으므로 제게 필요한 정보만 간략히 모아두었습니다
-이미지의 출처는 공식홈페이지 (https://apple.com) 입니다
-가격 모델 128G 256G 512G 1TB 15 125만원 140만원 170만원 X 15 PLUS 135만원 150만원 180만원 X 15 PRO 155만원 170만원 200만원 X 15 PRO MAX X 190만원 220만원 250만원 CPU, RAM 모델 CPU RAM 15, 15 PLUS A16 (iPhone14 Pro 와 동일) 6G 15 PRO, 15 PRO MAX A17 Pro (3나노 공정) 8G 색상 모델 색상 15 , 15 PLUS BLUE, PINK, YELLOW, GREEN, BLACK 15 PRO, 15 PRO MAX NATURAL TITAN, BLUE TITAN, WHITE TITAN, BLACK TITAN 기타 카메라 15 PRO: 0.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/life/news/iphone15/">Read more…</a>
+		<a class="list__footer-readmore btn" href="/dev/vue/nexttick/">Read more…</a>
 	</div>
 </article>
 </main>

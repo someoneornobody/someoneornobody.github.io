@@ -4,9 +4,9 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>[NEWS] iPhone15 - Someone or Nobody</title>
+	<title>[Vue] nextTick 활용 (#1) - Someone or Nobody</title>
 	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="">
+	<meta name="description" content="INPUT 요소 핸들링 중 nextTick 을 활용하는 예제">
 
 	
 	
@@ -23,22 +23,18 @@
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-74F0WSFH3D"></script>
         
-		<meta property="og:title" content="[NEWS] iPhone15" />
-<meta property="og:description" content="본 게시글은 개인적인 참고를 위해 작성되었으므로 제게 필요한 정보만 간략히 모아두었습니다
-이미지의 출처는 공식홈페이지 (https://apple.com) 입니다
-가격 모델 128G 256G 512G 1TB 15 125만원 140만원 170만원 X 15 PLUS 135만원 150만원 180만원 X 15 PRO 155만원 170만원 200만원 X 15 PRO MAX X 190만원 220만원 250만원 CPU, RAM 모델 CPU RAM 15, 15 PLUS A16 (iPhone14 Pro 와 동일) 6G 15 PRO, 15 PRO MAX A17 Pro (3나노 공정) 8G 색상 모델 색상 15 , 15 PLUS BLUE, PINK, YELLOW, GREEN, BLACK 15 PRO, 15 PRO MAX NATURAL TITAN, BLUE TITAN, WHITE TITAN, BLACK TITAN 기타 카메라 15 PRO: 0." />
+		<meta property="og:title" content="[Vue] nextTick 활용 (#1)" />
+<meta property="og:description" content="INPUT 요소 핸들링 중 nextTick 을 활용하는 예제" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://someoneornobody.github.io/life/news/iphone15/" /><meta property="article:section" content="life" />
-<meta property="article:published_time" content="2023-09-14T06:52:27+09:00" />
-<meta property="article:modified_time" content="2023-09-14T06:52:27+09:00" />
+<meta property="og:url" content="https://someoneornobody.github.io/dev/vue/nexttick/" /><meta property="article:section" content="dev" />
+<meta property="article:published_time" content="2023-11-08T13:18:38+09:00" />
+<meta property="article:modified_time" content="2023-11-08T13:18:38+09:00" />
 
-		<meta itemprop="name" content="[NEWS] iPhone15">
-<meta itemprop="description" content="본 게시글은 개인적인 참고를 위해 작성되었으므로 제게 필요한 정보만 간략히 모아두었습니다
-이미지의 출처는 공식홈페이지 (https://apple.com) 입니다
-가격 모델 128G 256G 512G 1TB 15 125만원 140만원 170만원 X 15 PLUS 135만원 150만원 180만원 X 15 PRO 155만원 170만원 200만원 X 15 PRO MAX X 190만원 220만원 250만원 CPU, RAM 모델 CPU RAM 15, 15 PLUS A16 (iPhone14 Pro 와 동일) 6G 15 PRO, 15 PRO MAX A17 Pro (3나노 공정) 8G 색상 모델 색상 15 , 15 PLUS BLUE, PINK, YELLOW, GREEN, BLACK 15 PRO, 15 PRO MAX NATURAL TITAN, BLUE TITAN, WHITE TITAN, BLACK TITAN 기타 카메라 15 PRO: 0."><meta itemprop="datePublished" content="2023-09-14T06:52:27+09:00" />
-<meta itemprop="dateModified" content="2023-09-14T06:52:27+09:00" />
-<meta itemprop="wordCount" content="140">
-<meta itemprop="keywords" content="iphone,iphone15," />
+		<meta itemprop="name" content="[Vue] nextTick 활용 (#1)">
+<meta itemprop="description" content="INPUT 요소 핸들링 중 nextTick 을 활용하는 예제"><meta itemprop="datePublished" content="2023-11-08T13:18:38+09:00" />
+<meta itemprop="dateModified" content="2023-11-08T13:18:38+09:00" />
+<meta itemprop="wordCount" content="472">
+<meta itemprop="keywords" content="nexttick," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -167,146 +163,107 @@
 <main class="main" role="main">
         <article class="post autonumbering">
 		<header class="post__header">
-			<h1 class="post__title">[NEWS] iPhone15</h1>
+			<h1 class="post__title">[Vue] nextTick 활용 (#1)</h1>
 			<div class="post__meta meta">
 <div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-14T06:52:27&#43;09:00">2023-09-14 06:52:27</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/news/" rel="category">news</a>
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-11-08T13:18:38&#43;09:00">2023-11-08 13:18:38</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
 	</span>
 </div></div>
 		</header>
-		
-		
-		
-<div class="post__toc toc">
-	<div class="toc__title">Page content</div>
-	<div class="toc__menu">
-		<nav id="TableOfContents">
-  <ul>
-    <li><a href="#가격">가격</a></li>
-    <li><a href="#cpu-ram">CPU, RAM</a></li>
-    <li><a href="#색상">색상</a></li>
-    <li><a href="#기타">기타</a></li>
-  </ul>
-</nav>
-	</div>
-</div><div class="content post__content clearfix">
-			<blockquote>
-<p><strong><code>본 게시글은 개인적인 참고를 위해 작성되었으므로 제게 필요한 정보만 간략히 모아두었습니다</code></strong></p>
-<p><strong><code>이미지의 출처는 공식홈페이지 (https://apple.com) 입니다</code></strong></p>
+		<div class="content post__content clearfix">
+			<p> </p>
+<p><em>input</em> 요소 처리 시 <code>nextTick</code> 이 사용 될 만한 예제에 대해 설명해 보겠습니다.</p>
+<p> </p>
+<p>먼저 <strong>input</strong> 에 대한 입력 조건은 아래와 같습니다.</p>
+<blockquote>
+<ol>
+<li>숫자만 입력 가능하다.</li>
+<li>6자리 이상은 입력되지 않는다.</li>
+</ol>
 </blockquote>
-<h2 id="가격">가격</h2>
-<hr>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">모델</th>
-<th style="text-align:center">128G</th>
-<th style="text-align:center">256G</th>
-<th style="text-align:center">512G</th>
-<th style="text-align:center">1TB</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">15</td>
-<td style="text-align:center">125만원</td>
-<td style="text-align:center">140만원</td>
-<td style="text-align:center">170만원</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">15 PLUS</td>
-<td style="text-align:center">135만원</td>
-<td style="text-align:center">150만원</td>
-<td style="text-align:center">180만원</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">15 PRO</td>
-<td style="text-align:center">155만원</td>
-<td style="text-align:center">170만원</td>
-<td style="text-align:center">200만원</td>
-<td style="text-align:center">X</td>
-</tr>
-<tr>
-<td style="text-align:center">15 PRO MAX</td>
-<td style="text-align:center">X</td>
-<td style="text-align:center">190만원</td>
-<td style="text-align:center">220만원</td>
-<td style="text-align:center">250만원</td>
-</tr>
-</tbody>
-</table>
 <p> </p>
-<h2 id="cpu-ram">CPU, RAM</h2>
-<hr>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">모델</th>
-<th style="text-align:center">CPU</th>
-<th style="text-align:center">RAM</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">15, 15 PLUS</td>
-<td style="text-align:center">A16 (iPhone14 Pro 와 동일)</td>
-<td style="text-align:center">6G</td>
-</tr>
-<tr>
-<td style="text-align:center">15 PRO, 15 PRO MAX</td>
-<td style="text-align:center">A17 Pro (3나노 공정)</td>
-<td style="text-align:center">8G</td>
-</tr>
-</tbody>
-</table>
+<p>위에 대한 조건을 바탕으로 하는 기본 코드는 아래와 같습니다.</p>
 <p> </p>
-<h2 id="색상">색상</h2>
-<hr>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">모델</th>
-<th style="text-align:center">색상</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">15 , 15 PLUS</td>
-<td style="text-align:center">BLUE, PINK, YELLOW, GREEN, BLACK  <img src="/img/posts/life/news/life.news.iphone15.color.1515plus.png" alt="pic_content_storage"></td>
-</tr>
-<tr>
-<td style="text-align:center">15 PRO, 15 PRO MAX</td>
-<td style="text-align:center">NATURAL TITAN, BLUE TITAN, WHITE TITAN, BLACK TITAN  <img src="/img/posts/life/news/life.news.iphone15.color.15pro15promax.png" alt="pic_content_storage"></td>
-</tr>
-</tbody>
-</table>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;birth&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ex) 200414&#34;</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-model</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">birth</span><span style="color:#960050;background-color:#1e0010">&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">ref</span>, <span style="color:#a6e22e">watch</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">birth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">watch</span>(() =&gt; <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">newValue</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newValue</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">6</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>      } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allowOnlyNumber</span>(<span style="color:#a6e22e">newValue</span>)
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">allowOnlyNumber</span>(<span style="color:#a6e22e">v</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[^0-9]/gi</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p> </p>
+<p>위의 코드를 실행 시 <strong>숫자와 영어 입력</strong> 시 조건에 부합하는 결과가 나오게 되는데요,</p>
+<p>만약 <strong>한글을 입력</strong>하게 된다면, 그대로 표시가 되는 걸 보실 수 있습니다.</p>
+<p>이유를 찾아보니&hellip;</p>
 <p> </p>
-<h2 id="기타">기타</h2>
 <hr>
-<ul>
-<li>카메라
-<ul>
-<li>15 PRO: 0.5배, 1배, 2배, 3배 광학 줌</li>
-<li>15 PRO MAX: 0.5배, 1배, 2배, 5배 광학 줌
- </li>
-</ul>
-</li>
-<li>출시예정일
-<ul>
-<li>미국: 9/15 pre order, 9/22 수령</li>
-<li>한국 (예상): 10/6 사전예약, 10/13 수령
- </li>
-</ul>
-</li>
-<li>connector
-<ul>
-<li>15, 15 PLUS: USB 2</li>
-<li>15 PRO, 15 PRO MAX: USB 3</li>
-</ul>
-</li>
-</ul>
+<p>영어 문자의 경우 vuejs 와의 입력과 동기화가 잘되므로 데이터 모델 변경 시 뷰에 즉각적인 반영에 있어서 문제가 없다고 합니다.</p>
+<p>하지만 한글은 조합형 문자인 경우가 있고 이러한 경우에 문자열의 변화가 느려질 수 있는데, 이때 vuejs 의 비동기 업데잍으 매커니즘과 충돌하는 등의</p>
+<p>영향이 있을 수 있다고 합니다. 그래서 한글 입력 시 데이터 모델 변경이 뷰에 반영되는데 문제가 생길 수 있다고 하네요.</p>
+<p>결국은 영어와 한글의 입력 차이에 의한 것이라는 거죠</p>
+<hr>
+<p> </p>
+<p>물론 문자를 더 입력하거나 포커스가 바뀐다면 삭제가 되긴 하겠지만 일단 <strong>input</strong> 에 노출 되는게 거슬릴 수도 있겠죠&hellip;?</p>
+<p>아무튼 이 때 사용하는 것이 바로 <code>nextTick</code> 입니다.</p>
+<p><code>nextTick</code> 을 사용하여 수정 된 코드는 아래와 같습니다.</p>
+<p> </p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vue" data-lang="vue"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">input</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;birth&#34;</span> <span style="color:#a6e22e">placeholder</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;ex) 200414&#34;</span> <span style="color:#a6e22e">v</span><span style="color:#f92672">-model</span><span style="color:#960050;background-color:#1e0010">=&#34;</span><span style="color:#a6e22e">birth</span><span style="color:#960050;background-color:#1e0010">&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">template</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">setup</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">import</span> {<span style="color:#a6e22e">ref</span>, <span style="color:#a6e22e">watch</span>, <span style="color:#a6e22e">nextTick</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;vue&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">birth</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">watch</span>(() =&gt; <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">newValue</span> =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">nextTick</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">newValue</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">6</span>) {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">6</span>)
+</span></span><span style="display:flex;"><span>        } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">birth</span>.<span style="color:#a6e22e">value</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">allowOnlyNumber</span>(<span style="color:#a6e22e">newValue</span>)
+</span></span><span style="display:flex;"><span>        }  
+</span></span><span style="display:flex;"><span>      })  
+</span></span><span style="display:flex;"><span>    })
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">allowOnlyNumber</span>(<span style="color:#a6e22e">v</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">replace</span>(<span style="color:#e6db74">/[^0-9]/gi</span>, <span style="color:#e6db74">&#39;&#39;</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p><code>import</code> 에서 <code>nextTick</code> 을 선언해주고 <code>watch</code> 에서 조건 처리 시 <code>nextTick</code> 으로 감싸주었습니다.</p>
+<p>이렇게 하면 숫자나 영어 처럼 한글을 입력시에도 <code>input</code> 박스에 한글이 노출되지 않습니다.</p>
+<p>이는 <code>nextTick</code> 이 <strong>DOM 업데이트 이후에 실행</strong> 이 되기 때문인데요, 이를 이해하기 위해서 Vue 의 화면 처리에 대해 알아야 하는데요&hellip;</p>
+<p>아래는 관련 내용에 대해 알아보고 이해한 내용을 바탕으로 작성한 것입니다.</p>
+<p> </p>
+<p>먼저 알아야 할 개념은 2가지 입니다.</p>
+<ol>
+<li>vuejs 는 단일 스레드 모델이다.</li>
+<li>DOM 업데이트 및 렌더링을 비동기로 처리한다.</li>
+</ol>
+<p>위 2가지를 바탕으로 설명하자면,</p>
+<p>Vue Component 에서 데이터 변경이 일어나면 DOM 을 즉시 업데이트 하지 않고 대기열에 추가한 후에 비동기 적으로 처리하게 됩니다.</p>
+<p>이렇게 대기열에 추가하여 작업하게 되면 데이터 변경이 일어날 경우 동일 데이터 대한 중복 업데이트가 방지 되며 이로 인해 성능이 올라가게 되죠.</p>
+<p>또한 DOM 에 대한 업데이트 역시 대기열에 추가하여 여러 업데이트를 모아서 비동기적으로 DOM 업데이트를 수행합니다.</p>
+<p> </p>
+<p>어떤 매커니즘으로 중복 업데이트가 방지되며 DOM 이 업데이트 처리 되는지는 아직도 잘 이해가 가진 않지만&hellip;</p>
+<p>아무튼 위의 내용에서 <strong>DOM 이 업데이트를 수행한 다음에 호출되는 함수가 바로 <code>nextTick</code> 입니다.</strong></p>
+<p>(데이터 모델의 변경이 뷰에 반영 된 후에 호출된다는 말입니다.)</p>
+<p>한글을 입력하였을 때 DOM 에 한글이 업데이트 된 후에 호출되어 조건에 맞는 처리를 하게 되므로 한글도 표시되지 않게 되는 것입니다.</p>
+<p>결론은,  <strong>DOM 업데이트 이후에 추가적인 작업, 어떠한 동작이 필요할 때</strong> <code>nextTick</code> 을 활용하면 되겠습니다.</p>
 <p> </p>
 
 		</div>
@@ -316,10 +273,7 @@
 	<svg class="tags__badge icon icon-tag" width="16" height="16" viewBox="0 0 32 32"><path d="M32 19c0 1-1 2-1 2L21 31s-1 1-2 1-2-1-2-1L2 16c-1-1-1.4-2-1.4-2S0 12.5 0 11V3C0 1.5.8.8.8.8S1.5 0 3 0h8c1.5 0 3 .6 3 .6S15 1 16 2l15 15s1 1 1 2zM7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>
 	<ul class="tags__list">
 		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/iphone/" rel="tag">iphone</a>
-		</li>
-		<li class="tags__item">
-			<a class="tags__link btn" href="/tags/iphone15/" rel="tag">iphone15</a>
+			<a class="tags__link btn" href="/tags/nexttick/" rel="tag">nexttick</a>
 		</li>
 	</ul>
 </div>
@@ -329,10 +283,10 @@
 
 
 <nav class="pager flex">
-	<div class="pager__item pager__item--next">
-		<a class="pager__link" href="/life/places/songnae-all-day-party/" rel="next">
-			<span class="pager__subtitle">Next&thinsp;»</span>
-			<p class="pager__title">[부천/송내] 올데이파티 키즈풀 파티룸</p>
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/dev/vue/set-env-mode/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[Vue] import.meta.env.MODE 값 설정하기</p>
 		</a>
 	</div>
 </nav>

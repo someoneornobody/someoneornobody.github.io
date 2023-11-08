@@ -162,6 +162,27 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/db/mysql-mariadb-commands/" rel="bookmark">
+			[MySQL/MariaDB] 명령어
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-18T11:22:47&#43;09:00">2023-09-18 11:22:47</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/db/" rel="category">db</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		MySQL / Mariadb 명령어 root 접속 (mysql 폴더 / bin 으로 이동해서 수행) ./mysql -u root -p 사용자 목록 use mysql; select user, host from user; 비밀번호 변경 mysqladmin -u아이디 -p기존패스워드 password 신규패스워드 인덱스 초기화 ALTER TABLE [table name] AUTO_INCREMENT = 1; 현재 커넥션 개수 보기 show global status like &#39;threads_connected&#39;; datetime #unix_time -&gt; date_time from_unixtime( signdate , &#34;%Y%m%d-%H%i%S&#34;) MySQL 외부 접근 권한
+%: 외부접근 localhost: 내부접근 권한설정 #gtane all privileges on {db}.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/db/mysql-mariadb-commands/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/vue/use-global-properties/" rel="bookmark">
 			[Vue] 전역 변수 사용하기
 			</a>
@@ -300,7 +321,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">4</span>
+				<span class="widget__counter widget__counter--bubble">5</span>
 				</li>
 		</ul>
 	</div>
@@ -309,11 +330,11 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/nexttick/">[Vue] nextTick 활용 (#1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/set-env-mode/">[Vue] import.meta.env.MODE 값 설정하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/places/songnae-all-day-party/">[부천/송내] 올데이파티 키즈풀 파티룸</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/db/mysql-mariadb-sql-mode/">[Mysql,Mariadb] sql_mode 구성 항목 및 설정</a></li>
 		</ul>
 	</div>
 </div>
@@ -343,6 +364,7 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 		<a class="widget-taglist__link widget__link btn" href="/tags/mode/" title="mode">mode (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="module">module (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="mysql">mysql (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/nexttick/" title="nexttick">nexttick (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_date/" title="NO_ZERO_DATE">NO_ZERO_DATE (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_in_date/" title="NO_ZERO_IN_DATE">NO_ZERO_IN_DATE (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/pinia/" title="pinia">pinia (1)</a>
