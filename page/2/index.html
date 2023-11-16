@@ -162,6 +162,26 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/vue/router-use-in-pinia-store/" rel="bookmark">
+			[Vue] Pinia Store 에서 vue-router 사용하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-04T09:26:00&#43;09:00">2023-10-04 09:26:00</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		개요 pinia store 에서 vue-router 사용 시 undefined 로 인해 정상적인 동작을 하지않는 상황이 발생 사실 이건 당연한, 간단한 구조적 문제였는데.. 저와 같은 실수를 하는 사람이 없길 바라며 작성하는 게시글입니다.. 개발 환경 build tool: vite framework: vue3 state management: pinia 코드 main.js import { createApp } from &#39;vue&#39; import { createPinia } from &#39;pinia&#39; import App from &#39;./App.vue&#39; import router from &#39;./router&#39; const app = createApp(App) app.use(createPinia()) app.use(router) app.mount(&#39;#app&#39;) stores/common.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/router-use-in-pinia-store/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/db/mysql-mariadb-sql-mode/" rel="bookmark">
 			[Mysql,Mariadb] sql_mode 구성 항목 및 설정
 			</a>
@@ -251,35 +271,12 @@ Apache Portable Runtime 의 약자.
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/server/apache-binary-install/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/dev/javascript/bf-cache/" rel="bookmark">
-			[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-19T07:48:19&#43;09:00">2023-09-19 07:48:19</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">javascript</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		BFCache ? BFCache 란 Back-forward Cache 의 약자로 브라우저가 현재 페이지의 상태를 저장하는 것을 말한다.
-현재 페이지의 상태라 함은 페이지의 DOM상태, Javascript, Input, 스크롤 위치 등의 데이터가 포함될 수 있다.
-사용자가 브라우저에서 뒤로가기 또는 앞으로 가기 버튼을 클릭 하였을 때 처음 이동하는 페이지보다 월등히 더 빠르게 렌더링 된 페이지를 볼 수 있는 이유는 이러한 BFCache 로 인해 캐싱된 페이지를 보기 때문이다.
-사용자 관점에서는 매우 효과적이고 효율적인 기능이지만 개발자 입장에서는 상황에 따라 손이 한번 더 가는 경우가 발생한다.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/javascript/bf-cache/">Read more…</a>
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/">«</a>
-	<span class="pagination__item pagination__item--current">2/3</span>
+	<span class="pagination__item pagination__item--current">2/4</span>
 	<a class="pagination__item pagination__item--next btn" href="/page/3/">»</a>
 </div>
 
@@ -323,7 +320,7 @@ Apache Portable Runtime 의 약자.
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">5</span>
+				<span class="widget__counter widget__counter--bubble">6</span>
 				</li>
 		</ul>
 	</div>
@@ -332,11 +329,11 @@ Apache Portable Runtime 의 약자.
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties-second/">[Vue] 전역 변수 사용하기 (함수사용)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/nexttick/">[Vue] nextTick 활용 (#1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/set-env-mode/">[Vue] import.meta.env.MODE 값 설정하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/places/songnae-all-day-party/">[부천/송내] 올데이파티 키즈풀 파티룸</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
 		</ul>
 	</div>
 </div>
@@ -355,6 +352,7 @@ Apache Portable Runtime 의 약자.
 		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/getter/" title="getter">getter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/global-properties/" title="global properties">global properties (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
@@ -378,7 +376,7 @@ Apache Portable Runtime 의 약자.
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vite/" title="vite">vite (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue-router/" title="vue-router">vue-router (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vuex/" title="vuex">vuex (1)</a>

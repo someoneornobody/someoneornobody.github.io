@@ -2,37 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://someoneornobody.github.io/dev/vue/use-global-properties-second/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/dev/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/global-properties/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/vue/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/vue/</loc>
+    <lastmod>2023-11-16T12:03:33+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://someoneornobody.github.io/dev/vue/nexttick/</loc>
     <lastmod>2023-11-08T13:18:38+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://someoneornobody.github.io/categories/</loc>
-    <lastmod>2023-11-08T13:18:38+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/dev/</loc>
-    <lastmod>2023-11-08T13:18:38+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://someoneornobody.github.io/tags/nexttick/</loc>
-    <lastmod>2023-11-08T13:18:38+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/</loc>
-    <lastmod>2023-11-08T13:18:38+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/</loc>
-    <lastmod>2023-11-08T13:18:38+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/categories/vue/</loc>
     <lastmod>2023-11-08T13:18:38+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
@@ -83,11 +98,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>https://someoneornobody.github.io/tags/store/</loc>
-    <lastmod>2023-10-19T13:06:30+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/vue/</loc>
     <lastmod>2023-10-19T13:06:30+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>

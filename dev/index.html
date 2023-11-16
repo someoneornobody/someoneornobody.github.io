@@ -163,6 +163,30 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/vue/use-global-properties-second/" rel="bookmark">
+			[Vue] 전역 변수 사용하기 (함수사용)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-11-16T12:03:33&#43;09:00">2023-11-16 12:03:33</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		[Vue] 전역 변수 사용하기 의 후속편입니다.
+이번에는 공통으로 사용되는 함수들을 모아 전역 변수로 선언한 후 해당 변수를 통해 함수를 호출하는 방법을 알아보도록 하겠습니다.
+먼저 공통 함수들을 선언하는 파일을 utils.js 라고 명명하고 아래와 같이 작성합니다.
+// utils.js export default { // 숫자 외 문자삭제 후 리턴 inputNumber: (v) =&gt; { return v.replace(/[^0-9]/g, &#39;&#39;) } } 그리고 main.js 에서 utils.js 파일을 import 후 전역 변수에 $utils 라는 이름으로 등록합니다.
+// main.js import { createApp } from &#39;vue&#39; import App from &#39;.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/use-global-properties-second/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/vue/nexttick/" rel="bookmark">
 			[Vue] nextTick 활용 (#1)
 			</a>
@@ -248,29 +272,6 @@ npm run build --mode local 정상적으로 진행 될 거라 생각했지만 아
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/vue/router-use-in-pinia-store/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/dev/db/mysql-mariadb-sql-mode/" rel="bookmark">
-			[Mysql,Mariadb] sql_mode 구성 항목 및 설정
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-26T10:26:05&#43;09:00">2023-09-26 10:26:05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/db/" rel="category">db</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		sql_mode 란? MySQL 이나 Mariadb 에서 데이터베이스 서버가 수행하는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 구성 설정입니다.
-이는 SQL 구문이나 데이터 유효성 검사, 오류 처리 등을 어떻게 처리할 지 결정하며,
-SQL 표준 및 데이터 무결성과 관련하여 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다. 구성 항목 (요소) ANSI_QUOTES 활성화 시 쌍따옴표 (&quot;) 는 컬럼명, 테이블과 같은 식별자만 처리 할 수 있도록 한다.
-SELECT &#34;COLUMN_NAME&#34; FROM &#34;TABLE_NAME&#34; STRICT_TRANS_TABLE 컬럼 타입과 다를 경우 최대한 맞춰서 값을 입력하게 할 것인지 여부.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/db/mysql-mariadb-sql-mode/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -320,7 +321,7 @@ SELECT &#34;COLUMN_NAME&#34; FROM &#34;TABLE_NAME&#34; STRICT_TRANS_TABLE 컬럼
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/vue/">vue</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">5</span>
+				<span class="widget__counter widget__counter--bubble">6</span>
 				</li>
 		</ul>
 	</div>
@@ -329,11 +330,11 @@ SELECT &#34;COLUMN_NAME&#34; FROM &#34;TABLE_NAME&#34; STRICT_TRANS_TABLE 컬럼
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties-second/">[Vue] 전역 변수 사용하기 (함수사용)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/nexttick/">[Vue] nextTick 활용 (#1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/set-env-mode/">[Vue] import.meta.env.MODE 값 설정하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/places/songnae-all-day-party/">[부천/송내] 올데이파티 키즈풀 파티룸</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/vue/router-use-in-pinia-store/">[Vue] Pinia Store 에서 vue-router 사용하기</a></li>
 		</ul>
 	</div>
 </div>
@@ -352,6 +353,7 @@ SELECT &#34;COLUMN_NAME&#34; FROM &#34;TABLE_NAME&#34; STRICT_TRANS_TABLE 컬럼
 		<a class="widget-taglist__link widget__link btn" href="/tags/getcurrentinstance/" title="getCurrentInstance">getCurrentInstance (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/getter/" title="getter">getter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/github/" title="github">github (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/global-properties/" title="global properties">global properties (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="go">go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="hugo">hugo (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="inject">inject (1)</a>
@@ -375,7 +377,7 @@ SELECT &#34;COLUMN_NAME&#34; FROM &#34;TABLE_NAME&#34; STRICT_TRANS_TABLE 컬럼
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="static site generators">static site generators (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="store">store (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vite/" title="vite">vite (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/vue/" title="vue">vue (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue-router/" title="vue-router">vue-router (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vue3/" title="vue3">vue3 (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/vuex/" title="vuex">vuex (1)</a>
