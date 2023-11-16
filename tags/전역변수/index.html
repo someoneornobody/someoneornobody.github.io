@@ -163,8 +163,32 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/vue/use-global-properties-second/" rel="bookmark">
+			[Vue] 전역 변수 사용하기 (#2)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-11-16T12:03:33&#43;09:00">2023-11-16 12:03:33</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		[Vue] 전역 변수 사용하기 의 후속편입니다.
+이번에는 공통으로 사용되는 함수들을 모아 전역 변수로 선언한 후 해당 변수를 통해 함수를 호출하는 방법을 알아보도록 하겠습니다.
+먼저 공통 함수들을 선언하는 파일을 utils.js 라고 명명하고 아래와 같이 작성합니다.
+// utils.js export default { // 숫자 외 문자삭제 후 리턴 inputNumber: (v) =&gt; { return v.replace(/[^0-9]/g, &#39;&#39;) } } 그리고 main.js 에서 utils.js 파일을 import 후 전역 변수에 $utils 라는 이름으로 등록합니다.
+// main.js import { createApp } from &#39;vue&#39; import App from &#39;.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/use-global-properties-second/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/vue/use-global-properties/" rel="bookmark">
-			[Vue] 전역 변수 사용하기
+			[Vue] 전역 변수 사용하기 (#1)
 			</a>
 		</h2>
 		<div class="list__meta meta">
@@ -233,7 +257,7 @@
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
-			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties-second/">[Vue] 전역 변수 사용하기 (함수사용)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/vue/use-global-properties-second/">[Vue] 전역 변수 사용하기 (#2)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/nexttick/">[Vue] nextTick 활용 (#1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/set-env-mode/">[Vue] import.meta.env.MODE 값 설정하기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/vue/setter-getter/">[Vue] computed property 값 변경하기</a></li>
@@ -292,7 +316,7 @@
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%95%84%EC%9D%B4%EB%9E%91-%EA%B0%80%EB%B3%BC%EB%A7%8C%ED%95%9C-%EA%B3%B3/" title="아이랑 가볼만한 곳">아이랑 가볼만한 곳 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%98%AC%EB%8D%B0%EC%9D%B4%ED%8C%8C%ED%8B%B0/" title="올데이파티">올데이파티 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%9D%B4%EB%AF%B8%EC%A7%80%EC%97%85%EB%A1%9C%EB%93%9C/" title="이미지업로드">이미지업로드 (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (1)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/" title="전역변수">전역변수 (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%82%A4%EC%A6%88%ED%92%80/" title="키즈풀">키즈풀 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%8C%8C%ED%8B%B0%EB%A3%B8/" title="파티룸">파티룸 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/%ED%94%84%EB%9D%BC%EC%9D%B4%EB%B9%97/" title="프라이빗">프라이빗 (1)</a>

@@ -8,7 +8,7 @@
     <language>ko-kr</language>
     <lastBuildDate>Thu, 16 Nov 2023 12:03:33 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Vue] 전역 변수 사용하기 (함수사용)</title>
+      <title>[Vue] 전역 변수 사용하기 (#2)</title>
       <link>https://someoneornobody.github.io/dev/vue/use-global-properties-second/</link>
       <pubDate>Thu, 16 Nov 2023 12:03:33 +0900</pubDate>
       
@@ -66,7 +66,7 @@ npm run build --mode local 정상적으로 진행 될 거라 생각했지만 아
     </item>
     
     <item>
-      <title>[Vue] 전역 변수 사용하기</title>
+      <title>[Vue] 전역 변수 사용하기 (#1)</title>
       <link>https://someoneornobody.github.io/dev/vue/use-global-properties/</link>
       <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
       
