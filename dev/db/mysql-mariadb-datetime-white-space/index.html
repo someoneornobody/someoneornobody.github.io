@@ -37,7 +37,7 @@
 		<meta itemprop="name" content="[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)">
 <meta itemprop="description" content="Mysql, Maraidb 에서 datetime 필드에 공백을 넣는 방법 또는 공백 시 오류 상황."><meta itemprop="datePublished" content="2023-09-26T09:40:29+09:00" />
 <meta itemprop="dateModified" content="2023-09-26T09:40:29+09:00" />
-<meta itemprop="wordCount" content="227">
+<meta itemprop="wordCount" content="214">
 <meta itemprop="keywords" content="mysql,mariadb,NO_ZERO_DATE,NO_ZERO_IN_DATE,datetime,sql_mode," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -212,8 +212,7 @@
 <p> </p>
 <p>만약 <code>GLOBAL</code> 로 설정하고 싶다면 <code>super 권한 (ex:root)</code> 을 가진 계정으로 아래와 같이 수행하면 됩니다.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> sql_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLE,NO_ZERO_DATE,NO_ZERO_IN_DATE&#39;</span>
-</span></span></code></pre></div><p><code>sql_mode</code> 에 대해 조금 더 자세한 내용을 알고 싶다면 <a href="https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode">이곳</a> 를 참고하시기 바랍니다.</p>
-<p> </p>
+</span></span></code></pre></div><p> </p>
 
 		</div>
 		<footer class="post__footer">
