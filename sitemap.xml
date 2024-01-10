@@ -2,37 +2,77 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://someoneornobody.github.io/life/places/gimpo-echo-village/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/echo-village/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/gimpo/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/life/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/places/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EA%B2%BD%EA%B8%B0%EB%8F%84-%EC%95%84%EC%9D%B4%EB%9E%91-%EA%B0%88%EB%A7%8C%ED%95%9C-%EA%B3%B3/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EA%B3%B5%EB%A3%A1-%EC%B2%B4%ED%97%98/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EA%B9%80%ED%8F%AC-%EC%95%84%EC%9D%B4%EB%9E%91-%EA%B0%88%EB%A7%8C%ED%95%9C-%EA%B3%B3/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EC%97%90%EC%BD%94%EB%B9%8C%EB%A6%AC%EC%A7%80/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%ED%98%B8%EA%B8%B0%EC%8B%AC%EB%86%80%EC%9D%B4%ED%84%B0/</loc>
+    <lastmod>2024-01-10T14:07:24+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://someoneornobody.github.io/life/places/suwon-fourseason-healing-farm/</loc>
     <lastmod>2024-01-09T14:32:57+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://someoneornobody.github.io/categories/</loc>
-    <lastmod>2024-01-09T14:32:57+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://someoneornobody.github.io/tags/fourseason/</loc>
-    <lastmod>2024-01-09T14:32:57+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/life/</loc>
-    <lastmod>2024-01-09T14:32:57+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/categories/places/</loc>
-    <lastmod>2024-01-09T14:32:57+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/</loc>
-    <lastmod>2024-01-09T14:32:57+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/</loc>
     <lastmod>2024-01-09T14:32:57+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
