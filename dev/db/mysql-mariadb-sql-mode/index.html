@@ -37,7 +37,7 @@
 		<meta itemprop="name" content="[Mysql,Mariadb] sql_mode 구성 항목 및 설정">
 <meta itemprop="description" content="Mysql, Mariadb 의 sql_mode 에 대한 설명."><meta itemprop="datePublished" content="2023-09-26T10:26:05+09:00" />
 <meta itemprop="dateModified" content="2023-09-26T10:26:05+09:00" />
-<meta itemprop="wordCount" content="347">
+<meta itemprop="wordCount" content="316">
 <meta itemprop="keywords" content="sql_mode,mysql,mariadb," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -180,12 +180,12 @@
 	<div class="toc__menu">
 		<nav id="TableOfContents">
   <ul>
-    <li><a href="#sql_mode-란">sql_mode 란?</a></li>
-    <li><a href="#구성-항목-요소">구성 항목 (요소)</a></li>
-    <li><a href="#적용방법">적용방법</a>
+    <li><a href="#sql_mode란">sql_mode란?</a></li>
+    <li><a href="#구성-항목요소">구성 항목(요소)</a></li>
+    <li><a href="#적용-방법">적용 방법</a>
       <ul>
-        <li><a href="#쿼리로-바로-적용하기">쿼리로 바로 적용하기</a></li>
-        <li><a href="#설정파일에서-적용하기">설정파일에서 적용하기</a></li>
+        <li><a href="#쿼리를-사용하여-직접-적용">쿼리를 사용하여 직접 적용</a></li>
+        <li><a href="#구성-파일에서-적용">구성 파일에서 적용</a></li>
       </ul>
     </li>
   </ul>
@@ -193,97 +193,93 @@
 	</div>
 </div><div class="content post__content clearfix">
 			<p> </p>
-<h2 id="sql_mode-란">sql_mode 란?</h2>
+<h1 id="sql_mode-mysql-및-mariadb에서의-중요한-설정">sql_mode: MySQL 및 MariaDB에서의 중요한 설정</h1>
+<p> </p>
+<h2 id="sql_mode란">sql_mode란?</h2>
 <hr>
 <ul>
-<li>MySQL 이나 Mariadb 에서 <strong>데이터베이스 서버가 수행하는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 구성 설정</strong>입니다.<br>
-이는 <strong>SQL 구문</strong>이나 <strong>데이터 유효성 검사</strong>, <strong>오류 처리</strong> 등을 어떻게 처리할 지 결정하며,<br>
-SQL 표준 및 데이터 무결성과 관련하여 <strong>데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정</strong>입니다.</li>
+<li>MySQL 또는 MariaDB에서 데이터베이스 서버에 의해 수행되는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 설정입니다.
+이는 <strong>SQL 구문</strong>, <strong>데이터 유효성 검사</strong>, <strong>오류 처리</strong> 등을 다루는 방법을 결정합니다.
+<strong>이는 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다.</strong></li>
 </ul>
-<p> </p>
-<h2 id="구성-항목-요소">구성 항목 (요소)</h2>
+<h2 id="구성-항목요소">구성 항목(요소)</h2>
 <hr>
 <ul>
 <li>
 <p><code>ANSI_QUOTES</code>
-활성화 시 쌍따옴표 (&quot;) 는 컬럼명, 테이블과 같은 식별자만 처리 할 수 있도록 한다.</p>
+활성화되면 이중 인용부호 (&quot;)는 열 이름 및 테이블과 같은 식별자만 처리하도록 허용합니다.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> <span style="color:#e6db74">&#34;COLUMN_NAME&#34;</span> <span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">&#34;TABLE_NAME&#34;</span>
 </span></span></code></pre></div></li>
 <li>
 <p><code>STRICT_TRANS_TABLE</code>
-컬럼 타입과 다를 경우 최대한 맞춰서 값을 입력하게 할 것인지 여부. OFF 상태일 경우 타입과 다르다면 오류 발생</p>
+컬럼 유형과 다를 경우 최대한 가깝게 값을 입력할지 여부를 결정합니다. OFF 상태일 때 유형이 다르면 오류가 발생합니다.</p>
 </li>
 <li>
 <p><code>STRICT_ALL_TABLE</code>
-<code>STRICT_TRANS_TABLE</code> 과 유사하며 해당 트랜잭션이 아닌 전체 테이블에 대해 엄격성을 적용</p>
+<code>STRICT_TRANS_TABLE</code>과 유사하지만 전체 테이블에 엄격성을 적용하며 트랜잭션만이 아닙니다.</p>
 </li>
 <li>
 <p><code>ERROR_FOR_DIVISION_BY_ZERO</code>
-0 으로 나누는 것에 대한 유효성 처리 (MODE(N,0). ON 상태일 시 0 으로 나눈 것에 대해 INSERT 를 수행 시 NULL 이 들어가면 오류 발생</p>
+0으로 나누기에 대한 유효성 처리 (MODE(N,0). ON 상태일 때 0으로 나누기에 대한 INSERT 수행 시 NULL이 입력되면 오류가 발생합니다.</p>
 </li>
 <li>
 <p><code>NO_ZERO_TIME</code>
-OFF 상태 일 시 datetime 필드에 값에 공백 입력 시 자동으로 <em>날짜형식 (0000-00-00)</em> 또는 <em>시간형식(0000-00-00 00:00:00)</em> 형식으로 등록</p>
+OFF 상태에서는 datetime 필드에 공백이 입력되면 <em>날짜 형식 (0000-00-00)</em> 또는 <em>시간 형식 (0000-00-00 00:00:00)</em> 형식으로 자동 등록됩니다.</p>
 </li>
 <li>
 <p><code>NO_ZERO_IN_TIME</code>
-ON 상태일 시 <strong>연, 월에 0 입력을 허용않는다</strong> <em>2023-00-12 08:57:11</em>: 과 같은 데이터를 삽입하려 한다면 오류가 발생</p>
+ON 상태일 때 <strong>연도 및 월에 대한 0 입력이 허용되지 않습니다.</strong> <em>2023-00-12 08:57:11</em> 과 같은 데이터를 삽입하려고하면 오류가 발생합니다.</p>
 </li>
 <li>
 <p><code>ALLOW_INVALID_DATES</code>
-ON 상태일 시, 잘못되지 않은 날짜의 삽입을 허용한다. 예를들어 <em>2023-02-31</em> 과 같이 유효하지 않은 날짜도 등록 가능</p>
+ON 상태에서는 잘못된 날짜의 삽입이 허용됩니다. 예를 들어 _2023-02-31_과 같은 잘못된 날짜도 등록할 수 있습니다.</p>
 </li>
 <li>
 <p><code>ONLY_FULL_GROUP_BY</code>
-GROUP BY 시 SELECT 절의 모든 필드가 포함되어야 한다. (v5.7 에서 추가)</p>
+GROUP BY 시 SELECT 절의 모든 필드를 포함해야 합니다. (v5.7에서 추가됨)</p>
 </li>
 <li>
 <p><code>NO_ENGINE_SUBSTITUTION</code>
-ON 상태일 시, CREATE, ALTER 시 사용가능한 engine 이 아니라면 오류 발생</p>
+ON 상태일 때 CREATE 또는 ALTER 중에 엔진을 사용할 수 없으면 오류가 발생합니다.</p>
 </li>
 <li>
 <p><code>NO_AUTO_CREATE_USER</code>
-사용자 계정 생성 처리 방법 중 하나로 MySQL 에서 클라이언트가 존재하지 않는 사용자 이름으로 데이터베이스 접속을 시도할 경우 기본동작은
-해당 이름과 함께 빈 비밀번호를 사용하여 새 사용자 계정을 생성하는 것이지만 해당 옵션이 ON 상태라면 오류 메시지와 함꼐 연결을 거부함. 예시로 아래와 같은 수행이 불가능.</p>
+사용자 계정 생성을 처리하는 MySQL의 방법 중 하나입니다. 클라이언트가 존재하지 않는 사용자 이름으로 데이터베이스에 연결하려고 할 때 기본 작업은
+해당 이름과 공백 비밀번호를 사용하여 새로운 사용자 계정을 만드는 것이지만 해당 옵션이 ON인 경우 연결이 오류 메시지와 함께 거부됩니다. 다음은 불가능한 예입니다.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  mysql <span style="color:#f92672">-</span>u root <span style="color:#f92672">-</span>p <span style="color:#f92672">&lt;</span> dump.<span style="color:#66d9ef">sql</span>
 </span></span></code></pre></div></li>
 </ul>
-<p> </p>
-<h2 id="적용방법">적용방법</h2>
+<h2 id="적용-방법">적용 방법</h2>
 <hr>
-<h3 id="쿼리로-바로-적용하기">쿼리로 바로 적용하기</h3>
+<h3 id="쿼리를-사용하여-직접-적용">쿼리를 사용하여 직접 적용</h3>
 <ul>
 <li>
-<p>현재 세션에만 설정하기</p>
+<p>현재 세션에만 설정</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> sql_mode<span style="color:#f92672">=</span>ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 </span></span></code></pre></div></li>
-</ul>
-<p> </p>
-<ul>
-<li>전역으로 설정하기
+<li>
+<p>전역적으로 설정</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> sql_mode<span style="color:#f92672">=</span>ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 </span></span></code></pre></div></li>
+<li>
+<p>쿼리로 설정하는 경우 <strong>현재 세션 또는 현재 실행 중인 서버 상태에만 적용되므로 서버 재시작이 발생하면 옵션이 적용되지 않습니다.</strong>
+따라서 위와 같이 별도로 설정 파일에 선언하여 설정을 일관되게 유지하려면 <strong><em>권장됩니다.</em></strong></p>
+</li>
 </ul>
-<p> </p>
-<ul>
-<li>쿼리로 설정할 경우 <strong>현재 세션이나 현재 실행중인 서버 상태만 적용되므로 서버 재기동이 발생 할 경우 해당 옵션이 적용되지 않게 된다.</strong>
-그러므로 위와 같이 쿼리로 따로 설정을 해주더라도 설정을 일관되게 유지시켜 주고 싶다면 <strong><em>설정파일에 따로 선언을 해두는 것을 추천</em></strong>  한다.</li>
-</ul>
-<p> </p>
-<h3 id="설정파일에서-적용하기">설정파일에서 적용하기</h3>
+<h3 id="구성-파일에서-적용">구성 파일에서 적용</h3>
 <ul>
 <li>
-<p>my.cnf (또는 my.ini) 에서 아래와 같이 설정한다.</p>
+<p>my.cnf(또는 my.ini)에 다음과 같이 설정합니다.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>...
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>mysqld<span style="color:#f92672">]</span>
 </span></span><span style="display:flex;"><span>sql_mode<span style="color:#f92672">=</span>ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>...
-</span></span></code></pre></div><p>위와 같이 설정 파일에 선언을 해두면 업데이트 등으로 인한 서버 재기동이 발생하여도 기존 환경과 동일하게 적용되므로 관련된 오류 상황에 대비 할 수 있다.</p>
+</span></span></code></pre></div><p>위와 같이 설정 파일에 선언하면 업데이트 등으로 서버가 다시 시작되더라도 기존 환경과 동일하게 적용되므로 관련 오류 상황에 대비할 수 있습니다.</p>
+<p> </p>
 </li>
 </ul>
-<p> </p>
 
 		</div>
 		<footer class="post__footer">

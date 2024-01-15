@@ -71,10 +71,8 @@ npm run build --mode local 정상적으로 진행 될 거라 생각했지만 아
       <pubDate>Tue, 26 Sep 2023 10:26:05 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode/</guid>
-      <description>sql_mode 란? MySQL 이나 Mariadb 에서 데이터베이스 서버가 수행하는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 구성 설정입니다.
-이는 SQL 구문이나 데이터 유효성 검사, 오류 처리 등을 어떻게 처리할 지 결정하며,
-SQL 표준 및 데이터 무결성과 관련하여 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다. 구성 항목 (요소) ANSI_QUOTES 활성화 시 쌍따옴표 (&amp;quot;) 는 컬럼명, 테이블과 같은 식별자만 처리 할 수 있도록 한다.
-SELECT &amp;#34;COLUMN_NAME&amp;#34; FROM &amp;#34;TABLE_NAME&amp;#34; STRICT_TRANS_TABLE 컬럼 타입과 다를 경우 최대한 맞춰서 값을 입력하게 할 것인지 여부.</description>
+      <description>sql_mode: MySQL 및 MariaDB에서의 중요한 설정 sql_mode란? MySQL 또는 MariaDB에서 데이터베이스 서버에 의해 수행되는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 설정입니다. 이는 SQL 구문, 데이터 유효성 검사, 오류 처리 등을 다루는 방법을 결정합니다. 이는 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다. 구성 항목(요소) ANSI_QUOTES 활성화되면 이중 인용부호 (&amp;quot;)는 열 이름 및 테이블과 같은 식별자만 처리하도록 허용합니다.
+SELECT &amp;#34;COLUMN_NAME&amp;#34; FROM &amp;#34;TABLE_NAME&amp;#34; STRICT_TRANS_TABLE 컬럼 유형과 다를 경우 최대한 가깝게 값을 입력할지 여부를 결정합니다.</description>
     </item>
     
     <item>
@@ -83,9 +81,9 @@ SELECT &amp;#34;COLUMN_NAME&amp;#34; FROM &amp;#34;TABLE_NAME&amp;#34; STRICT_TR
       <pubDate>Tue, 26 Sep 2023 09:40:29 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</guid>
-      <description>Mysql, Mariadb 사용 시 datetime 필드에 공백을 입력하고 싶거나
-혹은 기존까지 공백이 잘 들어갔는데 오류가 발생하는 케이스가 있을 경우 해결하는 내용입니다. 만약 기존에 아래의 쿼리처럼 datetime 필드에 공백을 넣었을 경우 문제가 없다가 갑자기 오류가 나는 상황이 발생하는 경우가 있습니다. UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ Error 1292: Incorrect datetime value: &#39;&#39; for column &#39;AGREE_DT&#39; at row 1
-만약, 이렇게 오류가 난다면 sql_mode 를 체크해봐야 합니다.</description>
+      <description>MySQL 및 MariaDB에서 데이트타임 필드에 공백 입력 시 발생하는 에러 해결 방법 Mysql이나 Mariadb를 사용할 때 데이트타임 필드에 공백을 입력해야 하는 상황이 발생하는데 그때 공백이 올바르게 입력되어도 에러가 발생하는 경우가 있을 경우 해결하는 케이스 입니다.
+에러 상황 다음과 같은 기존 쿼리에서 데이트타임 필드에 공백을 넣으면 문제가 없는 경우도 있지만 갑자기 에러가 발생할 수 있습니다.
+UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ 에러 내용: Error 1292: Incorrect datetime value: &#39;&#39; for column &#39;AGREE_DT&#39; at row 1</description>
     </item>
     
     <item>
@@ -132,8 +130,10 @@ Apache Portable Runtime 의 약자.</description>
       <pubDate>Mon, 18 Sep 2023 11:22:47 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-commands/</guid>
-      <description>MySQL / Mariadb 명령어 root 접속 (mysql 폴더 / bin 으로 이동해서 수행) ./mysql -u root -p 사용자 목록 use mysql; select user, host from user; 비밀번호 변경 mysqladmin -u아이디 -p기존패스워드 password 신규패스워드 인덱스 초기화 ALTER TABLE [table name] AUTO_INCREMENT = 1; 현재 커넥션 개수 보기 show global status like &amp;#39;threads_connected&amp;#39;; datetime #unix_time -&amp;gt; date_time from_unixtime( signdate , &amp;#34;%Y%m%d-%H%i%S&amp;#34;) MySQL 외부 접근 권한
-%: 외부접근 localhost: 내부접근 권한설정 #gtane all privileges on {db}.</description>
+      <description>MySQL/MariaDB: 명령어 및 관리에 대한 내용 1. 연결 설정 1.1 루트 연결 루트 사용자로 연결하려면 MySQL bin 폴더로 이동하고 다음 명령을 실행한다.
+./mysql -u root -p 1.2 사용자 목록 다음 SQL 쿼리로 사용자 및 해당 호스트 목록을 확인한다.
+use mysql; select user, host from user; 1.3 비밀번호 변경 mysqladmin 명령을 사용하여 사용자의 비밀번호를 변경한다.
+mysqladmin -uID -pOldPassword password NewPassword 2. 데이터베이스 작업 2.1 데이터베이스 목록 사용 가능한 데이터베이스 목록을 확인한다.</description>
     </item>
     
     <item>

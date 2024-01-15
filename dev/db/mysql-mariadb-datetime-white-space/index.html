@@ -37,7 +37,7 @@
 		<meta itemprop="name" content="[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)">
 <meta itemprop="description" content="Mysql, Maraidb 에서 datetime 필드에 공백을 넣는 방법 또는 공백 시 오류 상황."><meta itemprop="datePublished" content="2023-09-26T09:40:29+09:00" />
 <meta itemprop="dateModified" content="2023-09-26T09:40:29+09:00" />
-<meta itemprop="wordCount" content="233">
+<meta itemprop="wordCount" content="216">
 <meta itemprop="keywords" content="mysql,mariadb,NO_ZERO_DATE,NO_ZERO_IN_DATE,datetime,sql_mode," />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
@@ -174,46 +174,59 @@
 	</span>
 </div></div>
 		</header>
-		<div class="content post__content clearfix">
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#에러-상황">에러 상황</a></li>
+    <li><a href="#해결-방법">해결 방법</a>
+      <ul>
+        <li><a href="#설정-변경">설정 변경</a></li>
+        <li><a href="#글로벌-설정">글로벌 설정</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
 			<p> </p>
+<h1 id="mysql-및-mariadb에서-데이트타임-필드에-공백-입력-시-발생하는-에러-해결-방법">MySQL 및 MariaDB에서 데이트타임 필드에 공백 입력 시 발생하는 에러 해결 방법</h1>
+<p>Mysql이나 Mariadb를 사용할 때 데이트타임 필드에 공백을 입력해야 하는 상황이 발생하는데 <br>
+그때 공백이 올바르게 입력되어도 에러가 발생하는 경우가 있을 경우 해결하는 케이스 입니다.</p>
+<h2 id="에러-상황">에러 상황</h2>
+<p>다음과 같은 기존 쿼리에서 데이트타임 필드에 공백을 넣으면 문제가 없는 경우도 있지만 갑자기 에러가 발생할 수 있습니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">USER</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> AGREE_DT <span style="color:#f92672">=</span> :AGREE_DT,
+</span></span><span style="display:flex;"><span>       AGREE_SEQ <span style="color:#f92672">=</span> :AGREE_SEQ
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> USER_SEQ <span style="color:#f92672">=</span> :USER_SEQ
+</span></span></code></pre></div><p>에러 내용: <code>Error 1292: Incorrect datetime value: '' for column 'AGREE_DT' at row 1</code></p>
+<p> </p>
+<h2 id="해결-방법">해결 방법</h2>
+<p>이런 경우에는 <code>sql_mode</code>를 확인해야 합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">@@</span>sql_mode
+</span></span></code></pre></div><p>위와 같이 쿼리를 수행할 때 <code>NO_ZERO_DATE</code> 및 <code>NO_ZERO_IN_TIME</code>이 항목 중에 있는지 확인해야 합니다.</p>
 <ul>
-<li>Mysql, Mariadb 사용 시 datetime 필드에 공백을 입력하고 싶거나<br>
-혹은 기존까지 공백이 잘 들어갔는데 오류가 발생하는 케이스가 있을 경우 해결하는 내용입니다.</li>
+<li>해당 항목이 <strong>보이면 ON</strong>이며, <strong>보이지 않으면 OFF</strong>입니다.</li>
 </ul>
-<hr>
-<p> </p>
+<p>이 두 옵션에 대해 먼저 알아봅시다.</p>
 <ul>
-<li>만약 기존에 아래의 쿼리처럼 datetime 필드에 공백을 넣었을 경우 문제가 없다가 갑자기 오류가 나는 상황이 발생하는 경우가 있습니다.</li>
+<li><code>NO_ZERO_TIME</code>: 데이트타임 필드에 공백 값이 입력되면 자동으로 <code>0000-00-00 00:00:00</code> 형식으로 등록됨을 보장합니다.</li>
+<li><code>NO_ZERO_IN_TIME</code>: 연도 및 월에 0을 입력하는 것을 허용하지 않습니다. _2023-00-12 08:57:11_과 같은 데이터를 삽입하려고 하면 에러가 발생합니다.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">USER</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">SET</span>    AGREE_DT <span style="color:#f92672">=</span> :AGREE_DT,
-</span></span><span style="display:flex;"><span>         AGREE_SEQ <span style="color:#f92672">=</span> :AGREE_SEQ
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">WHERE</span>  USER_SEQ <span style="color:#f92672">=</span> :USER_SEQ
-</span></span></code></pre></div><blockquote>
-<p><code>Error 1292: Incorrect datetime value: '' for column 'AGREE_DT' at row 1</code></p>
-</blockquote>
-<p> </p>
-<p>만약, 이렇게 오류가 난다면 <code>sql_mode</code> 를 체크해봐야 합니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">@@</span>sql_mode
-</span></span></code></pre></div><p> 
-위와 같이 쿼리를 수행하였을 때 조회되는 항목 중, <code>NO_ZERO_DATE</code>, <code>NO_ZERO_IN_TIME</code> 의 여부를 확인하여야 합니다.</p>
-<p>만약 <strong>항목이 조회 된다면 ON</strong> 상태이고 <strong>조회되지 않는다면 OFF</strong> 상태 입니다.</p>
-<p>먼저 이 두 가지 옵션에 대해 알아보면..</p>
-<blockquote>
-<p><code>NO_ZERO_TIME</code> 은 만약 공백으로 datetime 필드에 값을 입력 시 자동으로 <code>0000-00-00 00:00:00</code> 형식으로 등록되게 해줍니다.</p>
-<p><code>NO_ZERO_IN_TIME</code> 은 연, 월에 0 입력을 허용하지 않는다는 것으로 만약 <em>2023-00-12 08:57:11</em> 과 같은 데이터를 삽입하려 한다면 오류가 발생하게 됩니다.</p>
-</blockquote>
-<p> </p>
-<p>만약 <strong>공백으로 입력시 기본값으로 <em>0000-00-00 00:00:00</em> 이 들어가게 하게 하고 싶다면 OFF</strong> 상태여야 하고<br>
-<strong>정상적인 datetime 형태로만 등록이 가능하게 하고 싶다면 ON</strong> 상태여야 합니다.</p>
-<p>위 옵션에 대해 ON/OFF 를 설정하고 싶다면 아래와 같은 쿼리를 수행하면 됩니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> sql_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLE,NO_ZERO_TIME,NO_ZERO_IN_DATE&#39;</span>
-</span></span></code></pre></div><p><code>STRICT_TRANS_TABLE</code> 옵션은 요청 트랜잭션에 대해 데이터 검증 및 처리를 담당하는 옵션으로 명시적으로 <code>ON</code> 상태를 유지하도록 합니다.</p>
-<p> </p>
-<p>만약 <code>GLOBAL</code> 로 설정하고 싶다면 <code>super 권한 (ex:root)</code> 을 가진 계정으로 아래와 같이 수행하면 됩니다.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>  <span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> sql_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLE,NO_ZERO_DATE,NO_ZERO_IN_DATE&#39;</span>
-</span></span></code></pre></div><p><code>sql_mode</code> 에 대해 조금 더 자세한 내용을 알고 싶다면<br>
-<strong>[Mysql,Mariadb] sql_mode 구성 항목 및 설정 (<a href="https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode">https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode</a>)</strong> 을 참고해주시기 바랍니다.</p>
+<h3 id="설정-변경">설정 변경</h3>
+<ul>
+<li>빈 공백에 <strong>기본값으로 _0000-00-00 00:00:00_을 입력하려면 OFF</strong>이어야 합니다.</li>
+<li>일반 데이트타임 형식으로만 등록하려면 ON이어야 합니다.</li>
+</ul>
+<p>위의 옵션을 설정하려면 다음 쿼리를 수행하면 됩니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">SESSION</span> sql_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLE,NO_ZERO_TIME,NO_ZERO_IN_DATE&#39;</span>
+</span></span></code></pre></div><p><code>STRICT_TRANS_TABLE</code> 옵션은 요청 트랜잭션에 대한 데이터 검증 및 처리를 담당하며 명시적으로 <code>ON</code> 상태로 유지됩니다.</p>
+<h3 id="글로벌-설정">글로벌 설정</h3>
+<p>만약 <code>GLOBAL</code>로 설정하려면 다음과 같이 수행합니다. 이때는 <code>super privileges</code>가 있는 계정 (예: root)으로 수행되어야 합니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> sql_mode<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;STRICT_TRANS_TABLE,NO_ZERO_DATE,NO_ZERO_IN_DATE&#39;</span>
+</span></span></code></pre></div><p><code>sql_mode</code>에 대해서는 [Mysql, MariaDB] sql_mode 구성 항목 및 설정 (<a href="https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode">https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode</a>)을 참조하세요.</p>
 <p> </p>
 
 		</div>

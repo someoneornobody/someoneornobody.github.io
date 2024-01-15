@@ -13,8 +13,10 @@
       <pubDate>Mon, 18 Sep 2023 11:22:47 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-commands/</guid>
-      <description>MySQL / Mariadb 명령어 root 접속 (mysql 폴더 / bin 으로 이동해서 수행) ./mysql -u root -p 사용자 목록 use mysql; select user, host from user; 비밀번호 변경 mysqladmin -u아이디 -p기존패스워드 password 신규패스워드 인덱스 초기화 ALTER TABLE [table name] AUTO_INCREMENT = 1; 현재 커넥션 개수 보기 show global status like &amp;#39;threads_connected&amp;#39;; datetime #unix_time -&amp;gt; date_time from_unixtime( signdate , &amp;#34;%Y%m%d-%H%i%S&amp;#34;) MySQL 외부 접근 권한
-%: 외부접근 localhost: 내부접근 권한설정 #gtane all privileges on {db}.</description>
+      <description>MySQL/MariaDB: 명령어 및 관리에 대한 내용 1. 연결 설정 1.1 루트 연결 루트 사용자로 연결하려면 MySQL bin 폴더로 이동하고 다음 명령을 실행한다.
+./mysql -u root -p 1.2 사용자 목록 다음 SQL 쿼리로 사용자 및 해당 호스트 목록을 확인한다.
+use mysql; select user, host from user; 1.3 비밀번호 변경 mysqladmin 명령을 사용하여 사용자의 비밀번호를 변경한다.
+mysqladmin -uID -pOldPassword password NewPassword 2. 데이터베이스 작업 2.1 데이터베이스 목록 사용 가능한 데이터베이스 목록을 확인한다.</description>
     </item>
     
   </channel>

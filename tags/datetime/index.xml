@@ -13,9 +13,9 @@
       <pubDate>Tue, 26 Sep 2023 09:40:29 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</guid>
-      <description>Mysql, Mariadb 사용 시 datetime 필드에 공백을 입력하고 싶거나
-혹은 기존까지 공백이 잘 들어갔는데 오류가 발생하는 케이스가 있을 경우 해결하는 내용입니다. 만약 기존에 아래의 쿼리처럼 datetime 필드에 공백을 넣었을 경우 문제가 없다가 갑자기 오류가 나는 상황이 발생하는 경우가 있습니다. UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ Error 1292: Incorrect datetime value: &#39;&#39; for column &#39;AGREE_DT&#39; at row 1
-만약, 이렇게 오류가 난다면 sql_mode 를 체크해봐야 합니다.</description>
+      <description>MySQL 및 MariaDB에서 데이트타임 필드에 공백 입력 시 발생하는 에러 해결 방법 Mysql이나 Mariadb를 사용할 때 데이트타임 필드에 공백을 입력해야 하는 상황이 발생하는데 그때 공백이 올바르게 입력되어도 에러가 발생하는 경우가 있을 경우 해결하는 케이스 입니다.
+에러 상황 다음과 같은 기존 쿼리에서 데이트타임 필드에 공백을 넣으면 문제가 없는 경우도 있지만 갑자기 에러가 발생할 수 있습니다.
+UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ 에러 내용: Error 1292: Incorrect datetime value: &#39;&#39; for column &#39;AGREE_DT&#39; at row 1</description>
     </item>
     
   </channel>
