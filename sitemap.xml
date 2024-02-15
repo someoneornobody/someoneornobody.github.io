@@ -2,6 +2,71 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://someoneornobody.github.io/life/places/pocheon-sunbeam-maru/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/life/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/categories/places/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EC%95%84%EA%B8%B0%EC%88%98%EC%98%81%EC%9E%A5/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%EC%98%A8%EC%88%98%ED%92%80/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%ED%82%A4%EC%A6%88%ED%92%80%EB%B9%8C%EB%9D%BC/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%ED%8C%AC%EC%85%98/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%ED%8F%AC%EC%B2%9C/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%ED%8F%AC%EC%B2%9C%ED%82%A4%EC%A6%88%ED%8C%AC%EC%85%98/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://someoneornobody.github.io/tags/%ED%8F%AC%EC%B2%9C%ED%82%A4%EC%A6%88%ED%92%80%EB%B9%8C%EB%9D%BC/</loc>
+    <lastmod>2024-02-15T14:17:09+09:00</lastmod>
+    <changefreq>always</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>https://someoneornobody.github.io/life/places/paju-munsterdam/</loc>
     <lastmod>2024-01-19T08:03:12+09:00</lastmod>
     <changefreq>always</changefreq>
@@ -12,32 +77,7 @@
     <changefreq>always</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>https://someoneornobody.github.io/categories/</loc>
-    <lastmod>2024-01-19T08:03:12+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/life/</loc>
-    <lastmod>2024-01-19T08:03:12+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>https://someoneornobody.github.io/tags/munsterdam/</loc>
-    <lastmod>2024-01-19T08:03:12+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/categories/places/</loc>
-    <lastmod>2024-01-19T08:03:12+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/</loc>
-    <lastmod>2024-01-19T08:03:12+09:00</lastmod>
-    <changefreq>always</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>https://someoneornobody.github.io/tags/</loc>
     <lastmod>2024-01-19T08:03:12+09:00</lastmod>
     <changefreq>always</changefreq>
     <priority>0.5</priority>
