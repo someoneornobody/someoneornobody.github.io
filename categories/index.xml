@@ -6,69 +6,56 @@
     <description>Recent content in Categories on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 15 Feb 2024 14:17:09 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 May 2024 13:57:54 +0900</lastBuildDate>
+    <atom:link href="https://someoneornobody.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>places</title>
+      <title>Places</title>
       <link>https://someoneornobody.github.io/categories/places/</link>
-      <pubDate>Thu, 15 Feb 2024 14:17:09 +0900</pubDate>
-      
+      <pubDate>Wed, 08 May 2024 13:57:54 +0900</pubDate>
       <guid>https://someoneornobody.github.io/categories/places/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>vue</title>
+      <title>Vue</title>
       <link>https://someoneornobody.github.io/categories/vue/</link>
       <pubDate>Thu, 16 Nov 2023 12:03:33 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/categories/vue/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>db</title>
+      <title>Db</title>
       <link>https://someoneornobody.github.io/categories/db/</link>
       <pubDate>Tue, 26 Sep 2023 10:26:05 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/categories/db/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hugo</title>
+      <title>Hugo</title>
       <link>https://someoneornobody.github.io/categories/hugo/</link>
       <pubDate>Mon, 25 Sep 2023 07:11:39 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/categories/hugo/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>server</title>
+      <title>Server</title>
       <link>https://someoneornobody.github.io/categories/server/</link>
       <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/categories/server/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>javascript</title>
+      <title>Javascript</title>
       <link>https://someoneornobody.github.io/categories/javascript/</link>
       <pubDate>Tue, 19 Sep 2023 07:48:19 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/categories/javascript/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>news</title>
+      <title>News</title>
       <link>https://someoneornobody.github.io/categories/news/</link>
       <pubDate>Thu, 14 Sep 2023 06:52:27 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/categories/news/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

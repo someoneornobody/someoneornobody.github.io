@@ -1,23 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nexttick on Someone or Nobody</title>
+    <title>Nexttick on Someone or Nobody</title>
     <link>https://someoneornobody.github.io/tags/nexttick/</link>
-    <description>Recent content in nexttick on Someone or Nobody</description>
+    <description>Recent content in Nexttick on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 08 Nov 2023 13:18:38 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/nexttick/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Nov 2023 13:18:38 +0900</lastBuildDate>
+    <atom:link href="https://someoneornobody.github.io/tags/nexttick/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Vue] nextTick 활용 (#1)</title>
       <link>https://someoneornobody.github.io/dev/vue/nexttick/</link>
       <pubDate>Wed, 08 Nov 2023 13:18:38 +0900</pubDate>
-      
       <guid>https://someoneornobody.github.io/dev/vue/nexttick/</guid>
-      <description>input 요소 처리 시 nextTick 이 사용 될 만한 예제에 대해 설명해 보겠습니다.
-먼저 input 에 대한 입력 조건은 아래와 같습니다.
-숫자만 입력 가능하다. 6자리 이상은 입력되지 않는다. 위에 대한 조건을 바탕으로 하는 기본 코드는 아래와 같습니다.
-&amp;lt;template&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;birth&amp;#34; placeholder=&amp;#34;ex) 200414&amp;#34; v-model=&amp;#34;birth&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script setup&amp;gt; import {ref, watch} from &amp;#39;vue&amp;#39; const birth = ref(&amp;#39;&amp;#39;) watch(() =&amp;gt; birth.value, newValue =&amp;gt; { if (newValue.length &amp;gt; 6) { birth.value = birth.</description>
+      <description>input 요소 처리 시 nextTick 이 사용 될 만한 예제에 대해 설명해 보겠습니다.&#xA;먼저 input 에 대한 입력 조건은 아래와 같습니다.&#xA;숫자만 입력 가능하다. 6자리 이상은 입력되지 않는다. 위에 대한 조건을 바탕으로 하는 기본 코드는 아래와 같습니다.&#xA;&amp;lt;template&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;birth&amp;#34; placeholder=&amp;#34;ex) 200414&amp;#34; v-model=&amp;#34;birth&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script setup&amp;gt; import {ref, watch} from &amp;#39;vue&amp;#39; const birth = ref(&amp;#39;&amp;#39;) watch(() =&amp;gt; birth.value, newValue =&amp;gt; { if (newValue.length &amp;gt; 6) { birth.value = birth.</description>
     </item>
-    
   </channel>
 </rss>
