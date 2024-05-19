@@ -6,15 +6,8 @@
     <description>Recent content in Db on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 26 Sep 2023 10:26:05 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 26 Sep 2023 09:40:29 +0900</lastBuildDate>
     <atom:link href="https://someoneornobody.github.io/categories/db/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>[Mysql,Mariadb] sql_mode 구성 항목 및 설정</title>
-      <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode/</link>
-      <pubDate>Tue, 26 Sep 2023 10:26:05 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode/</guid>
-      <description>sql_mode: MySQL 및 MariaDB에서의 중요한 설정 sql_mode란? MySQL 또는 MariaDB에서 데이터베이스 서버에 의해 수행되는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 설정입니다. 이는 SQL 구문, 데이터 유효성 검사, 오류 처리 등을 다루는 방법을 결정합니다. 이는 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다. 구성 항목(요소) ANSI_QUOTES 활성화되면 이중 인용부호 (&amp;quot;)는 열 이름 및 테이블과 같은 식별자만 처리하도록 허용합니다.&#xA;SELECT &amp;#34;COLUMN_NAME&amp;#34; FROM &amp;#34;TABLE_NAME&amp;#34; STRICT_TRANS_TABLE 컬럼 유형과 다를 경우 최대한 가깝게 값을 입력할지 여부를 결정합니다.</description>
-    </item>
     <item>
       <title>[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</title>
       <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</link>

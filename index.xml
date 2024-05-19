@@ -93,13 +93,6 @@
       <description>개요 pinia store 에서 vue-router 사용 시 undefined 로 인해 정상적인 동작을 하지않는 상황이 발생 사실 이건 당연한, 간단한 구조적 문제였는데.. 저와 같은 실수를 하는 사람이 없길 바라며 작성하는 게시글입니다.. 개발 환경 build tool: vite framework: vue3 state management: pinia 코드 main.js import { createApp } from &amp;#39;vue&amp;#39; import { createPinia } from &amp;#39;pinia&amp;#39; import App from &amp;#39;./App.vue&amp;#39; import router from &amp;#39;./router&amp;#39; const app = createApp(App) app.use(createPinia()) app.use(router) app.mount(&amp;#39;#app&amp;#39;) stores/common.</description>
     </item>
     <item>
-      <title>[Mysql,Mariadb] sql_mode 구성 항목 및 설정</title>
-      <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode/</link>
-      <pubDate>Tue, 26 Sep 2023 10:26:05 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-sql-mode/</guid>
-      <description>sql_mode: MySQL 및 MariaDB에서의 중요한 설정 sql_mode란? MySQL 또는 MariaDB에서 데이터베이스 서버에 의해 수행되는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 설정입니다. 이는 SQL 구문, 데이터 유효성 검사, 오류 처리 등을 다루는 방법을 결정합니다. 이는 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다. 구성 항목(요소) ANSI_QUOTES 활성화되면 이중 인용부호 (&amp;quot;)는 열 이름 및 테이블과 같은 식별자만 처리하도록 허용합니다.&#xA;SELECT &amp;#34;COLUMN_NAME&amp;#34; FROM &amp;#34;TABLE_NAME&amp;#34; STRICT_TRANS_TABLE 컬럼 유형과 다를 경우 최대한 가깝게 값을 입력할지 여부를 결정합니다.</description>
-    </item>
-    <item>
       <title>[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</title>
       <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</link>
       <pubDate>Tue, 26 Sep 2023 09:40:29 +0900</pubDate>
@@ -140,13 +133,6 @@
       <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
       <guid>https://someoneornobody.github.io/dev/vue/use-global-properties/</guid>
       <description>아래는vue3 에서 script setup 방식으로 전역변수를 사용하는 예제 입니다. 전역변수 설정 case 1 provide 를 사용하여 전역변수를 설정하는 방법. file: main.js ... const appTitle = &amp;#39;hello nobody&amp;#39; const app = createApp(app) .provide(&amp;#39;$title&amp;#39;, appTitle) .mount(&amp;#39;#app&amp;#39;) case 2 config.globalProperties 를 사용하는 방식으로 provide 와 동일하게 vue3 에서 전역 애플리케이션 인스턴스에 속성을 추가할 수 있는 기능. file: main.js ... const appTitle = &amp;#39;hello nobody&amp;#39; const app = createApp(app) ... app.config.globalProperties.$title = appTitle .</description>
-    </item>
-    <item>
-      <title>[NEWS] iPhone15</title>
-      <link>https://someoneornobody.github.io/life/news/iphone15/</link>
-      <pubDate>Thu, 14 Sep 2023 06:52:27 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/life/news/iphone15/</guid>
-      <description>본 게시글은 개인적인 참고를 위해 작성되었으므로 제게 필요한 정보만 간략히 모아두었습니다&#xA;이미지의 출처는 공식홈페이지 (https://apple.com) 입니다&#xA;가격 모델 128G 256G 512G 1TB 15 125만원 140만원 170만원 X 15 PLUS 135만원 150만원 180만원 X 15 PRO 155만원 170만원 200만원 X 15 PRO MAX X 190만원 220만원 250만원 CPU, RAM 모델 CPU RAM 15, 15 PLUS A16 (iPhone14 Pro 와 동일) 6G 15 PRO, 15 PRO MAX A17 Pro (3나노 공정) 8G 색상 모델 색상 15 , 15 PLUS BLUE, PINK, YELLOW, GREEN, BLACK 15 PRO, 15 PRO MAX NATURAL TITAN, BLUE TITAN, WHITE TITAN, BLACK TITAN 기타 카메라 15 PRO: 0.</description>
     </item>
     <item>
       <title>[HUGO] Github 연동하기</title>

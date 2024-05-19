@@ -220,27 +220,6 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
-			<a href="/dev/db/mysql-mariadb-sql-mode/" rel="bookmark">
-			[Mysql,Mariadb] sql_mode 구성 항목 및 설정
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-26T10:26:05&#43;09:00">2023-09-26 10:26:05</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/db/" rel="category">Db</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		sql_mode: MySQL 및 MariaDB에서의 중요한 설정 sql_mode란? MySQL 또는 MariaDB에서 데이터베이스 서버에 의해 수행되는 SQL 작업의 동작 및 유효성(엄격성)을 정의하는 설정입니다. 이는 SQL 구문, 데이터 유효성 검사, 오류 처리 등을 다루는 방법을 결정합니다. 이는 데이터베이스의 호환성 및 동작에 영향을 미칠 수 있는 중요한 설정입니다. 구성 항목(요소) ANSI_QUOTES 활성화되면 이중 인용부호 (&quot;)는 열 이름 및 테이블과 같은 식별자만 처리하도록 허용합니다.
-SELECT &#34;COLUMN_NAME&#34; FROM &#34;TABLE_NAME&#34; STRICT_TRANS_TABLE 컬럼 유형과 다를 경우 최대한 가깝게 값을 입력할지 여부를 결정합니다.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/db/mysql-mariadb-sql-mode/">Read more…</a>
-	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
 			<a href="/dev/db/mysql-mariadb-datetime-white-space/" rel="bookmark">
 			[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)
 			</a>
@@ -283,12 +262,36 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-write-article/">Read more…</a>
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/server/apache-binary-install/" rel="bookmark">
+			[Apache] 아파치 2.2.34 바이너리 설치
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-20T07:17:04&#43;09:00">2023-09-20 07:17:04</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/server/" rel="category">Server</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		개요 및 준비사항 - Apache 설치 시 OS에 필요한 라이브러리들이 없다고 가정하고(가끔 인프라쪽에 서버 생성 요청할때.. 정말 아무 라이브러리도 없는 쌩 서버만 주는 경우가 있죠..) , 필요한 라이브러리들 부터 순차적으로 설치 후 apache 를 설치하는 내용입니다.
+- 서버 설치 환경은 CentOS 7.5 버전 입니다
+Apache 소스 컴파일 설치 시 필요한 라이브러리 (괄호안의 숫자는 현 문서에서 다루는 버전입니다) apache (v2.2.34)
+Apache Http server. 웹 서버. download: https://httpd.apache.org/download.cgi apr (v1.7.0)
+Apache Portable Runtime 의 약자.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/server/apache-binary-install/">Read more…</a>
+	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/page/2/">«</a>
-	<span class="pagination__item pagination__item--current">3/5</span>
+	<span class="pagination__item pagination__item--current">3/4</span>
 	<a class="pagination__item pagination__item--next btn" href="/page/4/">»</a>
 </div>
 
@@ -308,7 +311,7 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 		<ul class="widget__list">
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/db/">Db</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">3</span>
+				<span class="widget__counter widget__counter--bubble">2</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
@@ -316,10 +319,6 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
-				</li>
-			<li class="widget__item">
-				<a class="widget__link" href="/categories/news/">News</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
 			<li class="widget__item">
@@ -372,15 +371,13 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 		<a class="widget-taglist__link widget__link btn" href="/tags/go/" title="Go">Go (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/hugo/" title="Hugo">Hugo (3)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/inject/" title="Inject">Inject (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/iphone/" title="Iphone">Iphone (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/iphone15/" title="Iphone15">Iphone15 (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/local/" title="Local">Local (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/manual/" title="Manual">Manual (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="Mariadb">Mariadb (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mariadb/" title="Mariadb">Mariadb (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/mode/" title="Mode">Mode (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/module/" title="Module">Module (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/munsterdam/" title="Munsterdam">Munsterdam (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="Mysql">Mysql (3)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/mysql/" title="Mysql">Mysql (2)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/nexttick/" title="Nexttick">Nexttick (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_date/" title="NO_ZERO_DATE">NO_ZERO_DATE (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/no_zero_in_date/" title="NO_ZERO_IN_DATE">NO_ZERO_IN_DATE (1)</a>
@@ -391,7 +388,7 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 		<a class="widget-taglist__link widget__link btn" href="/tags/setter/" title="Setter">Setter (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/songdo/" title="Songdo">Songdo (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/soopia/" title="Soopia">Soopia (1)</a>
-		<a class="widget-taglist__link widget__link btn" href="/tags/sql_mode/" title="Sql_mode">Sql_mode (2)</a>
+		<a class="widget-taglist__link widget__link btn" href="/tags/sql_mode/" title="Sql_mode">Sql_mode (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/ssg/" title="Ssg">Ssg (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/static-site-generators/" title="Static Site Generators">Static Site Generators (1)</a>
 		<a class="widget-taglist__link widget__link btn" href="/tags/store/" title="Store">Store (2)</a>
