@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getter on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/tags/getter/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 19 Oct 2023 13:06:30 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/getter/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Vue] computed property 값 변경하기</title>
+      <link>https://someoneornobody.github.io/dev/vue/setter-getter/</link>
+      <pubDate>Thu, 19 Oct 2023 13:06:30 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/vue/setter-getter/</guid>
+      <description>화면에서 computed 속성의 값을 변경 시킬 경우 발생하는 오류와 이에 대한 해결 방법을 이야기하고자 한다.
+먼저, 아래의 소스를 보자.
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;p&amp;gt;computed 값: {{ compDefaultValue }}&amp;lt;/p&amp;gt; &amp;lt;button @click=&amp;#34;increase&amp;#34;&amp;gt;문구 변경&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data: () =&amp;gt; ({ defaultValue: 0 }), computed: { compDefaultValue() { return this.defaultValue } }, methods: { increase() { this.compDefaultValue = 1 } } } &amp;lt;/script&amp;gt; 위 소스에서 문구 변경을 클릭할 경우 호출되는 increase 함수에서 this.</description>
+    </item>
+    
+  </channel>
+</rss>

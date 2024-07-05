@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue3 on Someone or Nobody</title>
-    <link>https://someoneornobody.github.io/tags/vue3/</link>
+    <link>http://localhost:1313/tags/vue3/</link>
     <description>Recent content in Vue3 on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 26 Oct 2023 10:37:09 +0900</lastBuildDate>
-    <atom:link href="https://someoneornobody.github.io/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Vue] import.meta.env.MODE 값 설정하기</title>
-      <link>https://someoneornobody.github.io/dev/vue/set-env-mode/</link>
+      <link>http://localhost:1313/dev/vue/set-env-mode/</link>
       <pubDate>Thu, 26 Oct 2023 10:37:09 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/set-env-mode/</guid>
+      <guid>http://localhost:1313/dev/vue/set-env-mode/</guid>
       <description>개발환경 현재 개발중인 환경은 아래와 같다&#xA;front framework: vue3 (v3.2.13) build tool: vite (v3.1.9) 상황 개발을 하다보면 local, dev, prod 와 같은 개발환경에 따라 다른 처리가 필요한 부분이 꼭 생기게 된다.&#xA;vue3, vite 를 사용하여 개발하는 지금, 이러한 처리가 필요한 부분이 발생하여 해당 환경에 맞게 처리 후&#xA;테스트 할 환경으로 빌드를 하기 위해 아래와 같이 빌드를 실행하였다.&#xA;npm run build --mode local 정상적으로 진행 될 거라 생각했지만 아래와 같은 오류가 발생하였다.</description>
     </item>
     <item>
       <title>[Vue] Pinia Store 에서 vue-router 사용하기</title>
-      <link>https://someoneornobody.github.io/dev/vue/router-use-in-pinia-store/</link>
+      <link>http://localhost:1313/dev/vue/router-use-in-pinia-store/</link>
       <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/router-use-in-pinia-store/</guid>
+      <guid>http://localhost:1313/dev/vue/router-use-in-pinia-store/</guid>
       <description>개요 pinia store 에서 vue-router 사용 시 undefined 로 인해 정상적인 동작을 하지않는 상황이 발생 사실 이건 당연한, 간단한 구조적 문제였는데.. 저와 같은 실수를 하는 사람이 없길 바라며 작성하는 게시글입니다.. 개발 환경 build tool: vite framework: vue3 state management: pinia 코드 main.js import { createApp } from &amp;#39;vue&amp;#39; import { createPinia } from &amp;#39;pinia&amp;#39; import App from &amp;#39;./App.vue&amp;#39; import router from &amp;#39;./router&amp;#39; const app = createApp(App) app.use(createPinia()) app.use(router) app.mount(&amp;#39;#app&amp;#39;) stores/common.</description>
     </item>
     <item>
       <title>[Vue] 전역 변수 사용하기 (#1)</title>
-      <link>https://someoneornobody.github.io/dev/vue/use-global-properties/</link>
+      <link>http://localhost:1313/dev/vue/use-global-properties/</link>
       <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/use-global-properties/</guid>
+      <guid>http://localhost:1313/dev/vue/use-global-properties/</guid>
       <description>아래는vue3 에서 script setup 방식으로 전역변수를 사용하는 예제 입니다. 전역변수 설정 case 1 provide 를 사용하여 전역변수를 설정하는 방법. file: main.js ... const appTitle = &amp;#39;hello nobody&amp;#39; const app = createApp(app) .provide(&amp;#39;$title&amp;#39;, appTitle) .mount(&amp;#39;#app&amp;#39;) case 2 config.globalProperties 를 사용하는 방식으로 provide 와 동일하게 vue3 에서 전역 애플리케이션 인스턴스에 속성을 추가할 수 있는 기능. file: main.js ... const appTitle = &amp;#39;hello nobody&amp;#39; const app = createApp(app) ... app.config.globalProperties.$title = appTitle .</description>
     </item>
   </channel>

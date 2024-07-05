@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>포시즌힐링팜 on Someone or Nobody</title>
-    <link>https://someoneornobody.github.io/tags/%ED%8F%AC%EC%8B%9C%EC%A6%8C%ED%9E%90%EB%A7%81%ED%8C%9C/</link>
+    <link>http://localhost:1313/tags/%ED%8F%AC%EC%8B%9C%EC%A6%8C%ED%9E%90%EB%A7%81%ED%8C%9C/</link>
     <description>Recent content in 포시즌힐링팜 on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 09 Jan 2024 14:32:57 +0900</lastBuildDate>
-    <atom:link href="https://someoneornobody.github.io/tags/%ED%8F%AC%EC%8B%9C%EC%A6%8C%ED%9E%90%EB%A7%81%ED%8C%9C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%ED%8F%AC%EC%8B%9C%EC%A6%8C%ED%9E%90%EB%A7%81%ED%8C%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[수원] 포시즌힐링팜 - 아이와 함께하는 (진짜) 즐거운 농장체험</title>
-      <link>https://someoneornobody.github.io/life/places/suwon-fourseason-healing-farm/</link>
+      <link>http://localhost:1313/life/places/suwon-fourseason-healing-farm/</link>
       <pubDate>Tue, 09 Jan 2024 14:32:57 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/life/places/suwon-fourseason-healing-farm/</guid>
+      <guid>http://localhost:1313/life/places/suwon-fourseason-healing-farm/</guid>
       <description>오늘은 수원 에 위치한 포시즌힐링팜 에 대한 소개를 하고자 합니다.&#xA;주소는 경기 수원시 권선구 서수원로594번길 316-25 이고 위치는 아래와 같이 서수원IC 와 가까이 위치해 있습니다.&#xA;가는 길이 조금 외지기도 하고.. 출입구로 나있는 조금 긴 논밭길이 외길이라 운전은 조금 조심하셔야 합니다.&#xA;포시즌힐링팜의 주차장은 나름 넓다면 넓고 좁다면 좁은데요.&#xA;일단은 주차안내를 해주시는 분이 계셔서 주차자체는 어렵지 않습니다.&#xA;그리고 내부적으로 인원을 제한하는 건지는 모르겠는데..&#xA;딱 차 오고가고 할 수 있는 만큼만 예약을 받고 있는 것 같기도 해요.</description>
     </item>
   </channel>

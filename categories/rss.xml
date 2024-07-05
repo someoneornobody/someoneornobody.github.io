@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/categories/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Tue, 18 Jun 2024 09:43:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Places</title>
+      <link>https://someoneornobody.github.io/categories/places/</link>
+      <pubDate>Tue, 18 Jun 2024 09:43:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/places/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue</title>
+      <link>https://someoneornobody.github.io/categories/vue/</link>
+      <pubDate>Thu, 16 Nov 2023 12:03:33 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Db</title>
+      <link>https://someoneornobody.github.io/categories/db/</link>
+      <pubDate>Tue, 26 Sep 2023 09:40:29 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/db/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://someoneornobody.github.io/categories/hugo/</link>
+      <pubDate>Mon, 25 Sep 2023 07:11:39 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>https://someoneornobody.github.io/categories/server/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://someoneornobody.github.io/categories/javascript/</link>
+      <pubDate>Tue, 19 Sep 2023 07:48:19 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/javascript/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

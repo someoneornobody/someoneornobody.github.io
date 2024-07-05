@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue on Someone or Nobody</title>
-    <link>https://someoneornobody.github.io/categories/vue/</link>
+    <link>http://localhost:1313/categories/vue/</link>
     <description>Recent content in Vue on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Thu, 16 Nov 2023 12:03:33 +0900</lastBuildDate>
-    <atom:link href="https://someoneornobody.github.io/categories/vue/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Vue] 전역 변수 사용하기 (#2)</title>
-      <link>https://someoneornobody.github.io/dev/vue/use-global-properties-second/</link>
+      <link>http://localhost:1313/dev/vue/use-global-properties-second/</link>
       <pubDate>Thu, 16 Nov 2023 12:03:33 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/use-global-properties-second/</guid>
+      <guid>http://localhost:1313/dev/vue/use-global-properties-second/</guid>
       <description>[Vue] 전역 변수 사용하기 (https://someoneornobody.github.io/dev/vue/use-global-properties/) 의 후속편입니다.&#xA;이번에는 공통으로 사용되는 함수들을 모아 전역 변수로 선언한 후 해당 변수를 통해 함수를 호출하는 방법을 알아보도록 하겠습니다.&#xA;먼저 공통 함수들을 선언하는 파일을 utils.js 라고 명명하고 아래와 같이 작성합니다.&#xA;// utils.js export default { // 숫자 외 문자삭제 후 리턴 inputNumber: (v) =&amp;gt; { return v.replace(/[^0-9]/g, &amp;#39;&amp;#39;) } } 그리고 main.js 에서 utils.js 파일을 import 후 전역 변수에 $utils 라는 이름으로 등록합니다.&#xA;// main.</description>
     </item>
     <item>
       <title>[Vue] nextTick 활용 (#1)</title>
-      <link>https://someoneornobody.github.io/dev/vue/nexttick/</link>
+      <link>http://localhost:1313/dev/vue/nexttick/</link>
       <pubDate>Wed, 08 Nov 2023 13:18:38 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/nexttick/</guid>
+      <guid>http://localhost:1313/dev/vue/nexttick/</guid>
       <description>input 요소 처리 시 nextTick 이 사용 될 만한 예제에 대해 설명해 보겠습니다.&#xA;먼저 input 에 대한 입력 조건은 아래와 같습니다.&#xA;숫자만 입력 가능하다. 6자리 이상은 입력되지 않는다. 위에 대한 조건을 바탕으로 하는 기본 코드는 아래와 같습니다.&#xA;&amp;lt;template&amp;gt; &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;birth&amp;#34; placeholder=&amp;#34;ex) 200414&amp;#34; v-model=&amp;#34;birth&amp;#34; /&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script setup&amp;gt; import {ref, watch} from &amp;#39;vue&amp;#39; const birth = ref(&amp;#39;&amp;#39;) watch(() =&amp;gt; birth.value, newValue =&amp;gt; { if (newValue.length &amp;gt; 6) { birth.value = birth.</description>
     </item>
     <item>
       <title>[Vue] import.meta.env.MODE 값 설정하기</title>
-      <link>https://someoneornobody.github.io/dev/vue/set-env-mode/</link>
+      <link>http://localhost:1313/dev/vue/set-env-mode/</link>
       <pubDate>Thu, 26 Oct 2023 10:37:09 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/set-env-mode/</guid>
+      <guid>http://localhost:1313/dev/vue/set-env-mode/</guid>
       <description>개발환경 현재 개발중인 환경은 아래와 같다&#xA;front framework: vue3 (v3.2.13) build tool: vite (v3.1.9) 상황 개발을 하다보면 local, dev, prod 와 같은 개발환경에 따라 다른 처리가 필요한 부분이 꼭 생기게 된다.&#xA;vue3, vite 를 사용하여 개발하는 지금, 이러한 처리가 필요한 부분이 발생하여 해당 환경에 맞게 처리 후&#xA;테스트 할 환경으로 빌드를 하기 위해 아래와 같이 빌드를 실행하였다.&#xA;npm run build --mode local 정상적으로 진행 될 거라 생각했지만 아래와 같은 오류가 발생하였다.</description>
     </item>
     <item>
       <title>[Vue] computed property 값 변경하기</title>
-      <link>https://someoneornobody.github.io/dev/vue/setter-getter/</link>
+      <link>http://localhost:1313/dev/vue/setter-getter/</link>
       <pubDate>Thu, 19 Oct 2023 13:06:30 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/setter-getter/</guid>
+      <guid>http://localhost:1313/dev/vue/setter-getter/</guid>
       <description>화면에서 computed 속성의 값을 변경 시킬 경우 발생하는 오류와 이에 대한 해결 방법을 이야기하고자 한다.&#xA;먼저, 아래의 소스를 보자.&#xA;&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;p&amp;gt;computed 값: {{ compDefaultValue }}&amp;lt;/p&amp;gt; &amp;lt;button @click=&amp;#34;increase&amp;#34;&amp;gt;문구 변경&amp;lt;/button&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { data: () =&amp;gt; ({ defaultValue: 0 }), computed: { compDefaultValue() { return this.defaultValue } }, methods: { increase() { this.compDefaultValue = 1 } } } &amp;lt;/script&amp;gt; 위 소스에서 문구 변경을 클릭할 경우 호출되는 increase 함수에서 this.</description>
     </item>
     <item>
       <title>[Vue] Pinia Store 에서 vue-router 사용하기</title>
-      <link>https://someoneornobody.github.io/dev/vue/router-use-in-pinia-store/</link>
+      <link>http://localhost:1313/dev/vue/router-use-in-pinia-store/</link>
       <pubDate>Wed, 04 Oct 2023 09:26:00 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/router-use-in-pinia-store/</guid>
+      <guid>http://localhost:1313/dev/vue/router-use-in-pinia-store/</guid>
       <description>개요 pinia store 에서 vue-router 사용 시 undefined 로 인해 정상적인 동작을 하지않는 상황이 발생 사실 이건 당연한, 간단한 구조적 문제였는데.. 저와 같은 실수를 하는 사람이 없길 바라며 작성하는 게시글입니다.. 개발 환경 build tool: vite framework: vue3 state management: pinia 코드 main.js import { createApp } from &amp;#39;vue&amp;#39; import { createPinia } from &amp;#39;pinia&amp;#39; import App from &amp;#39;./App.vue&amp;#39; import router from &amp;#39;./router&amp;#39; const app = createApp(App) app.use(createPinia()) app.use(router) app.mount(&amp;#39;#app&amp;#39;) stores/common.</description>
     </item>
     <item>
       <title>[Vue] 전역 변수 사용하기 (#1)</title>
-      <link>https://someoneornobody.github.io/dev/vue/use-global-properties/</link>
+      <link>http://localhost:1313/dev/vue/use-global-properties/</link>
       <pubDate>Fri, 15 Sep 2023 09:50:33 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/vue/use-global-properties/</guid>
+      <guid>http://localhost:1313/dev/vue/use-global-properties/</guid>
       <description>아래는vue3 에서 script setup 방식으로 전역변수를 사용하는 예제 입니다. 전역변수 설정 case 1 provide 를 사용하여 전역변수를 설정하는 방법. file: main.js ... const appTitle = &amp;#39;hello nobody&amp;#39; const app = createApp(app) .provide(&amp;#39;$title&amp;#39;, appTitle) .mount(&amp;#39;#app&amp;#39;) case 2 config.globalProperties 를 사용하는 방식으로 provide 와 동일하게 vue3 에서 전역 애플리케이션 인스턴스에 속성을 추가할 수 있는 기능. file: main.js ... const appTitle = &amp;#39;hello nobody&amp;#39; const app = createApp(app) ... app.config.globalProperties.$title = appTitle .</description>
     </item>
   </channel>

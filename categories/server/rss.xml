@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Server on Someone or Nobody</title>
+    <link>https://someoneornobody.github.io/categories/server/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 20 Sep 2023 07:17:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/server/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Apache] 아파치 2.2.34 바이너리 설치</title>
+      <link>https://someoneornobody.github.io/dev/server/apache-binary-install/</link>
+      <pubDate>Wed, 20 Sep 2023 07:17:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/server/apache-binary-install/</guid>
+      <description>개요 및 준비사항 - Apache 설치 시 OS에 필요한 라이브러리들이 없다고 가정하고(가끔 인프라쪽에 서버 생성 요청할때.. 정말 아무 라이브러리도 없는 쌩 서버만 주는 경우가 있죠..) , 필요한 라이브러리들 부터 순차적으로 설치 후 apache 를 설치하는 내용입니다.
+- 서버 설치 환경은 CentOS 7.5 버전 입니다
+Apache 소스 컴파일 설치 시 필요한 라이브러리 (괄호안의 숫자는 현 문서에서 다루는 버전입니다) apache (v2.2.34)
+Apache Http server. 웹 서버. download: https://httpd.apache.org/download.cgi apr (v1.7.0)
+Apache Portable Runtime 의 약자.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>NO_ZERO_IN_DATE on Someone or Nobody</title>
-    <link>https://someoneornobody.github.io/tags/no_zero_in_date/</link>
+    <link>http://localhost:1313/tags/no_zero_in_date/</link>
     <description>Recent content in NO_ZERO_IN_DATE on Someone or Nobody</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
     <lastBuildDate>Tue, 26 Sep 2023 09:40:29 +0900</lastBuildDate>
-    <atom:link href="https://someoneornobody.github.io/tags/no_zero_in_date/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/no_zero_in_date/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)</title>
-      <link>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</link>
+      <link>http://localhost:1313/dev/db/mysql-mariadb-datetime-white-space/</link>
       <pubDate>Tue, 26 Sep 2023 09:40:29 +0900</pubDate>
-      <guid>https://someoneornobody.github.io/dev/db/mysql-mariadb-datetime-white-space/</guid>
+      <guid>http://localhost:1313/dev/db/mysql-mariadb-datetime-white-space/</guid>
       <description>MySQL 및 MariaDB에서 데이트타임 필드에 공백 입력 시 발생하는 에러 해결 방법 Mysql이나 Mariadb를 사용할 때 데이트타임 필드에 공백을 입력해야 하는 상황이 발생하는데 그때 공백이 올바르게 입력되어도 에러가 발생하는 경우가 있을 경우 해결하는 케이스 입니다.&#xA;에러 상황 다음과 같은 기존 쿼리에서 데이트타임 필드에 공백을 넣으면 문제가 없는 경우도 있지만 갑자기 에러가 발생할 수 있습니다.&#xA;UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ 에러 내용: Error 1292: Incorrect datetime value: &#39;&#39; for column &#39;AGREE_DT&#39; at row 1</description>
     </item>
   </channel>
