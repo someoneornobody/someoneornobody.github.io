@@ -37,14 +37,18 @@
         
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8964630540815976" crossorigin="anonymous"></script>
         
-		<meta property="og:title" content="Vue" />
-<meta property="og:description" content="혼자, 또는 아이들과 함께 갈만한 곳, 여행지를 소개합니다. 그리고 아~주 약간의, 정말 약간의 어렵지 않은, 개인 메모 정도의 개발관련 이야기를 다루는 공간입니다." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://someoneornobody.github.io/categories/vue/" />
+		<meta property="og:url" content="https://someoneornobody.github.io/categories/vue/">
+  <meta property="og:site_name" content="Someone or Nobody">
+  <meta property="og:title" content="Vue">
+  <meta property="og:description" content="혼자, 또는 아이들과 함께 갈만한 곳, 여행지를 소개합니다. 그리고 아~주 약간의, 정말 약간의 어렵지 않은, 개인 메모 정도의 개발관련 이야기를 다루는 공간입니다.">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="website">
 
-
-		<meta itemprop="name" content="Vue">
-<meta itemprop="description" content="혼자, 또는 아이들과 함께 갈만한 곳, 여행지를 소개합니다. 그리고 아~주 약간의, 정말 약간의 어렵지 않은, 개인 메모 정도의 개발관련 이야기를 다루는 공간입니다.">
+		
+  <meta itemprop="name" content="Vue">
+  <meta itemprop="description" content="혼자, 또는 아이들과 함께 갈만한 곳, 여행지를 소개합니다. 그리고 아~주 약간의, 정말 약간의 어렵지 않은, 개인 메모 정도의 개발관련 이야기를 다루는 공간입니다.">
+  <meta itemprop="datePublished" content="2023-11-16T12:03:33+09:00">
+  <meta itemprop="dateModified" content="2023-11-16T12:03:33+09:00">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -279,13 +283,29 @@ npm run build --mode local 정상적으로 진행 될 거라 생각했지만 아
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/vue/router-use-in-pinia-store/">Read more…</a>
 	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/vue/use-global-properties/" rel="bookmark">
+			[Vue] 전역 변수 사용하기 (#1)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-15T09:50:33&#43;09:00">2023-09-15 09:50:33</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">Vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		아래는vue3 에서 script setup 방식으로 전역변수를 사용하는 예제 입니다. 전역변수 설정 case 1 provide 를 사용하여 전역변수를 설정하는 방법. file: main.js ... const appTitle = &#39;hello nobody&#39; const app = createApp(app) .provide(&#39;$title&#39;, appTitle) .mount(&#39;#app&#39;) case 2 config.globalProperties 를 사용하는 방식으로 provide 와 동일하게 vue3 에서 전역 애플리케이션 인스턴스에 속성을 추가할 수 있는 기능. file: main.js ... const appTitle = &#39;hello nobody&#39; const app = createApp(app) ... app.config.globalProperties.$title = appTitle .
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/use-global-properties/">Read more…</a>
+	</div>
 </article>
 </main>
 
-<div class="pagination">
-	<span class="pagination__item pagination__item--current">1/2</span>
-	<a class="pagination__item pagination__item--next btn" href="/categories/vue/page/2/">»</a>
-</div>
 
 			</div>
 			

@@ -37,19 +37,26 @@
         
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8964630540815976" crossorigin="anonymous"></script>
         
-		<meta property="og:title" content="[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)" />
-<meta property="og:description" content="javascript 에서 브라우저 뒤로가기 시 이벤트 감지 및 이벤트 실행하기에 대한 내용입니다. 페이지가 로드 될 때 호출되어야 하는 이벤트들은 브라우저 뒤로 가기 시 실행되지 않는데 이러한 경우 해결 할 수 있는 방법입니다." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://someoneornobody.github.io/dev/javascript/bf-cache/" /><meta property="article:section" content="dev" />
-<meta property="article:published_time" content="2023-09-19T07:48:19+09:00" />
-<meta property="article:modified_time" content="2023-09-19T07:48:19+09:00" />
+		<meta property="og:url" content="https://someoneornobody.github.io/dev/javascript/bf-cache/">
+  <meta property="og:site_name" content="Someone or Nobody">
+  <meta property="og:title" content="[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)">
+  <meta property="og:description" content="javascript 에서 브라우저 뒤로가기 시 이벤트 감지 및 이벤트 실행하기에 대한 내용입니다. 페이지가 로드 될 때 호출되어야 하는 이벤트들은 브라우저 뒤로 가기 시 실행되지 않는데 이러한 경우 해결 할 수 있는 방법입니다.">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:published_time" content="2023-09-19T07:48:19+09:00">
+    <meta property="article:modified_time" content="2023-09-19T07:48:19+09:00">
+    <meta property="article:tag" content="Bfcache">
+    <meta property="article:tag" content="Cache">
+    <meta property="article:tag" content="뒤로가기">
 
-
-		<meta itemprop="name" content="[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)">
-<meta itemprop="description" content="javascript 에서 브라우저 뒤로가기 시 이벤트 감지 및 이벤트 실행하기에 대한 내용입니다. 페이지가 로드 될 때 호출되어야 하는 이벤트들은 브라우저 뒤로 가기 시 실행되지 않는데 이러한 경우 해결 할 수 있는 방법입니다."><meta itemprop="datePublished" content="2023-09-19T07:48:19+09:00" />
-<meta itemprop="dateModified" content="2023-09-19T07:48:19+09:00" />
-<meta itemprop="wordCount" content="492">
-<meta itemprop="keywords" content="bfcache,cache,뒤로가기," />
+		
+  <meta itemprop="name" content="[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)">
+  <meta itemprop="description" content="javascript 에서 브라우저 뒤로가기 시 이벤트 감지 및 이벤트 실행하기에 대한 내용입니다. 페이지가 로드 될 때 호출되어야 하는 이벤트들은 브라우저 뒤로 가기 시 실행되지 않는데 이러한 경우 해결 할 수 있는 방법입니다.">
+  <meta itemprop="datePublished" content="2023-09-19T07:48:19+09:00">
+  <meta itemprop="dateModified" content="2023-09-19T07:48:19+09:00">
+  <meta itemprop="wordCount" content="492">
+  <meta itemprop="keywords" content="bfcache,javascript,뒤로가기,backward,event,navigation,cache,브라우저캐시">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -294,6 +301,7 @@ HTML 메타 태그를 사용해 BFCache 를 허용하지 않는 방법도 있다
 		</footer>
 	</article>
 </main>
+
 
 
 <nav class="pager flex">
