@@ -6,7 +6,16 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 18 Jun 2024 09:43:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/life/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Jul 2024 13:51:10 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/life/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Notyet</title>
+      <link>https://someoneornobody.github.io/life/places/notyet/</link>
+      <pubDate>Tue, 16 Jul 2024 13:51:10 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/life/places/notyet/</guid>
+      <description>test.. second test.. third test..</description>
+    </item>
+    
     <item>
       <title>[대구/수성구] 버터베이크, 이빵도 맛있고 저빵도 맛있고 다맛있네</title>
       <link>https://someoneornobody.github.io/life/places/suseonggu-butter-bake/</link>
