@@ -1,12 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Someone or Nobody</title>
+    <title>Tags on 국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</title>
     <link>https://someoneornobody.github.io/tags/</link>
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 18 Jun 2024 09:43:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Sep 2024 22:33:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>고양</title>
+      <link>https://someoneornobody.github.io/tags/%EA%B3%A0%EC%96%91/</link>
+      <pubDate>Sat, 21 Sep 2024 22:33:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EA%B3%A0%EC%96%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>수족관</title>
+      <link>https://someoneornobody.github.io/tags/%EC%88%98%EC%A1%B1%EA%B4%80/</link>
+      <pubDate>Sat, 21 Sep 2024 22:33:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%88%98%EC%A1%B1%EA%B4%80/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>아이와 갈만한 곳</title>
+      <link>https://someoneornobody.github.io/tags/%EC%95%84%EC%9D%B4%EC%99%80-%EA%B0%88%EB%A7%8C%ED%95%9C-%EA%B3%B3/</link>
+      <pubDate>Sat, 21 Sep 2024 22:33:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%95%84%EC%9D%B4%EC%99%80-%EA%B0%88%EB%A7%8C%ED%95%9C-%EA%B3%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>일산</title>
+      <link>https://someoneornobody.github.io/tags/%EC%9D%BC%EC%82%B0/</link>
+      <pubDate>Sat, 21 Sep 2024 22:33:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%9D%BC%EC%82%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>카페</title>
+      <link>https://someoneornobody.github.io/tags/%EC%B9%B4%ED%8E%98/</link>
+      <pubDate>Sat, 21 Sep 2024 22:33:04 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%B9%B4%ED%8E%98/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>대구</title>
       <link>https://someoneornobody.github.io/tags/%EB%8C%80%EA%B5%AC/</link>
@@ -40,15 +85,6 @@
       <pubDate>Tue, 18 Jun 2024 09:43:04 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/tags/%EC%88%98%EC%84%B1%EA%B5%AC%EC%B2%AD/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>카페</title>
-      <link>https://someoneornobody.github.io/tags/%EC%B9%B4%ED%8E%98/</link>
-      <pubDate>Tue, 18 Jun 2024 09:43:04 +0900</pubDate>
-      
-      <guid>https://someoneornobody.github.io/tags/%EC%B9%B4%ED%8E%98/</guid>
       <description></description>
     </item>
     
