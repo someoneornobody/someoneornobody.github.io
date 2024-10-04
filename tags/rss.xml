@@ -6,7 +6,16 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 18 Jun 2024 09:43:04 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 14:20:38 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nexttick</title>
+      <link>https://someoneornobody.github.io/tags/nexttick/</link>
+      <pubDate>Fri, 04 Oct 2024 14:20:38 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/nexttick/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>대구</title>
       <link>https://someoneornobody.github.io/tags/%EB%8C%80%EA%B5%AC/</link>
@@ -625,15 +634,6 @@
       <pubDate>Thu, 16 Nov 2023 12:03:33 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/tags/%EC%A0%84%EC%97%AD%EB%B3%80%EC%88%98/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nexttick</title>
-      <link>https://someoneornobody.github.io/tags/nexttick/</link>
-      <pubDate>Wed, 08 Nov 2023 13:18:38 +0900</pubDate>
-      
-      <guid>https://someoneornobody.github.io/tags/nexttick/</guid>
       <description></description>
     </item>
     

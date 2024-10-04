@@ -6,7 +6,18 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 19 Sep 2023 07:48:19 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/javascript/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Oct 2024 14:20:38 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/javascript/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[javascript] A 태그(Anchor) 에서의 href, onclick 사용</title>
+      <link>https://someoneornobody.github.io/dev/javascript/use-href-onclick-into-anchor/</link>
+      <pubDate>Fri, 04 Oct 2024 14:20:38 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/use-href-onclick-into-anchor/</guid>
+      <description>안녕하세요. 이번에는 프로그래밍 관련 게시글을 하나 적어볼까 합니다. 아래 문제는 아주 오래전에 겪어봐서 알아두었던 건데 최근에 깜빡하고 다시 똑같은 실수를 범해서 그냥 다시 한번 참고차 남겨두려는 의미에서 포스팅을 해봅니다.
+A 태그로 javascript function 을 호출하는 방법은 2가지가 있습니다.
+&amp;lt;!-- case1 --&amp;gt; &amp;lt;a href=&amp;#34;javascript:callFunction();&amp;#34;&amp;gt;javascript function&amp;lt;/a&amp;gt; &amp;lt;!-- case2 --&amp;gt; &amp;lt;a href=&amp;#34;javascript:void(0);&amp;#34; onclick=&amp;#34;callFunction();&amp;#34;&amp;gt;onclick function&amp;lt;/a&amp;gt; 물론 위 처럼 그대로 다 적어두지 않고 bind 로 click 이벤트를 주도록 하는 등의 코딩이 가능 하겠지만 일반적으로는 위 처럼 쓰일 것입니다.</description>
+    </item>
+    
     <item>
       <title>[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)</title>
       <link>https://someoneornobody.github.io/dev/javascript/bf-cache/</link>
