@@ -6,7 +6,18 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 04 Oct 2024 14:20:38 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/dev/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Oct 2024 13:15:02 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/dev/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[IDE] 콘솔 한글깨짐 처리 (console log encoding .. with tomcat)</title>
+      <link>https://someoneornobody.github.io/dev/ide/intellij-broken-kor/</link>
+      <pubDate>Mon, 07 Oct 2024 13:15:02 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/ide/intellij-broken-kor/</guid>
+      <description>IntelliJ에서 한글 깨짐 현상 해결 방법 IntelliJ에서 프로젝트 생성 및 Tomcat을 이용한 서버 시작 시, console 로그에서 한글이 깨지는 현상이 확인되었습니다. 웹상에서 많이 검색되는 2가지 방법과 제가 해결한 다른 1가지 방법, 총 3가지 방법에 대해 아래에 정리해보았습니다.
+현상 애플리케이션을 RUN 또는 DEBUG 시 보이는 콘솔이며, 이미지로 보이는 것 처럼 한글이 깨져서 나오는 경우가 있습니다.
+해결 방법 해결방법 #1 - Editor의 File Encoding 수정 CTRL + ALT + S로 IntelliJ Settings 메뉴를 호출합니다.</description>
+    </item>
+    
     <item>
       <title>[javascript] A 태그(Anchor) 에서의 href, onclick 사용</title>
       <link>https://someoneornobody.github.io/dev/javascript/use-href-onclick-into-anchor/</link>

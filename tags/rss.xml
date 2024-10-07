@@ -6,7 +6,25 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Fri, 04 Oct 2024 14:20:38 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Oct 2024 13:15:02 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ide</title>
+      <link>https://someoneornobody.github.io/tags/ide/</link>
+      <pubDate>Mon, 07 Oct 2024 13:15:02 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/ide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Intellij</title>
+      <link>https://someoneornobody.github.io/tags/intellij/</link>
+      <pubDate>Mon, 07 Oct 2024 13:15:02 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/intellij/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Nexttick</title>
       <link>https://someoneornobody.github.io/tags/nexttick/</link>
