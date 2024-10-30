@@ -3,8 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   
+  
+  
+  
+  
+  
+  
   <url>
     <loc>https://someoneornobody.github.io/dev/</loc>
+    <lastmod>2024-10-30T09:35:41+09:00</lastmod>
+  </url>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <url>
+    <loc>https://someoneornobody.github.io/dev/server/target-server-failed-to-respond/</loc>
     <lastmod>2024-10-30T09:35:41+09:00</lastmod>
   </url>
   
@@ -21,10 +44,6 @@
     <loc>https://someoneornobody.github.io/dev/ide/intellij-broken-kor/</loc>
     <lastmod>2024-10-07T13:15:02+09:00</lastmod>
   </url>
-  
-  
-  
-  
   
   
   
@@ -373,8 +392,6 @@
     <loc>https://someoneornobody.github.io/dev/server/apache-binary-install/</loc>
     <lastmod>2023-09-20T07:17:04+09:00</lastmod>
   </url>
-  
-  
   
   
   
