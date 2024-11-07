@@ -53,8 +53,8 @@
 		
   <meta itemprop="name" content="Devs">
   <meta itemprop="description" content="혼자, 또는 아이들과 함께 갈만한 곳, 여행지를 소개합니다. 그리고 아~주 약간의, 정말 약간의 어렵지 않은, 개인 메모 정도의 개발관련 이야기를 다루는 공간입니다.">
-  <meta itemprop="datePublished" content="2024-10-30T09:35:41+09:00">
-  <meta itemprop="dateModified" content="2024-10-30T09:35:41+09:00">
+  <meta itemprop="datePublished" content="2024-11-07T13:07:58+09:00">
+  <meta itemprop="dateModified" content="2024-11-07T13:07:58+09:00">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -196,6 +196,29 @@
 	<header class="main__header">
 		<h1 class="main__title">Devs</h1>
 	</header><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/java/sort-array-hashmap/" rel="bookmark">
+			[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-11-07T13:07:58&#43;09:00">2024-11-07 13:07:58</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		List의 제네릭 타입이 기본형 혹은 String 일 땐 Collections.sort(List<?> list) 메서드를 사용하면 간단하게 해결된다.
+하지만 제네릭 타입에 컬렉션이 출동하면 어떨까? 컬.렉.션.
+ArrayList&lt;HashMap&lt;String, String&gt;&gt; 타입을 예로 들면..
+import java.util.ArrayList; import java.util.Collections; import java.util.Comparator; import java.util.HashMap; public class Test { public static void main(String[] args) throws Exception { HashMap &lt; String, String &gt; map = new HashMap &lt; String, String &gt; (); ArrayList &lt; HashMap &lt; String, String &gt;&gt; list = new ArrayList &lt; HashMap &lt; String, String &gt;&gt; (); map.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/java/sort-array-hashmap/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -399,30 +422,6 @@ UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :U
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/db/mysql-mariadb-datetime-white-space/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/dev/hugo/hugo-write-article/" rel="bookmark">
-			[HUGO] 글작성, 문법, 이미지업로드 하기
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-25T07:11:39&#43;09:00">2023-09-25 07:11:39</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		개요 본 게시물은 hugo 의 Mainroad 테마를 기준으로 작성되었습니다. 이는 아래 작성된 내용들이 환경이나 표준과 다를 수 있음을 의미합니다. 파일 생성 수행 경로: hugo 사이트 생성 경로 (hugo/my-site)
-hugo new {경로/파일명.md} 를 통해 작성할 게시물 파일을 생성하는데, 이렇게 생성된 파일은
-hugo/my-site/content
-폴더 아래 자동으로 생성됩니다. 생성 된 파일은 hugo/my-site/archetypes/default.md 에 작성된 템플릿을 기반으로 기본적인 내용이 작성되어져 있습니다..
-hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생성. 내용 작성 해당 md 파일에 게시할 내용을 markdown 문법으로 작성함으로써 글 작성에 대한건 사실 끝입니다.
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-write-article/">Read more…</a>
-	</div>
 </article>
 </main>
 
@@ -463,6 +462,10 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">2</span>
 				</li>
@@ -485,11 +488,11 @@ hugo new dev/hugo/hugo.md hugo/my-site/content/dev/hugo/hugo.md 에 파일 생�
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/everything/neve-di-camaldoli/">크레마 네베 디 카말돌리 크림(NEVE DI CAMALDOLI) 초간단 사용후기..</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/server/target-server-failed-to-respond/">The target server failed to respond (And.. HTTP/1.0, HTTP/1.1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/ide/intellij-broken-kor/">[IDE] 콘솔 한글깨짐 처리 (console log encoding .. with tomcat)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/javascript/use-href-onclick-into-anchor/">[javascript] A 태그(Anchor) 에서의 href, onclick 사용</a></li>
-			<li class="widget__item"><a class="widget__link" href="/life/places/suseonggu-butter-bake/">[대구/수성구] 버터베이크, 이빵도 맛있고 저빵도 맛있고 다맛있네</a></li>
 		</ul>
 	</div>
 </div>

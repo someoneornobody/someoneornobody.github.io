@@ -6,7 +6,16 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 05 Nov 2024 14:18:09 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 07 Nov 2024 13:07:58 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://someoneornobody.github.io/categories/java/</link>
+      <pubDate>Thu, 07 Nov 2024 13:07:58 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/categories/java/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Everything</title>
       <link>https://someoneornobody.github.io/categories/everything/</link>

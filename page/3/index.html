@@ -54,8 +54,8 @@
 		
   <meta itemprop="name" content="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.">
   <meta itemprop="description" content="혼자, 또는 아이들과 함께 갈만한 곳, 여행지를 소개합니다. 그리고 아~주 약간의, 정말 약간의 어렵지 않은, 개인 메모 정도의 개발관련 이야기를 다루는 공간입니다.">
-  <meta itemprop="datePublished" content="2024-11-05T14:18:09+09:00">
-  <meta itemprop="dateModified" content="2024-11-05T14:18:09+09:00">
+  <meta itemprop="datePublished" content="2024-11-07T13:07:58+09:00">
+  <meta itemprop="dateModified" content="2024-11-07T13:07:58+09:00">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -195,6 +195,28 @@
 			
 <main class="main list" role="main">
 	<article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/db/mysql-mariadb-datetime-white-space/" rel="bookmark">
+			[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-26T09:40:29&#43;09:00">2023-09-26 09:40:29</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/db/" rel="category">Db</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		MySQL 및 MariaDB에서 데이트타임 필드에 공백 입력 시 발생하는 에러 해결 방법 Mysql이나 Mariadb를 사용할 때 데이트타임 필드에 공백을 입력해야 하는 상황이 발생하는데 그때 공백이 올바르게 입력되어도 에러가 발생하는 경우가 있을 경우 해결하는 케이스 입니다.
+에러 상황 다음과 같은 기존 쿼리에서 데이트타임 필드에 공백을 넣으면 문제가 없는 경우도 있지만 갑자기 에러가 발생할 수 있습니다.
+UPDATE USER SET AGREE_DT = :AGREE_DT, AGREE_SEQ = :AGREE_SEQ WHERE USER_SEQ = :USER_SEQ 에러 내용: Error 1292: Incorrect datetime value: '' for column 'AGREE_DT' at row 1
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/db/mysql-mariadb-datetime-white-space/">Read more…</a>
+	</div>
+</article><article class="list__item post">
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
@@ -392,6 +414,10 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 				<span class="widget__counter widget__counter--bubble">1</span>
 				</li>
 			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
 				<span class="widget__counter widget__counter--bubble">2</span>
 				</li>
@@ -414,11 +440,11 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/everything/neve-di-camaldoli/">크레마 네베 디 카말돌리 크림(NEVE DI CAMALDOLI) 초간단 사용후기..</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/server/target-server-failed-to-respond/">The target server failed to respond (And.. HTTP/1.0, HTTP/1.1)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/ide/intellij-broken-kor/">[IDE] 콘솔 한글깨짐 처리 (console log encoding .. with tomcat)</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/javascript/use-href-onclick-into-anchor/">[javascript] A 태그(Anchor) 에서의 href, onclick 사용</a></li>
-			<li class="widget__item"><a class="widget__link" href="/life/places/suseonggu-butter-bake/">[대구/수성구] 버터베이크, 이빵도 맛있고 저빵도 맛있고 다맛있네</a></li>
 		</ul>
 	</div>
 </div>

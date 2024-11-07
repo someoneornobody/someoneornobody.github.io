@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Array on 국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</title>
+    <link>https://someoneornobody.github.io/tags/array/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Thu, 07 Nov 2024 13:07:58 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/array/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</title>
+      <link>https://someoneornobody.github.io/dev/java/sort-array-hashmap/</link>
+      <pubDate>Thu, 07 Nov 2024 13:07:58 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/java/sort-array-hashmap/</guid>
+      <description>List의 제네릭 타입이 기본형 혹은 String 일 땐 Collections.sort(List&lt;?&gt; list) 메서드를 사용하면 간단하게 해결된다.
+하지만 제네릭 타입에 컬렉션이 출동하면 어떨까? 컬.렉.션.
+ArrayList&amp;lt;HashMap&amp;lt;String, String&amp;gt;&amp;gt; 타입을 예로 들면..
+import java.util.ArrayList; import java.util.Collections; import java.util.Comparator; import java.util.HashMap; public class Test { public static void main(String[] args) throws Exception { HashMap &amp;lt; String, String &amp;gt; map = new HashMap &amp;lt; String, String &amp;gt; (); ArrayList &amp;lt; HashMap &amp;lt; String, String &amp;gt;&amp;gt; list = new ArrayList &amp;lt; HashMap &amp;lt; String, String &amp;gt;&amp;gt; (); map.</description>
+    </item>
+    
+  </channel>
+</rss>
