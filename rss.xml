@@ -6,7 +6,23 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Wed, 20 Nov 2024 13:47:37 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Nov 2024 16:24:44 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</title>
+      <link>https://someoneornobody.github.io/dev/ide/eclipse-svn-error/</link>
+      <pubDate>Fri, 22 Nov 2024 16:24:44 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/ide/eclipse-svn-error/</guid>
+      <description>SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다.
+에러 중
+파일명~ is not under version control
+특히 이 경우.
+Override and Update, Mark as merged 도 안되고
+해당 파일이 있는 폴더 삭제도 안되고
+(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고
+이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복.</description>
+    </item>
+    
     <item>
       <title>[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</title>
       <link>https://someoneornobody.github.io/dev/javascript/jquery-handles/</link>
@@ -397,6 +413,22 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 정적 사이트 생성기란 서버측 처리없이 HTML, CSS, Javascript 파일로 제공되는 웹 사이트로 다양한 플랫폼에서 빠르고 안전하며 쉽게 호스팅 할 수 있습니다.
 다양한 케이스가 있겠지만 대표적인 방법으로는 github 저장소를 이용하여 콘텐츠 생성 및 호스팅을 하는 방법이 있습니다.
 아래 내용은 macOS 를 기준으로 작성 된 문서입니다 설치 brew 를 사용하여 hugo 를 설치합니다 # 최초 설치 시 brew install hugo # 설치확인 hugo version 다음 단계부터는 hugo 관련 파일들이 생성되기 때문에 작업 경로(실제로 hugo 사이트를 생성하고 관리할 경로) 로 이동해서 수행합니다 사이트 생성 신규 사이트 생성</description>
+    </item>
+    
+    <item>
+      <title>[부천/소풍] CGV IMAX관</title>
+      <link>https://someoneornobody.github.io/life/places/bucheon-sopoong-cgv/</link>
+      <pubDate>Mon, 24 Jul 2017 20:06:10 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/life/places/bucheon-sopoong-cgv/</guid>
+      <description>안녕하세요. 요즘 IMAX 로 너무 보고 싶은 영화가 있었습니다.
+그것은 바로 덩케르크.
+용산 IMAX 는 연일 매진 행진이라 어디로 가야 하나 하다가
+부천 소풍터미널에 위치한 CGV 에 IMAX 관이 있다는 것을 알았습니다.
+크기는 CGV 부천 점이 더 커보여서 이곳에 없으면 부천에는 없겠구나 했는데 의외로 CGV 소풍점에 있더라구요.
+그래서 바로 관람하러 갔습니다.
+현재 소풍 CGV 는 공사중이더라구요.
+리모델링을 하고 있는 것인지 6층으로 이동하면 계단을 이용해서 7층으로 가라는 안내와 함께 6층은 공사가 한창이었습니다.</description>
     </item>
     
     <item>

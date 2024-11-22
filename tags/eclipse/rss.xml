@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eclipse on 국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</title>
+    <link>https://someoneornobody.github.io/tags/eclipse/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 22 Nov 2024 16:24:44 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/eclipse/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</title>
+      <link>https://someoneornobody.github.io/dev/ide/eclipse-svn-error/</link>
+      <pubDate>Fri, 22 Nov 2024 16:24:44 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/ide/eclipse-svn-error/</guid>
+      <description>SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다.
+에러 중
+파일명~ is not under version control
+특히 이 경우.
+Override and Update, Mark as merged 도 안되고
+해당 파일이 있는 폴더 삭제도 안되고
+(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고
+이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복.</description>
+    </item>
+    
+  </channel>
+</rss>

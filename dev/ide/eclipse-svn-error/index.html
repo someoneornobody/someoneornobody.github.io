@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+          
+            
+              [ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error
+            
+          
+        </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다. 에러 중 파일명~ is not under version control 특히 이 경우. Override and Update, Mark as merged 도 안되고 해당 파일이 있는 폴더 삭제도 안되고(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복..) 인터넷에 찾아보면 clean up 을 하라 하지만 clean up 도 에러. 이럴 땐 SVN 을 끊었다가 다시 하는 수 밖에 없다.(프로젝트 패키지를 ..">
+	<meta name="keywords" content="">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WHXPGVQXNY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WHXPGVQXNY"></script>
+        
+
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8964630540815976" crossorigin="anonymous"></script>
+        
+		<meta property="og:url" content="https://someoneornobody.github.io/dev/ide/eclipse-svn-error/">
+  <meta property="og:site_name" content="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.">
+  <meta property="og:title" content="[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error">
+  <meta property="og:description" content="SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다. 에러 중 파일명~ is not under version control 특히 이 경우. Override and Update, Mark as merged 도 안되고 해당 파일이 있는 폴더 삭제도 안되고(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복..) 인터넷에 찾아보면 clean up 을 하라 하지만 clean up 도 에러. 이럴 땐 SVN 을 끊었다가 다시 하는 수 밖에 없다.(프로젝트 패키지를 ..">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:published_time" content="2024-11-22T16:24:44+09:00">
+    <meta property="article:modified_time" content="2024-11-22T16:24:44+09:00">
+    <meta property="article:tag" content="Eclipse">
+    <meta property="article:tag" content="Svn">
+
+		
+  <meta itemprop="name" content="[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error">
+  <meta itemprop="description" content="SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다. 에러 중 파일명~ is not under version control 특히 이 경우. Override and Update, Mark as merged 도 안되고 해당 파일이 있는 폴더 삭제도 안되고(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복..) 인터넷에 찾아보면 clean up 을 하라 하지만 clean up 도 에러. 이럴 땐 SVN 을 끊었다가 다시 하는 수 밖에 없다.(프로젝트 패키지를 ..">
+  <meta itemprop="datePublished" content="2024-11-22T16:24:44+09:00">
+  <meta itemprop="dateModified" content="2024-11-22T16:24:44+09:00">
+  <meta itemprop="wordCount" content="196">
+  <meta itemprop="keywords" content="Eclipse,Svn">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+        
+        <script src="/js/lazysizes.min.js"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다." rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/java">
+            
+            <span class="menu__text">Java</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/ide">
+            
+            <span class="menu__text">IDE</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/places">
+            
+            <span class="menu__text">PLACES</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/everything">
+            
+            <span class="menu__text">EVERYTHING</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-11-22T16:24:44&#43;09:00">2024-11-22 16:24:44</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/ide/" rel="category">Ide</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p> </p>
+<p>SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다.</p>
+<p>에러 중</p>
+<blockquote>
+<p>파일명~ is not under version control</p>
+</blockquote>
+<p>특히 이 경우.</p>
+<p>Override and Update, Mark as merged 도 안되고</p>
+<p>해당 파일이 있는 폴더 삭제도 안되고</p>
+<p>(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고</p>
+<p>이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복..)</p>
+<p>인터넷에 찾아보면 clean up 을 하라 하지만 clean up 도 에러.</p>
+<p>이럴 땐 SVN 을 끊었다가 다시 하는 수 밖에 없다.</p>
+<p>(프로젝트 패키지를 통째로 삭제하고 하는 거랑 회복시간은 비슷하지만 최소한 내가 작업 중인 파일들에 대해 서는 Keeping 이 가능하니까 삭제보다는 연결을 끊었다 다시 맺어주는 걸고.)</p>
+<p> </p>
+<ol>
+<li>프로젝트 &gt; Team -&gt; Disconnect</li>
+<li>&lsquo;Also delete the SVN meta information from the file system&rsquo; 선택 후 OK</li>
+<li>프로젝트 연결 끊김 확인</li>
+<li>프로젝트 &gt; Team &gt; Share Project</li>
+<li>프로젝트 연결 경로 선택 후 Next 만. (Radio 버튼으로 Advanced 뭐 어쩌고 나오지만 다 무시하고 그냥 Next)<br>
+-&gt; 마지막에 Commit 할 때 화면과 비슷하게 나오는 화면이 있는데 그 내용은 현재 내 로컬 프로젝트 파일들과 선택한 연결 경로의 프로젝트 파일들과 싱크를 맞추겠다는 말이니 그냥 Next</li>
+</ol>
+<p> </p>
+<p>위의 과정을 거치고 나면 다시 예전처럼 SVN 사용이 가능하다.</p>
+<p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+
+		</footer>
+	</article>
+</main>
+
+
+
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">Db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/everything/">Everything</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ide/">Ide</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/places/">Places</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">11</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">Server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">Vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">6</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/ide/eclipse-svn-error/">[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/jquery-handles/">[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/decimal-point-ceiling-floor-round/">[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/java-random-char-num/">[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
