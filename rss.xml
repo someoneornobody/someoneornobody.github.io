@@ -8,6 +8,46 @@
     <language>ko-kr</language>
     <lastBuildDate>Wed, 20 Nov 2024 13:47:37 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/rss.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</title>
+      <link>https://someoneornobody.github.io/dev/javascript/jquery-handles/</link>
+      <pubDate>Wed, 20 Nov 2024 13:47:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/jquery-handles/</guid>
+      <description>jQuery 의 선택, 삽입, 삭제, 변경, 변환, 확장에 대해 기록해두려고 합니다.
+지금은 vue3, react 등.. frontend framework 를 사용하여 잘 사용하지 않지만
+왠만한 레거시 프로젝트에는 모두 사용중이라 안 쓸 수가 없네요.
+위에 말은 길게 하였지만 결국 jQuery 셀렉터 입니다.
+제어 선택 .add() 요소를 추가 선택한다. // p 요소와 div 요소를 선택한다. $(&amp;#34;p&amp;#34;).add(&amp;#34;div&amp;#34;) .not() 선택된 확장집합에서 인자에 해당하는 요소를 제거한다. // p 요소의 확장집합에서 class가 green인 요소를 제거한다. $(&amp;#34;p&amp;#34;).not(&amp;#34;.green&amp;#34;) .children() 요소의 고유한 자식으로 구성된 확장 집합을 반환한다.</description>
+    </item>
+    
+    <item>
+      <title>[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</title>
+      <link>https://someoneornobody.github.io/dev/javascript/decimal-point-ceiling-floor-round/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/decimal-point-ceiling-floor-round/</guid>
+      <description>자바스크립트(Javascript)를 이용하여 소수점 자리수에 대해 올림, 버림, 반올림, 원단위 절삭을 하는 방법을 알아보도록 하겠습니다.
+소수점 올림, 버림, 반올림 Math.ceil() : 소수점 올림, 정수형 반환
+Math.floor() : 소수점 버림, 정수형 반환
+Math.round() : 소수점 반올림, 정수형 반환
+var n = 123.456; alert(Math.ceil(n)); // 124 alert(Math.round(n)); // 123 n = 123.567; alert(Math.ceil(n)); // 124 alert(Math.floor(n)); // 123 alert(Math.round(n)); // 124 소수점 자리수 표기 toFiexed() : 숫자를 문자열로 변환하면서 지정된 소수점 이하 숫자를 반올림하여 출력한다.</description>
+    </item>
+    
+    <item>
+      <title>[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</title>
+      <link>https://someoneornobody.github.io/dev/java/java-random-char-num/</link>
+      <pubDate>Wed, 13 Nov 2024 20:07:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/java/java-random-char-num/</guid>
+      <description>예전에 정리해놓았던, 간단하고 가~끔 사용하던 랜덤 함수를 이용한 함수를 기록해봅니다.
+(지금은 AI 툴을 사용하면 정확하고 깔끔하게 바로 생성이 되지만 말이죠..)
+java.lang.Math.random() 을 이용하여 랜덤 숫자 만들기 Math.random() 메서드는 0.0 과 1.0 사이의 값 중 하나의 double 값을 생성한다.
+만약 0~9 사이의 랜덤한 수를 구하고 싶다면
+import java.lang.Math; System.out.println((int)(Math.random()*10)); (int)형으로 케스팅을 하지않으면 &amp;ldquo;2.4575805934491237&amp;rdquo; 이런식의 더블형 이 리턴 된다.
+import java.util.Random 클래스를 이용한 임의의 숫자 만들기 import java.util.Random; Random rnd = new Random(); // 0~9까지의 정수를 랜덤하게 출력 int i = rnd.</description>
+    </item>
+    
+    <item>
       <title>[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</title>
       <link>https://someoneornobody.github.io/dev/java/sort-array-hashmap/</link>
       <pubDate>Thu, 07 Nov 2024 13:07:58 +0900</pubDate>

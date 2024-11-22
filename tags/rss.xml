@@ -6,7 +6,124 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Thu, 07 Nov 2024 13:07:58 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Nov 2024 13:47:37 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Handle</title>
+      <link>https://someoneornobody.github.io/tags/handle/</link>
+      <pubDate>Wed, 20 Nov 2024 13:47:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/handle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jquery</title>
+      <link>https://someoneornobody.github.io/tags/jquery/</link>
+      <pubDate>Wed, 20 Nov 2024 13:47:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/jquery/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Selector</title>
+      <link>https://someoneornobody.github.io/tags/selector/</link>
+      <pubDate>Wed, 20 Nov 2024 13:47:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/selector/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>https://someoneornobody.github.io/tags/javascript/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>반올림</title>
+      <link>https://someoneornobody.github.io/tags/%EB%B0%98%EC%98%AC%EB%A6%BC/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EB%B0%98%EC%98%AC%EB%A6%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>버림</title>
+      <link>https://someoneornobody.github.io/tags/%EB%B2%84%EB%A6%BC/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EB%B2%84%EB%A6%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>소수점</title>
+      <link>https://someoneornobody.github.io/tags/%EC%86%8C%EC%88%98%EC%A0%90/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%86%8C%EC%88%98%EC%A0%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>올림</title>
+      <link>https://someoneornobody.github.io/tags/%EC%98%AC%EB%A6%BC/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%98%AC%EB%A6%BC/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://someoneornobody.github.io/tags/java/</link>
+      <pubDate>Wed, 13 Nov 2024 20:07:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random</title>
+      <link>https://someoneornobody.github.io/tags/random/</link>
+      <pubDate>Wed, 13 Nov 2024 20:07:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/random/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>랜덤문자</title>
+      <link>https://someoneornobody.github.io/tags/%EB%9E%9C%EB%8D%A4%EB%AC%B8%EC%9E%90/</link>
+      <pubDate>Wed, 13 Nov 2024 20:07:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EB%9E%9C%EB%8D%A4%EB%AC%B8%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>랜덤숫자</title>
+      <link>https://someoneornobody.github.io/tags/%EB%9E%9C%EB%8D%A4%EC%88%AB%EC%9E%90/</link>
+      <pubDate>Wed, 13 Nov 2024 20:07:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EB%9E%9C%EB%8D%A4%EC%88%AB%EC%9E%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>자바랜덤</title>
+      <link>https://someoneornobody.github.io/tags/%EC%9E%90%EB%B0%94%EB%9E%9C%EB%8D%A4/</link>
+      <pubDate>Wed, 13 Nov 2024 20:07:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/tags/%EC%9E%90%EB%B0%94%EB%9E%9C%EB%8D%A4/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Array</title>
       <link>https://someoneornobody.github.io/tags/array/</link>
@@ -22,15 +139,6 @@
       <pubDate>Thu, 07 Nov 2024 13:07:58 +0900</pubDate>
       
       <guid>https://someoneornobody.github.io/tags/hashmap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Java</title>
-      <link>https://someoneornobody.github.io/tags/java/</link>
-      <pubDate>Thu, 07 Nov 2024 13:07:58 +0900</pubDate>
-      
-      <guid>https://someoneornobody.github.io/tags/java/</guid>
       <description></description>
     </item>
     

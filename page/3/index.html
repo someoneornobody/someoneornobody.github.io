@@ -206,6 +206,81 @@
 	
 	<header class="list__header">
 		<h2 class="list__title post__title">
+			<a href="/dev/vue/setter-getter/" rel="bookmark">
+			[Vue] computed property 값 변경하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-19T13:06:30&#43;09:00">2023-10-19 13:06:30</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">Vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		화면에서 computed 속성의 값을 변경 시킬 경우 발생하는 오류와 이에 대한 해결 방법을 이야기하고자 한다.
+먼저, 아래의 소스를 보자.
+&lt;template&gt; &lt;div&gt; &lt;p&gt;computed 값: {{ compDefaultValue }}&lt;/p&gt; &lt;button @click=&#34;increase&#34;&gt;문구 변경&lt;/button&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; export default { data: () =&gt; ({ defaultValue: 0 }), computed: { compDefaultValue() { return this.defaultValue } }, methods: { increase() { this.compDefaultValue = 1 } } } &lt;/script&gt; 위 소스에서 문구 변경을 클릭할 경우 호출되는 increase 함수에서 this.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/setter-getter/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+		
+		
+	<figure class="list__thumbnail thumbnail">
+		<a class="thumbnail__link" href="/life/places/songnae-all-day-party/">
+		<img class="thumbnail__image" src="/img/posts/life/places/songnae.all.day.party/life.places.songnae.all.day.party.34.jpeg" alt="[부천/송내] 올데이파티 키즈풀 파티룸">
+		</a>
+	</figure>
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/life/places/songnae-all-day-party/" rel="bookmark">
+			[부천/송내] 올데이파티 키즈풀 파티룸
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-14T00:23:17&#43;09:00">2023-10-14 00:23:17</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/places/" rel="category">Places</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		소개 및 예약 부천 송내역 에서 도보 3분 거리에 드디어 !!!
+프라이빗 키즈풀 파티룸 이 생겼습니다.
+키즈워터룸 또는 워터룸 이라고도 불리우는데요, (아래부터는 워터룸 이라 칭할게요)
+넓은 수영장과 함께 정말 많은, 왠만한 장난감은 다 갖춘 정말 퍼펙트한 워터룸 이었습니다.
+예약은 네이버에서 올데이파티키즈룸 으로 검색하셔서 날짜 및 시간을 정해서 예매하시면 문자로 진행이 됩니다.
+비밀번호나 기타 이것저것 사용에 관련된 안내를 친절하게 받으실 수 있어요.
+위치 위치는 송내역 북부 광장에서 신호등 건너면 바로 있는 송내 스카이뷰 자이 건물 2층 입니다.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/life/places/songnae-all-day-party/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
+			<a href="/dev/vue/router-use-in-pinia-store/" rel="bookmark">
+			[Vue] Pinia Store 에서 vue-router 사용하기
+			</a>
+		</h2>
+		<div class="list__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-10-04T09:26:00&#43;09:00">2023-10-04 09:26:00</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/vue/" rel="category">Vue</a>
+	</span>
+</div></div>
+	</header>
+	<div class="content list__excerpt post__content clearfix">
+		개요 pinia store 에서 vue-router 사용 시 undefined 로 인해 정상적인 동작을 하지않는 상황이 발생 사실 이건 당연한, 간단한 구조적 문제였는데.. 저와 같은 실수를 하는 사람이 없길 바라며 작성하는 게시글입니다.. 개발 환경 build tool: vite framework: vue3 state management: pinia 코드 main.js import { createApp } from &#39;vue&#39; import { createPinia } from &#39;pinia&#39; import App from &#39;./App.vue&#39; import router from &#39;./router&#39; const app = createApp(App) app.use(createPinia()) app.use(router) app.mount(&#39;#app&#39;) stores/common.
+	</div>
+	<div class="list__footer clearfix">
+		<a class="list__footer-readmore btn" href="/dev/vue/router-use-in-pinia-store/">Read more…</a>
+	</div>
+</article><article class="list__item post">
+	
+	<header class="list__header">
+		<h2 class="list__title post__title">
 			<a href="/dev/db/mysql-mariadb-datetime-white-space/" rel="bookmark">
 			[Mysql-Mariadb] datetime 에 공백 넣기(NO_ZERO_DATE, NO_ZERO_IN_DATE)
 			</a>
@@ -360,35 +435,13 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<div class="list__footer clearfix">
 		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-with-github/">Read more…</a>
 	</div>
-</article><article class="list__item post">
-	
-	<header class="list__header">
-		<h2 class="list__title post__title">
-			<a href="/dev/hugo/hugo-start/" rel="bookmark">
-			[HUGO] 시작하기
-			</a>
-		</h2>
-		<div class="list__meta meta">
-<div class="meta__item-datetime meta__item">
-	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2023-09-11T15:04:49&#43;09:00">2023-09-11 15:04:49</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/hugo/" rel="category">Hugo</a>
-	</span>
-</div></div>
-	</header>
-	<div class="content list__excerpt post__content clearfix">
-		HUGO ? HUGO 는 GO 프로그래밍 언어로 작성된 오픈 소스 정적 사이트 (Static Site Generators) 생성기 입니다.
-정적 사이트 생성기란 서버측 처리없이 HTML, CSS, Javascript 파일로 제공되는 웹 사이트로 다양한 플랫폼에서 빠르고 안전하며 쉽게 호스팅 할 수 있습니다.
-다양한 케이스가 있겠지만 대표적인 방법으로는 github 저장소를 이용하여 콘텐츠 생성 및 호스팅을 하는 방법이 있습니다.
-아래 내용은 macOS 를 기준으로 작성 된 문서입니다 설치 brew 를 사용하여 hugo 를 설치합니다 # 최초 설치 시 brew install hugo # 설치확인 hugo version 다음 단계부터는 hugo 관련 파일들이 생성되기 때문에 작업 경로(실제로 hugo 사이트를 생성하고 관리할 경로) 로 이동해서 수행합니다 사이트 생성 신규 사이트 생성
-	</div>
-	<div class="list__footer clearfix">
-		<a class="list__footer-readmore btn" href="/dev/hugo/hugo-start/">Read more…</a>
-	</div>
 </article>
 </main>
 
 <div class="pagination">
 	<a class="pagination__item pagination__item--prev btn" href="/page/2/">«</a>
-	<span class="pagination__item pagination__item--current">3/3</span>
+	<span class="pagination__item pagination__item--current">3/4</span>
+	<a class="pagination__item pagination__item--next btn" href="/page/4/">»</a>
 </div>
 
 			</div>
@@ -423,11 +476,11 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">1</span>
+				<span class="widget__counter widget__counter--bubble">2</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
-				<span class="widget__counter widget__counter--bubble">2</span>
+				<span class="widget__counter widget__counter--bubble">4</span>
 				</li>
 			<li class="widget__item">
 				<a class="widget__link" href="/categories/places/">Places</a>&nbsp;
@@ -448,11 +501,11 @@ git repository 생성 먼저 github 에 가입 후 아래와 같이 2개의 repo
 	<h4 class="widget__title">Recent Posts</h4>
 	<div class="widget__content">
 		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/jquery-handles/">[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/decimal-point-ceiling-floor-round/">[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/java-random-char-num/">[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</a></li>
 			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
 			<li class="widget__item"><a class="widget__link" href="/life/everything/neve-di-camaldoli/">크레마 네베 디 카말돌리 크림(NEVE DI CAMALDOLI) 초간단 사용후기..</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/server/target-server-failed-to-respond/">The target server failed to respond (And.. HTTP/1.0, HTTP/1.1)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/ide/intellij-broken-kor/">[IDE] 콘솔 한글깨짐 처리 (console log encoding .. with tomcat)</a></li>
-			<li class="widget__item"><a class="widget__link" href="/dev/javascript/use-href-onclick-into-anchor/">[javascript] A 태그(Anchor) 에서의 href, onclick 사용</a></li>
 		</ul>
 	</div>
 </div>
