@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
-
+Disallow: /life/places/goyang-aquagarden/
+Disallow: /dev/db/mysql-mariadb-sql-mode/
+Disallow: /tags/iphone15/
+Disallow: /tags/파주카페/index.xml
+Disallow: /tags/독채팬션/index.xml
+Disallow: /tags/iphone15/index.xml
+Disallow: /tags/iphone
+Disallow: /categories/news
+Disallow: /life/news/iphone15/
 Sitemap: https://someoneornobody.github.io/sitemap.xml
