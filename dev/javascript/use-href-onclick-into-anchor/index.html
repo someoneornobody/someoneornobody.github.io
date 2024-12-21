@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+          
+            
+              [javascript] A 태그(Anchor) 에서의 href, onclick 사용
+            
+          
+        </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="안녕하세요. 이번에는 프로그래밍 관련 게시글을 하나 적어볼까 합니다. 아래 문제는 아주 오래전에 겪어봐서 알아두었던 건데 최근에 깜빡하고 다시 똑같은 실수를 범해서 그냥 다시 한번 참고차 남겨두려는 의미에서 포스팅을 해봅니다. A 태그로 javascript function 을 호출하는 방법은 2가지가 있습니다. javascript function onclick function 물론 위 처럼 그대로 다 적어두지 않고 bind 로 click 이벤트를 주도록 하는 등의 코딩이 가능 하겠지만 일반적으로는 위 처럼 쓰일 것입니다. 이렇게 ​A 태그에서 함수 호출 시 href 로 사용하는 방법과 onclick 을 사용하는 방법이 있는데 만약 href 로 사용 시 자기 자신을 지칭하는 this 가 전달되지 않습니다...">
+	<meta name="keywords" content="[a태그 anchor href onClick pseudo this]">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WHXPGVQXNY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WHXPGVQXNY"></script>
+        
+
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8964630540815976" crossorigin="anonymous"></script>
+        
+		<meta property="og:url" content="https://someoneornobody.github.io/dev/javascript/use-href-onclick-into-anchor/">
+  <meta property="og:site_name" content="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.">
+  <meta property="og:title" content="[javascript] A 태그(Anchor) 에서의 href, onclick 사용">
+  <meta property="og:description" content="안녕하세요. 이번에는 프로그래밍 관련 게시글을 하나 적어볼까 합니다. 아래 문제는 아주 오래전에 겪어봐서 알아두었던 건데 최근에 깜빡하고 다시 똑같은 실수를 범해서 그냥 다시 한번 참고차 남겨두려는 의미에서 포스팅을 해봅니다. A 태그로 javascript function 을 호출하는 방법은 2가지가 있습니다. javascript function onclick function 물론 위 처럼 그대로 다 적어두지 않고 bind 로 click 이벤트를 주도록 하는 등의 코딩이 가능 하겠지만 일반적으로는 위 처럼 쓰일 것입니다. 이렇게 ​A 태그에서 함수 호출 시 href 로 사용하는 방법과 onclick 을 사용하는 방법이 있는데 만약 href 로 사용 시 자기 자신을 지칭하는 this 가 전달되지 않습니다...">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:published_time" content="2024-10-04T14:20:38+09:00">
+    <meta property="article:modified_time" content="2024-10-04T14:20:38+09:00">
+    <meta property="article:tag" content="Nexttick">
+
+		
+  <meta itemprop="name" content="[javascript] A 태그(Anchor) 에서의 href, onclick 사용">
+  <meta itemprop="description" content="안녕하세요. 이번에는 프로그래밍 관련 게시글을 하나 적어볼까 합니다. 아래 문제는 아주 오래전에 겪어봐서 알아두었던 건데 최근에 깜빡하고 다시 똑같은 실수를 범해서 그냥 다시 한번 참고차 남겨두려는 의미에서 포스팅을 해봅니다. A 태그로 javascript function 을 호출하는 방법은 2가지가 있습니다. javascript function onclick function 물론 위 처럼 그대로 다 적어두지 않고 bind 로 click 이벤트를 주도록 하는 등의 코딩이 가능 하겠지만 일반적으로는 위 처럼 쓰일 것입니다. 이렇게 ​A 태그에서 함수 호출 시 href 로 사용하는 방법과 onclick 을 사용하는 방법이 있는데 만약 href 로 사용 시 자기 자신을 지칭하는 this 가 전달되지 않습니다...">
+  <meta itemprop="datePublished" content="2024-10-04T14:20:38+09:00">
+  <meta itemprop="dateModified" content="2024-10-04T14:20:38+09:00">
+  <meta itemprop="wordCount" content="475">
+  <meta itemprop="keywords" content="a태그,anchor,href,onClick,pseudo,this">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+        
+        <script src="/js/lazysizes.min.js"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다." rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/java">
+            
+            <span class="menu__text">Java</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/ide">
+            
+            <span class="menu__text">IDE</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/places">
+            
+            <span class="menu__text">PLACES</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/everything">
+            
+            <span class="menu__text">EVERYTHING</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[javascript] A 태그(Anchor) 에서의 href, onclick 사용</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-10-04T14:20:38&#43;09:00">2024-10-04 14:20:38</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">Javascript</a>
+	</span>
+</div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p> </p>
+<p>안녕하세요. 이번에는 프로그래밍 관련 게시글을 하나 적어볼까 합니다. 아래 문제는 아주 오래전에 겪어봐서 알아두었던 건데 최근에 깜빡하고 다시 똑같은 실수를 범해서 그냥 다시 한번 참고차 남겨두려는 의미에서 포스팅을 해봅니다.</p>
+<p>A 태그로 javascript function 을 호출하는 방법은 2가지가 있습니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- case1 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:callFunction();&#34;</span>&gt;javascript function&lt;/<span style="color:#f92672">a</span>&gt;  
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- case2 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0);&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callFunction();&#34;</span>&gt;onclick function&lt;/<span style="color:#f92672">a</span>&gt;  
+</span></span></code></pre></div><p>물론 위 처럼 그대로 다 적어두지 않고 bind 로 click 이벤트를 주도록 하는 등의 코딩이 가능 하겠지만 일반적으로는 위 처럼 쓰일 것입니다.</p>
+<p>이렇게 ​A 태그에서 함수 호출 시 href 로 사용하는 방법과 onclick 을 사용하는 방법이 있는데 만약   <strong><u>href 로 사용 시 자기 자신을 지칭하는 this 가 전달되지 않습니다.</u></strong></p>
+<p>아래 코드를 보며 확인해 보도록 하겠습니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callFunction</span>(<span style="color:#a6e22e">obj</span>) {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">$</span>(<span style="color:#a6e22e">obj</span>).<span style="color:#a6e22e">attr</span>(<span style="color:#e6db74">&#39;attr-&#39;</span><span style="color:#a6e22e">a</span><span style="color:#960050;background-color:#1e0010">&#39;</span>));  
+</span></span><span style="display:flex;"><span>}  
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:callFunction(this);&#34;</span> <span style="color:#a6e22e">attr-a</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onclick : attr-a&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    javascript function
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;  
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0);&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callFunction(this);&#34;</span> <span style="color:#a6e22e">attr-a</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;onclick : attr-a&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    onclick function
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;  
+</span></span></code></pre></div><p>결과 :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">javascript</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672">-&gt;</span> <span style="color:#66d9ef">undefined</span>  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">onclick</span> <span style="color:#66d9ef">function</span> <span style="color:#f92672">-&gt;</span> <span style="color:#a6e22e">onclick</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">attr</span><span style="color:#f92672">-</span><span style="color:#a6e22e">a</span>  
+</span></span></code></pre></div><p>위 처럼 <code>​href 로 함수 호출 시 자기 자신의 object 를 찾지 못해 undefined 를 표시</code> 하게됩니다. 하지만, <code>onclick 을 사용하면 정상적으로 자기 자신 this 가 인식되어 attr-a 를 표시</code>하게 됩니다.</p>
+<blockquote>
+<p><strong>결론</strong> : <code>​앵커태그에서 함수 호출 시 자기 자신 객체를 전달 시에는 href 가 아닌 onclick 을 사용</code>하면 될 것 같습니다.</p>
+</blockquote>
+<p> </p>
+<hr>
+<h2 id="추가적인-내용">추가적인 내용</h2>
+<p>A 태그에서 <a href="javascript:callFunction();">click</a> 와 같이 쓰는 방법은 <strong>​javascript pseudo protocol 등의 이름으로 불리우는데 하이퍼링크(href) 에서 자바스크립트를 호출하기 위해 만들어 진 것</strong>​이라고 합니다. 이와 같은 사용법은 해당 <strong>​pseudo protocol 방식을 지원하는 브라우저에서만 지원하며 만약 javascript 의 기능을 off 시에는 동작하지 않는다</strong>고 합니다. ​(현재 대부분의 브라우저에서는 사용이 가능하다죠?)</p>
+<p>하지만 페이지 이동을 위해서 만들어진 A 태그에서 어쩔 수 없이 함수를 호출해야 하는 경우는 빈번 하실 겁니다. 아래 2가지 예제에 대한 문제를 확인해 보고 해결 방법에 대해 설명해 보도록 하겠습니다.</p>
+<p> </p>
+<h3 id="예제-1-이벤트-버블링">예제 1. 이벤트 버블링</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callFunction();&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">call</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+</span></span></code></pre></div><p>문제점 :<br>
+위와 같이 onclick 으로 함수호출 시 함수 호출 후 이벤트 버블링으로 인해 anchor 를 타서 브라우저 상단으로 이동해 버리는 문제가 있습니다.</p>
+<p>해결방법 :<br>
+피연산자를 실행하되 <strong>​피연산자에서 처리된 값을 무시하고 무조건 undefined 를 return 하게 해주는 void 함수를 사용</strong>하여 코딩을 할 수가 있습니다.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0);&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callFunction();&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">call</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;  </span>
+</span></span></code></pre></div><p>하지만 이 방법의 경우 <strong>​특정 브라우저에서 페이지 이동이 되지 않는 문제가 야기</strong>​된다고 하므로 아래와 같이 사용하도록 해야 합니다. (검색 결과 IE6 에서 그렇다고 하네요. 그 이후부터는 정상동작 한다고 합니다.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:void(0);&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callFunction(); return false;&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">call</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;  </span>
+</span></span></code></pre></div><p>또는</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;#&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;callFunction(); return false;&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">call</span> <span style="color:#66d9ef">function</span><span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;  </span>
+</span></span></code></pre></div><p>이렇게 <strong>​onclick 이벤트에 return false; 를 추가하게 되면 javascript:# , javascript:void(0); 어떠한 것을 사용해도 상관 없다</strong>고 합니다.</p>
+<p> </p>
+<h3 id="예제-2-pseudo-protocol-사용-함수에-return-처리-시">예제 2. pseudo protocol 사용 함수에 return 처리 시</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callFunction</span>() {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;call function&#39;</span>);  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span>;  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:callFunction();&#34;</span>&gt;call function&lt;/<span style="color:#f92672">a</span>&gt;  
+</span></span></code></pre></div><p>문제점 :<br>
+익스프롤러와 파이어폭스의 경우 <strong>​Anchor 태그에 의해 실행된 자바스크립트 함수가 undefined 이외의 값을 리턴하게 되면 url 로 간주하여 페이지를 이동</strong>시켜버립니다.</p>
+<p>해결 :<br>
+<strong>​자바스크립트 함수는 브레이스({}) 혹은 return; 을 만났을 때는 아무것도 return 하지 않게 하는 undefined 를 리턴</strong>합니다.  그러므로 함수를</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">callFunction</span>() {  
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;call function&#39;</span>);  
+</span></span><span style="display:flex;"><span>}  
+</span></span></code></pre></div><p>와 같이 변경하여 사용하시거나 또는</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;javascript:callFunction();&#34;</span> <span style="color:#a6e22e">onclick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;return false;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    call function
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">a</span>&gt;  
+</span></span></code></pre></div><p>처럼 사용해도 해결 가능 할 것입니다.</p>
+<p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+
+		</footer>
+	</article>
+</main>
+
+
+
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">Db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/everything/">Everything</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ide/">Ide</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/places/">Places</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">12</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">Server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">Vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">6</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/ide/eclipse-svn-error/">[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/jquery-handles/">[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/decimal-point-ceiling-floor-round/">[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/java-random-char-num/">[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

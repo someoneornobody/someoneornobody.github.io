@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+          
+            
+              [Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)
+            
+          
+        </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="1. 제어 - 선택 .add() : 요소를 추가 선택한다. / $(&amp;quot;p&amp;quot;).add(&amp;quot;div&amp;quot;) // p 요소와 div 요소를 선택한다. .not() : 선택된 확장집합에서 인자에 해당하는 요소를 제거한다. / $(&amp;quot;p&amp;quot;).not(&amp;quot;.green&amp;quot;) // p 요소의 확장집합에서 class가 green인 요소를 제거한다. .children() : 요소의 고유한 자식으로 구성된 확장 집합을 반환한다. .contents() : 선택한 요소의 자식 요소를 가져온다.(text node 포함) $(&#39;.container&#39;).contents().filter(function(){}); // class container 요소의 자식요소(text 포함)를 가져와 filter 한다. iframe text를 가져올때 사용 .fir..">
+	<meta name="keywords" content="">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WHXPGVQXNY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WHXPGVQXNY"></script>
+        
+
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8964630540815976" crossorigin="anonymous"></script>
+        
+		<meta property="og:url" content="https://someoneornobody.github.io/dev/javascript/jquery-handles/">
+  <meta property="og:site_name" content="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.">
+  <meta property="og:title" content="[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)">
+  <meta property="og:description" content="1. 제어 - 선택 .add() : 요소를 추가 선택한다. / $(&#34;p&#34;).add(&#34;div&#34;) // p 요소와 div 요소를 선택한다. .not() : 선택된 확장집합에서 인자에 해당하는 요소를 제거한다. / $(&#34;p&#34;).not(&#34;.green&#34;) // p 요소의 확장집합에서 class가 green인 요소를 제거한다. .children() : 요소의 고유한 자식으로 구성된 확장 집합을 반환한다. .contents() : 선택한 요소의 자식 요소를 가져온다.(text node 포함) $(&#39;.container&#39;).contents().filter(function(){}); // class container 요소의 자식요소(text 포함)를 가져와 filter 한다. iframe text를 가져올때 사용 .fir..">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:published_time" content="2024-11-20T13:47:37+09:00">
+    <meta property="article:modified_time" content="2024-11-20T13:47:37+09:00">
+    <meta property="article:tag" content="Jquery">
+    <meta property="article:tag" content="Selector">
+    <meta property="article:tag" content="Handle">
+
+		
+  <meta itemprop="name" content="[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)">
+  <meta itemprop="description" content="1. 제어 - 선택 .add() : 요소를 추가 선택한다. / $(&#34;p&#34;).add(&#34;div&#34;) // p 요소와 div 요소를 선택한다. .not() : 선택된 확장집합에서 인자에 해당하는 요소를 제거한다. / $(&#34;p&#34;).not(&#34;.green&#34;) // p 요소의 확장집합에서 class가 green인 요소를 제거한다. .children() : 요소의 고유한 자식으로 구성된 확장 집합을 반환한다. .contents() : 선택한 요소의 자식 요소를 가져온다.(text node 포함) $(&#39;.container&#39;).contents().filter(function(){}); // class container 요소의 자식요소(text 포함)를 가져와 filter 한다. iframe text를 가져올때 사용 .fir..">
+  <meta itemprop="datePublished" content="2024-11-20T13:47:37+09:00">
+  <meta itemprop="dateModified" content="2024-11-20T13:47:37+09:00">
+  <meta itemprop="wordCount" content="1400">
+  <meta itemprop="keywords" content="Jquery,Selector,Handle">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+        
+        <script src="/js/lazysizes.min.js"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다." rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/java">
+            
+            <span class="menu__text">Java</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/ide">
+            
+            <span class="menu__text">IDE</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/places">
+            
+            <span class="menu__text">PLACES</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/everything">
+            
+            <span class="menu__text">EVERYTHING</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-11-20T13:47:37&#43;09:00">2024-11-20 13:47:37</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/javascript/" rel="category">Javascript</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#제어">제어</a>
+      <ul>
+        <li><a href="#선택">선택</a></li>
+        <li><a href="#삽입">삽입</a></li>
+        <li><a href="#삭제">삭제</a></li>
+        <li><a href="#변경-변환">변경, 변환</a></li>
+        <li><a href="#확장">확장</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p>jQuery 의 선택, 삽입, 삭제, 변경, 변환, 확장에 대해 기록해두려고 합니다.<br>
+지금은 vue3, react 등.. frontend framework 를 사용하여 잘 사용하지 않지만<br>
+왠만한 레거시 프로젝트에는 모두 사용중이라 안 쓸 수가 없네요.<br>
+위에 말은 길게 하였지만 결국 <code>jQuery 셀렉터</code> 입니다.</p>
+<h2 id="제어">제어</h2>
+<hr>
+<h3 id="선택">선택</h3>
+<dl>
+<dt><strong>.add()</strong> </dt>
+<dd>요소를 추가 선택한다. </dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// p 요소와 div 요소를 선택한다.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;p&#34;</span>).<span style="color:#a6e22e">add</span>(<span style="color:#e6db74">&#34;div&#34;</span>)  
+</span></span></code></pre></div><dl>
+<dt><strong>.not()</strong> </dt>
+<dd>선택된 확장집합에서 인자에 해당하는 요소를 제거한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// p 요소의 확장집합에서 class가 green인 요소를 제거한다.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;p&#34;</span>).<span style="color:#a6e22e">not</span>(<span style="color:#e6db74">&#34;.green&#34;</span>)  
+</span></span></code></pre></div><dl>
+<dt><strong>.children()</strong> </dt>
+<dd>요소의 고유한 자식으로 구성된 확장 집합을 반환한다.<br>
+ </dd>
+<dt><strong>.contents()</strong> </dt>
+<dd>선택한 요소의 자식 요소를 가져온다.(text node 포함)</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// class container 요소의 자식요소(text 포함)를 가져와 filter 한다. iframe text를 가져올때 사용  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;.container&#39;</span>).<span style="color:#a6e22e">contents</span>().<span style="color:#a6e22e">filter</span>(<span style="color:#66d9ef">function</span>(){});        
+</span></span></code></pre></div><dl>
+<dt><strong>.first()</strong> </dt>
+<dd>요소의 첫번째 노드 반환<br>
+ </dd>
+<dt><strong>.last()</strong> </dt>
+<dd>요소의 마지막 노드 반환<br>
+ </dd>
+<dt><strong>.next()</strong> </dt>
+<dd>요소 집합내의 바로 다음에 나오는 형제로 구성된 요소 반환<br>
+ </dd>
+<dt><strong>.nextAll()</strong> </dt>
+<dd>요소 집합내의 다음에 나오는 모든 형제로 구성된 확장집합 반환<br>
+ </dd>
+<dt><strong>.nextUntil()</strong> </dt>
+<dd>선택 요소부터 인자가 나올때까지 집합을 선택한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// id term 요소부터 dt가 나올때까지 형제요소를 검색하고 배경을 red로 변경  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#term&#34;</span>).<span style="color:#a6e22e">nextUntil</span>(<span style="color:#e6db74">&#34;dt&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;background-color&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>);     
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// id term 요소부터 id term2 요소까지 중 dd 요소만 배경을 red로 변경
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#term&#34;</span>).<span style="color:#a6e22e">nextUntil</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#term2&#34;</span>), <span style="color:#e6db74">&#34;dd&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;background-color&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>);        
+</span></span></code></pre></div><dl>
+<dt><strong>.parent()</strong> </dt>
+<dd>요소 집합의 바로 위 부모로 구성된 확장 집합 반환<br>
+ </dd>
+<dt><strong>.parents()</strong> </dt>
+<dd>요소 집합의 모든 조상 확장 집합을 반환. 부모와 상위 모든 조상이 포함되지만 문서루트는 미포함<br>
+ </dd>
+<dt><strong>.parentsUnitl()</strong> </dt>
+<dd>선택 요소부터 인자가 나올때까지 부모 집합을 선택한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// id term 요소부터 dt가 나올때까지 부모요소를 검색하고 배경을 red로 변경
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#term&#34;</span>).<span style="color:#a6e22e">parentsUntil</span>(<span style="color:#e6db74">&#34;dt&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;background-color&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>);                   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// id term 요소부터 id term2 부모요소까지 중 dd 요소만 배경을 red로 변경
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#term&#34;</span>).<span style="color:#a6e22e">parentsUntil</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#term2&#34;</span>), <span style="color:#e6db74">&#34;dd&#34;</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;background-color&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>);              
+</span></span></code></pre></div><dl>
+<dt><strong>.prev()</strong> </dt>
+<dd>요소 집합의 바로 이전에 나오는 형제로 구성된 확장 집합을 반환<br>
+ </dd>
+<dt><strong>.prevAll()</strong> </dt>
+<dd>요소 집합의 이전에 나오는 모든 형제로 구성된 확장 집합을 반환<br>
+ </dd>
+<dt><strong>.siblings()</strong> </dt>
+<dd>요소의 모든 형제를 포함하는 확장 집합을 반환.<br>
+ </dd>
+<dt><strong>.eq()</strong></dt>
+<dd>선택 요소의 index번째 요소를 선택한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div의 3번째 요소의 배경을 변경  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">eq</span>(<span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">css</span>(<span style="color:#e6db74">&#39;background-color&#39;</span>, <span style="color:#e6db74">&#39;red&#39;</span>); 
+</span></span></code></pre></div><dl>
+<dt><strong>.index()</strong></dt>
+<dd>선택 요소에서 인자의 index 번호를 반환</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 안에서 div에 &#39;Third&#39;라는 단어를 포함하고 있는 div index 값
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">index</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div:contains(&#39;Third&#39;)&#34;</span>));            
+</span></span></code></pre></div><dl>
+<dt><strong>$.inArray() &lt;jQuery.inArray()&gt;</strong></dt>
+<dd>대상 배열 내의 값을찾아서 인덱스를 반환한다. ; 첫번째 배열은 0, 요소가 없으면 -1</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// arr 배열에서 &#34;John&#34;의 인덱스를 찾아서 반환  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">inArray</span>(<span style="color:#e6db74">&#34;John&#34;</span>, <span style="color:#a6e22e">arr</span>);    
+</span></span></code></pre></div><dl>
+<dt><strong>.find()</strong> </dt>
+<dd>선택된 요소의 자식노드에서 인자의 요소를 찾는다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// id div의 자식노드에서 ul 요소를 찾는다.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#div&#34;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#a6e22e">ul</span>); 
+</span></span></code></pre></div><dl>
+<dt><strong>.filter()</strong></dt>
+<dd>선택된 요소를 포함한 노드에서 인자의 요소를 찾는다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// id div 노드 자신을 포함한 요소에서 ul 요소를 찾는다.  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#div&#34;</span>).<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">ul</span>); 
+</span></span></code></pre></div><dl>
+<dt><strong>.end()</strong></dt>
+<dd>jQuery 함수를 연쇄적으로(chain)으로 사용할 경우 앞쪽에 이미 선택되었던 요소로 돌아간다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// ul의 첫번째 요소에서 class=foo를 찾아 배경 변경. find를 호출하기 전의 요소($(&#39;ul:first))에서 class=bar를 찾아 배경 변경
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;ul:first&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;.foo).css(&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#a6e22e">red</span><span style="color:#e6db74">&#39;).end().find(&#39;</span><span style="color:#a6e22e">bar</span><span style="color:#e6db74">&#39;).css(&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span><span style="color:#e6db74">&#39;, &#39;</span><span style="color:#a6e22e">green</span><span style="color:#960050;background-color:#1e0010">&#39;</span>); 
+</span></span></code></pre></div><dl>
+<dt><strong>.each()</strong></dt>
+<dd>다중 요소를 순서대로 선택한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 요소를 순서대로 선택한다.  i: 순서 시작은 0 ,  element : 선택된 요소 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">each</span>(<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">i</span>,<span style="color:#a6e22e">element</span>){
+</span></span><span style="display:flex;"><span>  ...
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><dl>
+<dt><strong>.has()</strong></dt>
+<dd>인자를 가지고 있는 확장집합을 선택</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// li 요소중 ul을 가지고 있는 요소만 선택
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;li&#34;</span>).<span style="color:#a6e22e">has</span>(<span style="color:#e6db74">&#34;ul&#34;</span>);   
+</span></span></code></pre></div><dl>
+<dt><strong>.slice()</strong></dt>
+<dd>선택한 요소 집합을 인자의 범위로 잘라낸다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// img 요소의 세번째 요소부터 끝 요소까지 css 적용            
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;img&#34;</span>).<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>).<span style="color:#a6e22e">css</span>(...);                                 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// img 요소의 세번째 요소부터 5번째 요소를 만날때까지(4번째) css적용            
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;img&#34;</span>).<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>).<span style="color:#a6e22e">css</span>(...);                                 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// img 요소의 끝에서 두번째 요소부터 끝에서 첫번째 요소를 만날때까지 css적용  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;img&#34;</span>).<span style="color:#a6e22e">slice</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>).<span style="color:#a6e22e">css</span>(...);                      
+</span></span></code></pre></div><dl>
+<dt><strong>.clone()</strong></dt>
+<dd>선택된 요소를 복사한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#img&#34;</span>).<span style="color:#a6e22e">clone</span>();  <span style="color:#75715e">// id img DOM을 복사한다. 
+</span></span></span></code></pre></div><dl>
+<dt><strong>.closest()</strong> </dt>
+<dd>현재 위치한 요소에서 DOM 트리를 탐색하여 일치된 요소를 선택한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// id name 요소에서 가장 가까운 ul을 선택한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#name&#34;</span>).<span style="color:#a6e22e">closest</span>(<span style="color:#e6db74">&#34;ul&#34;</span>);   
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// id code 요소 아래의 id name 요소에서 가장 가까운 ul을 선택한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#name&#34;</span>).<span style="color:#a6e22e">closest</span>(<span style="color:#e6db74">&#34;ul&#34;</span>, <span style="color:#e6db74">&#34;#code&#34;</span>);   
+</span></span></code></pre></div><dl>
+<dt><strong>.andSelf()</strong></dt>
+<dd>선택된 구조 요소를 이어붙인다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div와 내부의 p요소를 선택해서 결합 후 css 적용  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;div&#39;</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#39;p&#39;</span>).<span style="color:#a6e22e">andSelf</span>().<span style="color:#a6e22e">css</span>(..);                         
+</span></span></code></pre></div><dl>
+<dt><strong>.offsetParent()</strong></dt>
+<dd>위치(css:position) 요소를 기반으로 한 부모 요소를 찾는다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// li의 item-a 클래스의 css position상 가장 가까운 부모요소에 css를 적용  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;li.item-a&#39;</span>).<span style="color:#a6e22e">offsetParent</span>().<span style="color:#a6e22e">css</span>(..);   
+</span></span></code></pre></div><dl>
+<dt><strong>$.grep() &lt;jQuery.grep()&gt;</strong></dt>
+<dd>배열 요소를 조건에 따라 필터링하여 제거 한다. 특정 로직에 의해 true가 되는 결과만 반환</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 배열 \[0,1,2\] 에서 0보다 큰값을 반환 \[1,2\]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">grep</span>(<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">\</span>], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">i</span>){ <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>;});                              
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 배열 \[0,1,2\] 에서 0보다 크지 않은 값을 반환 \[0\]  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">grep</span>(<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">\</span>], <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">n</span>,<span style="color:#a6e22e">i</span>){ <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">0</span>;}, <span style="color:#66d9ef">true</span>);                         
+</span></span></code></pre></div><dl>
+<dt><strong>$.proxy() &lt;jQuery.proxy()&gt;</strong></dt>
+<dd>jQuery의 네임스페이스를 관리할 수 있게 한다. &ldquo;this&rdquo; 키워드를 통하여 다른 개체를 유지할 수 있게 한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// config 메서드에 clickMessage를 정의
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">app</span><span style="color:#f92672">=</span>{
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">config</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">clickMessage</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Hi!&#34;</span> 
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">clickHandler</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){                
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// clicHandler 메서드 함수 정의 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#75715e">// this:app 의 config 메시지의 clickMessage를 알  람
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#a6e22e">alert</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">config</span>.<span style="color:#a6e22e">clickMessage</span>);                                              
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>...
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 실행되지 않는다. jQuery 이벤트 모델에 의해 this가 app 이 아니다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">clickHandler</span>);                                
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// this 키워드를 유지한채 실행된다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;a&#39;</span>).<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#39;click&#39;</span>, .<span style="color:#a6e22e">proxy</span>(<span style="color:#a6e22e">app</span>, <span style="color:#e6db74">&#39;clickHandler&#39;</span>));                              
+</span></span></code></pre></div><p> </p>
+<h3 id="삽입">삽입</h3>
+<dl>
+<dt><strong>.after()</strong> </dt>
+<dd>지정한 요소 뒤에 새로운 요소를 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//A뒤에 B를 추가)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">after</span>(<span style="color:#a6e22e">B</span>) 
+</span></span></code></pre></div><dl>
+<dt><strong>.insertAfter()</strong></dt>
+<dd>지정한 요소 뒤에 새로운 요소를 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//B뒤에 A를 추가
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">insertAfter</span>(<span style="color:#a6e22e">B</span>)
+</span></span></code></pre></div><dl>
+<dt><strong>.append()</strong></dt>
+<dd>지정한 요소 뒤에 내용 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 뒤에 &lt;p&gt;내용&lt;/p&gt; 를 삽입한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">append</span>(<span style="color:#e6db74">&#34;&lt;p&gt;내용&lt;/p&gt;&#34;</span>);    
+</span></span></code></pre></div><dl>
+<dt><strong>.appenTo()</strong></dt>
+<dd>지정한 내용을 요소 뒤에 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// &lt;p&gt;내용&lt;/p&gt;를 div 뒤에 삽입한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;&lt;p&gt;내용&lt;/p&gt;&#34;</span>).<span style="color:#a6e22e">appendTo</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>));   
+</span></span></code></pre></div><dl>
+<dt><strong>.before()</strong></dt>
+<dd>지정한 요소의 앞에 요소를 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// A 앞에 B를 추가  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">before</span>(<span style="color:#a6e22e">B</span>) 
+</span></span></code></pre></div><dl>
+<dt><strong>.insertBefore()</strong></dt>
+<dd>지정한 요소의 앞에 요소를 삽입 </dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// B 앞에 A를 추가
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">A</span>.<span style="color:#a6e22e">insertBefore</span>(<span style="color:#a6e22e">B</span>)
+</span></span></code></pre></div><dl>
+<dt><strong>.prepend()</strong></dt>
+<dd>지정한 요소 앞에 내용 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 앞에 &lt;p&gt;내용&lt;/p&gt; 를 삽입한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">prepend</span>(<span style="color:#e6db74">&#34;&lt;p&gt;내용&lt;/p&gt;&#34;</span>);    
+</span></span></code></pre></div><dl>
+<dt><strong>.prependTo()</strong></dt>
+<dd>지정한 내용을 요소 앞에 삽입</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// &lt;p&gt;내용&lt;/p&gt;를 div 앞에 삽입한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;&lt;p&gt;내용&lt;/p&gt;&#34;</span>).<span style="color:#a6e22e">prependTo</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>));                  
+</span></span></code></pre></div><dl>
+<dt><strong>.pushStack()</strong></dt>
+<dd>jQuery 스택에 DOM 요소를 추가한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// id ids 요소에 jQuery 스택에 div 요소를 추가한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;#ids&#34;</span>).<span style="color:#a6e22e">pushStack</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>));          
+</span></span></code></pre></div><dl>
+<dt><strong>.wrap()</strong></dt>
+<dd>$() 형식으로 쓰는 함수의 선택한 요소 각각을 문자열 또는 객체로 감싼다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// class=inner 집합 요소 각각을 &lt;div class =&#34;new&#34;&gt;&lt;/div&gt;             
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.inner&#34;</span>).<span style="color:#a6e22e">wrap</span>(<span style="color:#e6db74">&#39;&lt;div class=&#34;new&#34; /&gt;&#39;</span>);                                      
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// class=inner 집합 요소 각각을 &lt;div class =&#34;new&#34;&gt;&lt;/div&gt;;  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.inner&#34;</span>).<span style="color:#a6e22e">wrap</span>(<span style="color:#66d9ef">function</span>(){<span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;&lt;div class=&#34;new&#34; /&gt;&#39;</span>});                                     
+</span></span></code></pre></div><dl>
+<dt><strong>.unwrap()</strong></dt>
+<dd>선택한 요소 집합의 부모를 제거한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// class=inner 집합 요소의 부모를 제거한다.   
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.inner&#34;</span>).<span style="color:#a6e22e">wrap</span>();   
+</span></span></code></pre></div><dl>
+<dt><strong>.wrapAll()</strong></dt>
+<dd>$() 형식으로 쓰는 함수의 선택한 요소 전체를 문자열 또는 객체로 감싼다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// class=inner 집합 요소 전체를 &lt;div class =&#34;new&#34;&gt;&lt;/div&gt;  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.inner&#34;</span>).<span style="color:#a6e22e">wrapAll</span>(<span style="color:#e6db74">&#39;&lt;div class=&#34;new&#34; /&gt;&#39;</span>);                                     
+</span></span></code></pre></div><dl>
+<dt><strong>.wrapInner()</strong></dt>
+<dd>$() 형식으로 쓰는 함수의 선택한 요소 각각의 내부를 문자열 또는 객체로 감싼다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// class=inner 집합 요소 각각의 내부를 &lt;div class =&#34;new&#34;&gt;&lt;/div&gt; 로 감싼다  
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.inner&#34;</span>).<span style="color:#a6e22e">wrapInner</span>(<span style="color:#e6db74">&#39;&lt;div class=&#34;new&#34; /&gt;&#39;</span>);                               
+</span></span></code></pre></div><p> </p>
+<h3 id="삭제">삭제</h3>
+<dl>
+<dt><strong>.detach()</strong> </dt>
+<dd>지정한 요소를 포함 하위 요소 모두 제거</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div를 포함 하위 요소 모두 제거
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">detach</span>();    
+</span></span></code></pre></div><dl>
+<dt><strong>.empty()</strong> </dt>
+<dd>지정한 요소의 하위 요소를 제거</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 하위 요소 모두 제거
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">empty</span>();    
+</span></span></code></pre></div><dl>
+<dt><strong>.remove()</strong> </dt>
+<dd>지정한 요소를 포함 하위 요소 모두 제거, 요소와 관련된 이벤트와 데이터 모두 제거</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 포함 하위 요소, 이벤트, 데이터 모두 제거
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">remove</span>();    
+</span></span></code></pre></div><p> </p>
+<h3 id="변경-변환">변경, 변환</h3>
+<dl>
+<dt><strong>.text()</strong> </dt>
+<dd>해당 요소에 text 요소를 삽입 또는 변경한다.<br>
+ </dd>
+<dt><strong>.html()</strong> </dt>
+<dd>해당 요소에 html 요소를 삽입 또는 변경한다.<br>
+ </dd>
+<dt><strong>.val()</strong> </dt>
+<dd>해당 요소의 value 값을 삽입 또는 변경한다.<br>
+ </dd>
+<dt><strong>.replaceAll()</strong> </dt>
+<dd>해당 요소들로 인자 요소를 대체한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// div 요소를 &lt;h2&gt;New heading&lt;/h2&gt; 요소로 변경한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#39;&lt;h2&gt;New heading&lt;/h2&gt;&#39;</span>).<span style="color:#a6e22e">empty</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>));    
+</span></span></code></pre></div><dl>
+<dt><strong>.replaceWith()</strong> </dt>
+<dd>해당 요소들을 인자의 요소로 바꾼다. replaceAll() 과 선택,인자(target)이 반대</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//  &lt;h2&gt;New heading&lt;/h2&gt; 요소로 div 요소를 변경 시킨다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">empty</span>(<span style="color:#e6db74">&#39;&lt;h2&gt;New heading&lt;/h2&gt;&#39;</span>);    
+</span></span></code></pre></div><dl>
+<dt><strong>.toArray()</strong> </dt>
+<dd>선택한 요소 DOM 집합을 자바스크립트 배열로 만든다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//  arr\[0\] === &lt;div&gt;Hello&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">toArray</span>();    
+</span></span></code></pre></div><dl>
+<dt><strong>$.makeArray &lt;jQuery.makeArray()&gt;</strong></dt>
+<dd>jQuery 집합의 요소 값을 JavaScript 배열로 변환한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">//  arr\[0\] === &#34;Hello&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">makeArray</span>(<span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;input&#34;</span>));      
+</span></span></code></pre></div><dl>
+<dt><strong>$.map() &lt;jQuery.map()&gt;</strong></dt>
+<dd>선택된 배열 요소를 순서대로 callback 함수를 통해 얻어진 리턴값을 포함하는 새로운 jQuery 오브젝트 생성</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 선택된 요소들의 text값을 대문자로 변경한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">map</span> (<span style="color:#66d9ef">function</span>(){ 
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">$</span>(<span style="color:#66d9ef">this</span>).<span style="color:#a6e22e">text</span>().<span style="color:#a6e22e">toUpperCase</span>();      
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//  key를 반환한다.  \[&#34;width&#34;, &#34;height&#34;\]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;div&#34;</span>).<span style="color:#a6e22e">map</span>({<span style="color:#a6e22e">width</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>, <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">15</span>} ,<span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">value</span>, <span style="color:#a6e22e">index</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">index</span>;      
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><dl>
+<dt><strong>$.globalEval() &lt;jQuery.globalEval()&gt;</strong></dt>
+<dd>문자열로 명령어를 실행시켜준다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// newVar == true
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">globalEval</span>(<span style="color:#e6db74">&#34;var newVar = true;&#34;</span>)      
+</span></span></code></pre></div><dl>
+<dt><strong>$.merge() &lt;jQuery.merge()&gt;</strong></dt>
+<dd>두개의 배열을 첫번째 배열에 합칩니다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 첫번째 배열 결과 : \[0,1,2,2,3,4\]
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">merge</span>(<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">\</span>],<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span><span style="color:#960050;background-color:#1e0010">\</span>]);      
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 첫번째 배열의 값을 유지하기 위해 새로운 배열을 만든다. 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">merge</span>(<span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">merge</span>(<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#960050;background-color:#1e0010">\</span>],<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span><span style="color:#960050;background-color:#1e0010">\</span>]),<span style="color:#960050;background-color:#1e0010">\</span>[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span><span style="color:#960050;background-color:#1e0010">\</span>]);      
+</span></span></code></pre></div><dl>
+<dt>                                     </dt>
+<dt><strong>$.trim() &lt;jQuery.trim()&gt;</strong></dt>
+<dd>문자열 앞뒤에 있는 공백 문자를 제거하고 결과 반환</dd>
+</dl>
+<pre tabindex="0"><code class="language-javascript " data-lang="javascript ">// str === &#34;   abc def ff  &#34;;    trimStr === &#34;abc def ff&#34;;
+var trimStr = $.trim(str);      
+</code></pre><dl>
+<dt><strong>$.unique() &lt;jQuery.unique()&gt;</strong></dt>
+<dd>element 배열의 중복된 모든 element를 제거한다. ; string, number 배열에서는 동작 X</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// divs의 중복 선택되어 들어간 element를 제거한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">divs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">unique</span>(<span style="color:#a6e22e">divs</span>);      
+</span></span></code></pre></div><dl>
+<dt><strong>$.parseJSON() &lt;jQuery.parseJSON()&gt;</strong></dt>
+<dd>JSON문자열을 JavaScript object로 반환한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 문자열 {&#34;name&#34;:&#34;John&#34;}을 JavaScript object로 변환한다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">parseJSON</span>(<span style="color:#e6db74">&#39;{&#34;name&#34;:&#34;John&#34;}&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// JavaScriptObject인 obj에서 name 요소인 John
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">alert</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">name</span><span style="color:#f92672">===</span><span style="color:#e6db74">&#34;John&#34;</span>);
+</span></span></code></pre></div><p><strong>참고</strong> : 형식이 어긋난 JSON 문자열을 인자로 사용하면 exception이 발생한다.  문자열의 key 와 value 는 쌍따옴표(&quot;&quot;)를 사용해야 한다.</p>
+<dl>
+<dt><strong>$.parseXML() &lt;jQuery.parseXML()&gt;</strong></dt>
+<dd>유효한 XML문서를 파상한다.</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// xml 파일에서 title의 값을 찾는다.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">$title</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">parseXML</span>(<span style="color:#a6e22e">xml</span>).<span style="color:#a6e22e">find</span>(<span style="color:#e6db74">&#34;title&#34;</span>);  
+</span></span></code></pre></div><p> </p>
+<h3 id="확장">확장</h3>
+<dl>
+<dt><strong>$.noop() &lt;jQuery.noop()&gt;</strong></dt>
+<dd>비어있는 함수 (function(){})<br>
+ </dd>
+<dt><strong>$.noConflict() &lt;jQuery.Conflict()&gt;</strong></dt>
+<dd>다른 JavaScript 라이브러리와 함께 사용할때 $의 충돌을 막기위해 사용<br>
+ </dd>
+<dt><strong>$.sub() &lt;jQuery.sub()&gt;</strong></dt>
+<dd>새로운 jQuery 함수를 정의할때, 네임스페이스의 충돌로 다른 개발자의 함수에 영향을 주지 않도록 캡슐화된 플러그인을 만들고자 할때 $.sub() 로 복사하여 사용</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>  (<span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sub$</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">jQuery</span>.<span style="color:#a6e22e">sub</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sub$</span>.<span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">myCustomMethod</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;just for me&#39;</span>;
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">sub$</span>(document).<span style="color:#a6e22e">ready</span>(<span style="color:#66d9ef">function</span>() {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">sub$</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">myCustomMethod</span>() <span style="color:#75715e">// &#39;just for me&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    });
+</span></span><span style="display:flex;"><span>  })();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">jQuery</span>(<span style="color:#e6db74">&#39;body&#39;</span>).<span style="color:#a6e22e">myCustomMethod</span> <span style="color:#75715e">// undefined
+</span></span></span></code></pre></div><dl>
+<dt><strong>$.extend() &lt;jQuery.extend()&gt;</strong> </dt>
+<dd>첫번째 인자에서 두번째 인자를 병합하며, 확장한다.<br>
+(1) 두번째 인자값이 첫번째 인자값의 같은 옵션을 대체하며 확장</dd>
+</dl>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> { 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">apple</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,  <span style="color:#a6e22e">banana</span> <span style="color:#f92672">:</span> {<span style="color:#a6e22e">weight</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">52</span>, <span style="color:#a6e22e">price</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>}, <span style="color:#a6e22e">cherry</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">97</span> 
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">object2</span> <span style="color:#f92672">=</span> { 
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">banana</span> <span style="color:#f92672">:</span> {<span style="color:#a6e22e">price</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>},  <span style="color:#a6e22e">durian</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> 
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">extend</span>(<span style="color:#a6e22e">object1</span>, <span style="color:#a6e22e">object2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// object1 결과
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// {apple: 0, banana: {price: 200}, cherry: 97, durian: 100}
+</span></span></span></code></pre></div><p>         (2) 첫번째 인자값의 원본 값을 유지하며 병합</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">object1</span> <span style="color:#f92672">=</span> {  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">apple</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">banana</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">weight</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">52</span>, <span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>},  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">cherry</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">97</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">object2</span> <span style="color:#f92672">=</span> {  
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">banana</span><span style="color:#f92672">:</span> {<span style="color:#a6e22e">price</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>},  <span style="color:#a6e22e">durian</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">extend</span>(<span style="color:#66d9ef">true</span>, <span style="color:#a6e22e">object1</span>, <span style="color:#a6e22e">object2</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// object1 결과
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// {apple: 0, banana: {weight: 52, price: 200}, cherry: 97, durian: 100}
+</span></span></span></code></pre></div><p>         (3) 요소에 적용할 명령어 확장</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">extend</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">myMethod</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){...}
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 결과: $(&#34;div&#34;).myMethod();
+</span></span></span></code></pre></div><p>         (4) 함수 실행 JQuery 명령어 확장</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#a6e22e">$</span>.<span style="color:#a6e22e">extend</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">myMethod2</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(){...}
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 결과: $.myMethod();
+</span></span></span></code></pre></div><p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+
+		</footer>
+	</article>
+</main>
+
+
+
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">Db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/everything/">Everything</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ide/">Ide</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/places/">Places</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">12</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">Server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">Vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">6</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/ide/eclipse-svn-error/">[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/jquery-handles/">[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/decimal-point-ceiling-floor-round/">[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/java-random-char-num/">[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>

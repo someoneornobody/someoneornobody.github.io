@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>소수점 on 국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</title>
+    <link>https://someoneornobody.github.io/tags/%EC%86%8C%EC%88%98%EC%A0%90/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Mon, 18 Nov 2024 10:48:11 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/%EC%86%8C%EC%88%98%EC%A0%90/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</title>
+      <link>https://someoneornobody.github.io/dev/javascript/decimal-point-ceiling-floor-round/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/decimal-point-ceiling-floor-round/</guid>
+      <description>자바스크립트(Javascript)를 이용하여 소수점 자리수에 대해 올림, 버림, 반올림, 원단위 절삭을 하는 방법을 알아보도록 하겠습니다.
+소수점 올림, 버림, 반올림 Math.ceil() : 소수점 올림, 정수형 반환
+Math.floor() : 소수점 버림, 정수형 반환
+Math.round() : 소수점 반올림, 정수형 반환
+var n = 123.456; alert(Math.ceil(n)); // 124 alert(Math.round(n)); // 123 n = 123.567; alert(Math.ceil(n)); // 124 alert(Math.floor(n)); // 123 alert(Math.round(n)); // 124 소수점 자리수 표기 toFiexed() : 숫자를 문자열로 변환하면서 지정된 소수점 이하 숫자를 반올림하여 출력한다.</description>
+    </item>
+    
+  </channel>
+</rss>

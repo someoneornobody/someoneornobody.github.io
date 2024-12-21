@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Handle on 국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</title>
+    <link>https://someoneornobody.github.io/tags/handle/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Wed, 20 Nov 2024 13:47:37 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/tags/handle/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</title>
+      <link>https://someoneornobody.github.io/dev/javascript/jquery-handles/</link>
+      <pubDate>Wed, 20 Nov 2024 13:47:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/jquery-handles/</guid>
+      <description>jQuery 의 선택, 삽입, 삭제, 변경, 변환, 확장에 대해 기록해두려고 합니다.
+지금은 vue3, react 등.. frontend framework 를 사용하여 잘 사용하지 않지만
+왠만한 레거시 프로젝트에는 모두 사용중이라 안 쓸 수가 없네요.
+위에 말은 길게 하였지만 결국 jQuery 셀렉터 입니다.
+제어 선택 .add() 요소를 추가 선택한다. // p 요소와 div 요소를 선택한다. $(&amp;#34;p&amp;#34;).add(&amp;#34;div&amp;#34;) .not() 선택된 확장집합에서 인자에 해당하는 요소를 제거한다. // p 요소의 확장집합에서 class가 green인 요소를 제거한다. $(&amp;#34;p&amp;#34;).not(&amp;#34;.green&amp;#34;) .children() 요소의 고유한 자식으로 구성된 확장 집합을 반환한다.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ide on 국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</title>
+    <link>https://someoneornobody.github.io/categories/ide/</link>
+    <description></description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 22 Nov 2024 16:24:44 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/ide/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</title>
+      <link>https://someoneornobody.github.io/dev/ide/eclipse-svn-error/</link>
+      <pubDate>Fri, 22 Nov 2024 16:24:44 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/ide/eclipse-svn-error/</guid>
+      <description>SVN 파일 커밋 시 이것저것 다 해도 에러가 뜨는 경우가 있다.
+에러 중
+파일명~ is not under version control
+특히 이 경우.
+Override and Update, Mark as merged 도 안되고
+해당 파일이 있는 폴더 삭제도 안되고
+(해당 프로젝트 폴더가 already locked 라고.. .metadata 폴더에서 .locked 파일 지우려 하면 이클립스 켜져있어서 안지워진다 하고
+이클립스 끄고 지운다음에 다시 키면 이클립스 실행할대 .locked 가 생겨서 폴더 삭제 하려면 또 already locked 라고 무한반복.</description>
+    </item>
+    
+    <item>
+      <title>[IDE] 콘솔 한글깨짐 처리 (console log encoding .. with tomcat)</title>
+      <link>https://someoneornobody.github.io/dev/ide/intellij-broken-kor/</link>
+      <pubDate>Mon, 07 Oct 2024 13:15:02 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/ide/intellij-broken-kor/</guid>
+      <description>IntelliJ에서 한글 깨짐 현상 해결 방법 IntelliJ에서 프로젝트 생성 및 Tomcat을 이용한 서버 시작 시, console 로그에서 한글이 깨지는 현상이 확인되었습니다. 웹상에서 많이 검색되는 2가지 방법과 제가 해결한 다른 1가지 방법, 총 3가지 방법에 대해 아래에 정리해보았습니다.
+현상 애플리케이션을 RUN 또는 DEBUG 시 보이는 콘솔이며, 이미지로 보이는 것 처럼 한글이 깨져서 나오는 경우가 있습니다.
+해결 방법 해결방법 #1 - Editor의 File Encoding 수정 CTRL + ALT + S로 IntelliJ Settings 메뉴를 호출합니다.</description>
+    </item>
+    
+  </channel>
+</rss>

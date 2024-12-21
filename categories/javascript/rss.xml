@@ -6,7 +6,44 @@
     <description></description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Tue, 19 Sep 2023 07:48:19 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/javascript/rss.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Nov 2024 13:47:37 +0900</lastBuildDate><atom:link href="https://someoneornobody.github.io/categories/javascript/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</title>
+      <link>https://someoneornobody.github.io/dev/javascript/jquery-handles/</link>
+      <pubDate>Wed, 20 Nov 2024 13:47:37 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/jquery-handles/</guid>
+      <description>jQuery 의 선택, 삽입, 삭제, 변경, 변환, 확장에 대해 기록해두려고 합니다.
+지금은 vue3, react 등.. frontend framework 를 사용하여 잘 사용하지 않지만
+왠만한 레거시 프로젝트에는 모두 사용중이라 안 쓸 수가 없네요.
+위에 말은 길게 하였지만 결국 jQuery 셀렉터 입니다.
+제어 선택 .add() 요소를 추가 선택한다. // p 요소와 div 요소를 선택한다. $(&amp;#34;p&amp;#34;).add(&amp;#34;div&amp;#34;) .not() 선택된 확장집합에서 인자에 해당하는 요소를 제거한다. // p 요소의 확장집합에서 class가 green인 요소를 제거한다. $(&amp;#34;p&amp;#34;).not(&amp;#34;.green&amp;#34;) .children() 요소의 고유한 자식으로 구성된 확장 집합을 반환한다.</description>
+    </item>
+    
+    <item>
+      <title>[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</title>
+      <link>https://someoneornobody.github.io/dev/javascript/decimal-point-ceiling-floor-round/</link>
+      <pubDate>Mon, 18 Nov 2024 10:48:11 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/decimal-point-ceiling-floor-round/</guid>
+      <description>자바스크립트(Javascript)를 이용하여 소수점 자리수에 대해 올림, 버림, 반올림, 원단위 절삭을 하는 방법을 알아보도록 하겠습니다.
+소수점 올림, 버림, 반올림 Math.ceil() : 소수점 올림, 정수형 반환
+Math.floor() : 소수점 버림, 정수형 반환
+Math.round() : 소수점 반올림, 정수형 반환
+var n = 123.456; alert(Math.ceil(n)); // 124 alert(Math.round(n)); // 123 n = 123.567; alert(Math.ceil(n)); // 124 alert(Math.floor(n)); // 123 alert(Math.round(n)); // 124 소수점 자리수 표기 toFiexed() : 숫자를 문자열로 변환하면서 지정된 소수점 이하 숫자를 반올림하여 출력한다.</description>
+    </item>
+    
+    <item>
+      <title>[javascript] A 태그(Anchor) 에서의 href, onclick 사용</title>
+      <link>https://someoneornobody.github.io/dev/javascript/use-href-onclick-into-anchor/</link>
+      <pubDate>Fri, 04 Oct 2024 14:20:38 +0900</pubDate>
+      
+      <guid>https://someoneornobody.github.io/dev/javascript/use-href-onclick-into-anchor/</guid>
+      <description>안녕하세요. 이번에는 프로그래밍 관련 게시글을 하나 적어볼까 합니다. 아래 문제는 아주 오래전에 겪어봐서 알아두었던 건데 최근에 깜빡하고 다시 똑같은 실수를 범해서 그냥 다시 한번 참고차 남겨두려는 의미에서 포스팅을 해봅니다.
+A 태그로 javascript function 을 호출하는 방법은 2가지가 있습니다.
+&amp;lt;!-- case1 --&amp;gt; &amp;lt;a href=&amp;#34;javascript:callFunction();&amp;#34;&amp;gt;javascript function&amp;lt;/a&amp;gt; &amp;lt;!-- case2 --&amp;gt; &amp;lt;a href=&amp;#34;javascript:void(0);&amp;#34; onclick=&amp;#34;callFunction();&amp;#34;&amp;gt;onclick function&amp;lt;/a&amp;gt; 물론 위 처럼 그대로 다 적어두지 않고 bind 로 click 이벤트를 주도록 하는 등의 코딩이 가능 하겠지만 일반적으로는 위 처럼 쓰일 것입니다.</description>
+    </item>
+    
     <item>
       <title>[Javascript] 브라우저 뒤로가기 처리 (BFCache, Back-forward cache)</title>
       <link>https://someoneornobody.github.io/dev/javascript/bf-cache/</link>

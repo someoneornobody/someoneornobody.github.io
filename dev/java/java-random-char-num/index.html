@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>
+          
+            
+              [JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기
+            
+          
+        </title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="java.lang.Math.random() 을 이용하여 랜덤 숫자 만들기Math.random() 메서드는 0.0 과 1.0 사이의 값 중 하나의 double 값을 생성한다.만약 0~9 사이의 랜덤한 수를 구하고 싶다면import java.lang.Math;System.out.println((int)(Math.random()*10));(int)형으로 케스팅을 하지않으면 2.4575805934491237 이런식의 더블형 이 리턴 된다. - import java.util.Random 클래스를 이용한 임의의 숫자 만들기import java.util.Random;Random rnd = new Random(); 0~9까지의 정수를 랜덤하게 출력int i = rnd.nextInt(10); 0.0f 에서..">
+	<meta name="keywords" content="">
+
+	
+	
+	  <meta name="naver-site-verification" content="439f59aba127ab6f3090f6d4a52855af8d1e66fa" /> 
+	
+
+        
+        
+        
+        
+        
+        
+        
+        
+
+	
+		    
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WHXPGVQXNY');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WHXPGVQXNY"></script>
+        
+
+        
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8964630540815976" crossorigin="anonymous"></script>
+        
+		<meta property="og:url" content="https://someoneornobody.github.io/dev/java/java-random-char-num/">
+  <meta property="og:site_name" content="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.">
+  <meta property="og:title" content="[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기">
+  <meta property="og:description" content="java.lang.Math.random() 을 이용하여 랜덤 숫자 만들기Math.random() 메서드는 0.0 과 1.0 사이의 값 중 하나의 double 값을 생성한다.만약 0~9 사이의 랜덤한 수를 구하고 싶다면import java.lang.Math;System.out.println((int)(Math.random()*10));(int)형으로 케스팅을 하지않으면 2.4575805934491237 이런식의 더블형 이 리턴 된다. - import java.util.Random 클래스를 이용한 임의의 숫자 만들기import java.util.Random;Random rnd = new Random(); 0~9까지의 정수를 랜덤하게 출력int i = rnd.nextInt(10); 0.0f 에서..">
+  <meta property="og:locale" content="ko_kr">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dev">
+    <meta property="article:published_time" content="2024-11-13T20:07:37+09:00">
+    <meta property="article:modified_time" content="2024-11-13T20:07:37+09:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Random">
+    <meta property="article:tag" content="자바랜덤">
+    <meta property="article:tag" content="랜덤숫자">
+    <meta property="article:tag" content="랜덤문자">
+
+		
+  <meta itemprop="name" content="[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기">
+  <meta itemprop="description" content="java.lang.Math.random() 을 이용하여 랜덤 숫자 만들기Math.random() 메서드는 0.0 과 1.0 사이의 값 중 하나의 double 값을 생성한다.만약 0~9 사이의 랜덤한 수를 구하고 싶다면import java.lang.Math;System.out.println((int)(Math.random()*10));(int)형으로 케스팅을 하지않으면 2.4575805934491237 이런식의 더블형 이 리턴 된다. - import java.util.Random 클래스를 이용한 임의의 숫자 만들기import java.util.Random;Random rnd = new Random(); 0~9까지의 정수를 랜덤하게 출력int i = rnd.nextInt(10); 0.0f 에서..">
+  <meta itemprop="datePublished" content="2024-11-13T20:07:37+09:00">
+  <meta itemprop="dateModified" content="2024-11-13T20:07:37+09:00">
+  <meta itemprop="wordCount" content="207">
+  <meta itemprop="keywords" content="Java,Random,자바랜덤,랜덤숫자,랜덤문자">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+
+	<link rel="stylesheet" href="/css/style.css">
+	
+
+	<link rel="shortcut icon" href="/favicon.ico">
+
+        
+        <script src="/js/lazysizes.min.js"></script>
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container header__container">
+		
+	<div class="logo">
+		<a class="logo__link" href="/" title="국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다." rel="home">
+			<div class="logo__item logo__text">
+					<div class="logo__title">국내 이곳저곳 여행지 및 카페, 아이와 함께 갈만한 곳을 소개합니다.</div>
+					
+				</div>
+		</a>
+	</div>
+		
+<nav class="menu">
+  <button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+    <span class="menu__btn-title" tabindex="-1">Menu</span>
+  </button>
+  <ul class="menu__list">
+    <li class="menu__item">
+      <a class="menu__link" href="/">
+        
+          <span class="menu__text">Home</span>
+        
+      </a>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/dev">
+        
+        <span class="menu__text">DEVELOPMENT</span>
+        <label class="drop-icon" for="DEVELOPMENT">▾</label>
+        
+      </a>
+      <input type="checkbox" id="DEVELOPMENT">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/javascript">
+            
+            <span class="menu__text">Javascript</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/vue">
+            
+            <span class="menu__text">Vue</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/java">
+            
+            <span class="menu__text">Java</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/server">
+            
+            <span class="menu__text">Server</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/db">
+            
+            <span class="menu__text">Database</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/hugo">
+            
+            <span class="menu__text">HUGO</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/ide">
+            
+            <span class="menu__text">IDE</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+    <li class="menu__item menu__dropdown">
+      <a class="menu__link" href="/life">
+        
+        <span class="menu__text">LIFE</span>
+        <label class="drop-icon" for="LIFE">▾</label>
+        
+      </a>
+      <input type="checkbox" id="LIFE">
+      <ul class="submenu__list">
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/places">
+            
+            <span class="menu__text">PLACES</span>
+            
+          </a>
+          </li>
+        
+          <li class="menu__item">
+          <a class="menu__link" href="/categories/everything">
+            
+            <span class="menu__text">EVERYTHING</span>
+            
+          </a>
+          </li>
+        
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+        <article class="post autonumbering">
+		<header class="post__header">
+			<h1 class="post__title">[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2024-11-13T20:07:37&#43;09:00">2024-11-13 20:07:37</time></div><div class="meta__item-categories meta__item"><svg class="meta__icon icon icon-category" width="16" height="16" viewBox="0 0 16 16"><path d="m7 2l1 2h8v11h-16v-13z"/></svg><span class="meta__text"><a class="meta__link" href="/categories/java/" rel="category">Java</a>
+	</span>
+</div></div>
+		</header>
+		
+<div class="post__toc toc">
+	<div class="toc__title">Page content</div>
+	<div class="toc__menu">
+		<nav id="TableOfContents">
+  <ul>
+    <li><a href="#javalangmathrandom-을-이용하여-랜덤-숫자-만들기">java.lang.Math.random() 을 이용하여 랜덤 숫자 만들기</a></li>
+    <li><a href="#import-javautilrandom-클래스를-이용한-임의의-숫자-만들기">import java.util.Random 클래스를 이용한 임의의 숫자 만들기</a></li>
+    <li><a href="#az-사이의-문자를-랜덤하게-뽑기">A~Z 사이의 문자를 랜덤하게 뽑기</a></li>
+    <li><a href="#20자리-영문숫자-랜덤코드-만들기">20자리 영문+숫자 랜덤코드 만들기</a></li>
+  </ul>
+</nav>
+	</div>
+</div><div class="content post__content clearfix">
+			<p> </p>
+<p>예전에 정리해놓았던, 간단하고 가~끔 사용하던 랜덤 함수를 이용한 함수를 기록해봅니다.</p>
+<p>(지금은 AI 툴을 사용하면 정확하고 깔끔하게 바로 생성이 되지만 말이죠..)</p>
+<p> </p>
+<h2 id="javalangmathrandom-을-이용하여-랜덤-숫자-만들기">java.lang.Math.random() 을 이용하여 랜덤 숫자 만들기</h2>
+<hr>
+<p>Math.random() 메서드는 0.0 과 1.0 사이의 값 중 하나의 double 값을 생성한다.</p>
+<p>만약 0~9 사이의 랜덤한 수를 구하고 싶다면</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.lang.Math;
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>((<span style="color:#66d9ef">int</span>)(Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">*</span>10));
+</span></span></code></pre></div><p>(int)형으로 케스팅을 하지않으면 &ldquo;2.4575805934491237&rdquo; 이런식의 더블형 이 리턴 된다.</p>
+<p> </p>
+<h2 id="import-javautilrandom-클래스를-이용한-임의의-숫자-만들기">import java.util.Random 클래스를 이용한 임의의 숫자 만들기</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span>  <span style="color:#f92672">import</span> java.util.Random;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Random rnd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 0~9까지의 정수를 랜덤하게 출력</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> rnd.<span style="color:#a6e22e">nextInt</span>(10);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 0.0f 에서 1.0f 까지의 실수를 랜덤하게 출력</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">float</span> f <span style="color:#f92672">=</span> rnd.<span style="color:#a6e22e">nextFloat</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// true(참), false(거짓) 중의 하나를 랜덤하게 출력</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  Boolean b <span style="color:#f92672">=</span> rnd.<span style="color:#a6e22e">nextBoolean</span>();
+</span></span></code></pre></div><p> </p>
+<h2 id="az-사이의-문자를-랜덤하게-뽑기">A~Z 사이의 문자를 랜덤하게 뽑기</h2>
+<hr>
+<p>조건은 아래와 같다.</p>
+<ol>
+<li>A 부터 Z 까지의 문자의 수는 26 개이다..</li>
+<li>아스키코드는 65 ~ 90 까지가 영문대문자, 97~122 까지가 영문소문자<br>
+-&gt; 26까지의 랜덤 한 수를 구하고 그 수에 65 라는 수를 더한 후 (char)형으로 케스팅을 하면 랜덤 한 영문대문자를 뽑아낼 수 있다.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.lang.Math;
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>((<span style="color:#66d9ef">char</span>)((<span style="color:#66d9ef">int</span>)(Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">*</span>26)<span style="color:#f92672">+</span>65)); <span style="color:#75715e">// 랜덤 한 대문자</span>
+</span></span><span style="display:flex;"><span>System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>((<span style="color:#66d9ef">char</span>)((<span style="color:#66d9ef">int</span>)(Math.<span style="color:#a6e22e">random</span>()<span style="color:#f92672">*</span>26)<span style="color:#f92672">+</span>97)); <span style="color:#75715e">// 랜덤 한 소문자</span>
+</span></span></code></pre></div><p> </p>
+<h2 id="20자리-영문숫자-랜덤코드-만들기">20자리 영문+숫자 랜덤코드 만들기</h2>
+<hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#f92672">import</span> java.util.Random;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Random rnd <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> Random();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>StringBuffer buf <span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> StringBuffer();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0;i<span style="color:#f92672">&lt;</span>20;i<span style="color:#f92672">++</span>){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// rnd.nextBoolean() 는 랜덤으로 true, false 를 리턴. true일 시 랜덤 한 소문자를, false 일 시 랜덤 한 숫자를 StringBuffer 에 append 한다.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span>(rnd.<span style="color:#a6e22e">nextBoolean</span>()){
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        buf.<span style="color:#a6e22e">append</span>((<span style="color:#66d9ef">char</span>)((<span style="color:#66d9ef">int</span>)(rnd.<span style="color:#a6e22e">nextInt</span>(26))<span style="color:#f92672">+</span>97));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        buf.<span style="color:#a6e22e">append</span>((rnd.<span style="color:#a6e22e">nextInt</span>(10)));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p> </p>
+
+		</div>
+		<footer class="post__footer">
+			
+
+		</footer>
+	</article>
+</main>
+
+
+
+
+  <section class="comments">
+    <script src="https://utteranc.es/client.js"
+        repo="someoneornobody/someoneornobody-comments"
+        issue-term="pathname"
+        label="✨💬✨"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+  </section>
+
+
+			</div>
+			<aside class="sidebar"><div class="widget-search widget">
+  <form class="widget-search__form" role="search" method="get" action="https://someoneornobody.github.io/search">
+    <label>
+      <input class="widget-search__field" type="search" placeholder="SEARCH…" value="" name="s" aria-label="SEARCH…">
+    </label>
+    <input class="widget-search__submit" type="submit" value="Search">
+  </form>
+</div>
+
+<div class="widget-categories widget">
+	<h4 class="widget__title">Categories</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/db/">Db</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/everything/">Everything</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">1</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/hugo/">Hugo</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">3</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/ide/">Ide</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/java/">Java</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/javascript/">Javascript</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">4</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/places/">Places</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">12</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/server/">Server</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">2</span>
+				</li>
+			<li class="widget__item">
+				<a class="widget__link" href="/categories/vue/">Vue</a>&nbsp;
+				<span class="widget__counter widget__counter--bubble">6</span>
+				</li>
+		</ul>
+	</div>
+</div>
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/dev/ide/eclipse-svn-error/">[ETC] Eclipse SVN Sync ‘~ is not under version control.’ Error</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/jquery-handles/">[Javascript] jQuery 제어 (선택, 삽입, 삭제, 변경, 변환, 확장)</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/javascript/decimal-point-ceiling-floor-round/">[JAVASCRIPT] 소수점 자리수 올림, 버림, 반올림, 원단위 절삭</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/java-random-char-num/">[JAVA] Random 을 이용하여 랜덤 문자,숫자 만들기</a></li>
+			<li class="widget__item"><a class="widget__link" href="/dev/java/sort-array-hashmap/">[JAVA] List&lt;HashMap&lt;String, String&gt;&gt; 정렬</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2024 doproperly.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script>
+</body>
+</html>
